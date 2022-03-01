@@ -1,4 +1,4 @@
-import { Box, Text } from '@chakra-ui/react';
+import { Box, Divider, Text } from '@chakra-ui/react';
 
 export const CTAButton: React.FC = () => {
   return (
@@ -9,8 +9,13 @@ export const CTAButton: React.FC = () => {
       textAlign='center'
       fontWeight='medium'
       lineHeight='tall'
-      fontSize='3xl'>
-      <Text>Vamos nessa?</Text>
+      fontSize='3xl'
+      _hover={{
+        transform: 'scale(0.98)',
+        textDecoration: 'underline'
+      }}>
+      <Divider />
+      <Text mt='14'>Vamos nessa?</Text>
       <Text>Então escolha seu continente</Text>
     </Box>
   );

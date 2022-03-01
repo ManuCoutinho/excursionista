@@ -1,8 +1,9 @@
-import { Divider, Flex, HStack } from '@chakra-ui/react';
+import { Flex, HStack } from '@chakra-ui/react';
 import { TravelTypesIcons } from './TravelTypesIcons';
 import { FaCocktail, FaUmbrellaBeach, FaGlobeAfrica } from 'react-icons/fa';
 import { BsBuilding, BsBank } from 'react-icons/bs';
 import { CTAButton } from './CTAButton';
+import { Carousel } from '../Carousel';
 
 //todo acertar spacing no breakpoint
 
@@ -32,8 +33,11 @@ export const MiddleSection: React.FC = () => {
           text='e mais...'
         />
       </HStack>
-      <Flex justify='center'>
+      <Flex justify='center' mb={14}>
         <CTAButton />
+      </Flex>
+      <Flex>
+        <Carousel />
       </Flex>
     </Flex>
   );
