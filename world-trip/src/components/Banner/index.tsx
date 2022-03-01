@@ -6,7 +6,7 @@ export const Banner: React.FC = () => {
     <Flex
       w='100%'
       h='370px'
-      bgImage="url('/assets/bg4.jpg')"
+      bgImage="url('/assets/bg2.jpg')"
       bgPosition='top'
       bgRepeat='no-repeat'
       bgSize='cover'
