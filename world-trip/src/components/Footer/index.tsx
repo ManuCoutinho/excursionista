@@ -1,5 +1,6 @@
 import { Box, Divider, Flex, HStack, VStack } from '@chakra-ui/react';
 import { Logo } from '../Header/Logo';
+import { Contacts } from './Contacts';
 import { MenuList } from './MenuList';
 
 export const Footer: React.FC = () => {
@@ -32,7 +33,7 @@ export const Footer: React.FC = () => {
           <Box alignSelf='flex-start'>
             <MenuList menuItem={socialItem} text='Redes Sociais' />
           </Box>
-          <Box>Contato</Box>
+          <Contacts />
         </HStack>
       </Box>
     </Flex>
