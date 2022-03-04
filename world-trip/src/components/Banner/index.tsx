@@ -6,7 +6,7 @@ export const Banner: React.FC = () => {
     <Flex
       w='100%'
       h='370px'
-      bgImage="url('/assets/bg.jpg')"
+      bgImage="url('/assets/banner/bg.jpg')"
       bgPosition='center'
       bgRepeat='no-repeat'
       bgSize='cover'
@@ -21,7 +21,7 @@ export const Banner: React.FC = () => {
           </Text>
         </Box>
         <Box mt='48'>
-          <Image src='/assets/airplane.svg' alt='Airplane' width={417} height={270} />
+          <Image src='/assets/banner/airplane.svg' alt='Airplane' width={417} height={270} />
         </Box>
       </Flex>
     </Flex>

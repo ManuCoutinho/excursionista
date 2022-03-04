@@ -10,6 +10,39 @@ import 'swiper/css/a11y';
 import 'swiper/css/autoplay';
 
 export const Carousel: React.FC = () => {
+  const carouselItem = [
+    {
+      id: 321,
+      text: 'África',
+      description: 'O continente mais antigo',
+      img: '/assets/carousel/africa.jpg'
+    },
+    {
+      id: 322,
+      text: 'Europa',
+      description: 'O continente multicultural',
+      img: '/assets/carousel/europe.jpg'
+    },
+    { id: 323, text: 'Asia', description: 'Culturas exóticas', img: '/assets/carousel/asia.jpg' },
+    {
+      id: 324,
+      text: 'América do Sul',
+      description: 'O continente mais caliente',
+      img: '/assets/carousel/latam.jpg'
+    },
+    {
+      id: 325,
+      text: 'América do Norte',
+      description: 'O continente mais cosmopolitan',
+      img: '/assets/carousel/northAmerica.jpg'
+    },
+    {
+      id: 326,
+      text: 'Oceânia',
+      description: 'Desbrave o Outback',
+      img: '/assets/carousel/oceania.jpg'
+    }
+  ];
   return (
     <Swiper
       style={{
@@ -30,26 +63,11 @@ export const Carousel: React.FC = () => {
       pagination={{ clickable: true }}
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log('slide change')}>
-      <SwiperSlide>
-        <CarouselItem
-          bgImg='/assets/bg2.jpg'
-          text='África'
-          description='O continente mais antigo'
-        />
-      </SwiperSlide>
-      <SwiperSlide>
-        <CarouselItem bgImg='/assets/bg.jpg' text='Europa' description='O continente mais antigo' />
-      </SwiperSlide>
-      <SwiperSlide>
-        <CarouselItem bgImg='/assets/bg2.jpg' text='Asia' description='O continente mais antigo' />
-      </SwiperSlide>
-      <SwiperSlide>
-        <CarouselItem
-          bgImg='/assets/bg4.jpg'
-          text='Américas'
-          description='O continente mais antigo'
-        />
-      </SwiperSlide>
+      {carouselItem.map((item) => (
+        <SwiperSlide key={item.id}>
+          <CarouselItem text={item.text} description={item.description} bgImg={item.img} />
+        </SwiperSlide>
+      ))}
     </Swiper>
   );
 };

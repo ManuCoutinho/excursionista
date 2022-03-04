@@ -17,11 +17,12 @@ export const CarouselItem = ({ text, bgImg, description }: CarouselItemsProps) =
       bgSize='cover'
       justify='center'
       alignItems='center'
-      direction='column'>
-      <Heading color='gray.50' mb={4} fontWeight='bold' fontSize='5xl'>
+      direction='column'
+      color='yellow.500'>
+      <Heading mb={4} fontWeight='bold' fontSize='5xl'>
         {text}
       </Heading>
-      <Text color='gray.50' fontWeight='bold' fontSize='2xl'>
+      <Text fontWeight='bold' fontSize='2xl'>
         {description}
       </Text>
     </Flex>
