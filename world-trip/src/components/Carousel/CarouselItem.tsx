@@ -21,7 +21,7 @@ export const CarouselItem = ({ text, bgImg, description }: CarouselItemsProps) =
       <Heading color='gray.50' mb={4} fontWeight='bold' fontSize='5xl'>
         {text}
       </Heading>
-      <Text color='gray.50' fontWeight='bold' fontSize='xl'>
+      <Text color='gray.50' fontWeight='bold' fontSize='2xl'>
         {description}
       </Text>
     </Flex>

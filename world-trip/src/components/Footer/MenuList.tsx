@@ -19,10 +19,9 @@ export function MenuList({ menuItem, text }: MenuItemProps) {
       </Heading>
       <List fontSize='sm'>
         {menuItem.map((item) => (
-          <Link href={item.url}>
+          <Link href={item.url} key={item.id}>
             <a>
               <ListItem
-                key={item.id}
                 p={1}
                 _hover={{
                   color: 'purple.300'

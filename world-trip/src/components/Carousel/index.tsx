@@ -1,22 +1,33 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Scrollbar, A11y, Lazy, Keyboard, EffectFlip } from 'swiper';
+import { Navigation, Pagination, A11y, Lazy, Autoplay } from 'swiper';
+import { CarouselItem } from './CarouselItem';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
-import Image from 'next/image';
-import { Flex, Heading } from '@chakra-ui/react';
-import { CarouselItem } from './CarouselItem';
+import 'swiper/css/effect-flip';
+import 'swiper/css/a11y';
+import 'swiper/css/autoplay';
 
 export const Carousel: React.FC = () => {
   return (
     <Swiper
-      modules={[Navigation, Pagination, Scrollbar, A11y, EffectFlip]}
+      style={{
+        '--swiper-navigation-color': '#FFC759',
+        '--swiper-pagination-color': '#FFC759',
+        '--swiper-navigation-size': '50px',
+        '--swiper-pagination-bullet-size': '16px'
+      }}
+      modules={[Navigation, Pagination, A11y, Lazy, Autoplay]}
       slidesPerView={1}
       navigation
+      loop={true}
+      lazy={true}
+      autoplay={{
+        delay: 3500,
+        disableOnInteraction: false
+      }}
       pagination={{ clickable: true }}
-      scrollbar={{ draggable: true }}
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log('slide change')}>
       <SwiperSlide>

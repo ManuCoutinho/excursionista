@@ -10,7 +10,7 @@ export const Footer: React.FC = () => {
     { id: 13, listItem: 'América do Sul', url: '/latam' },
     { id: 14, listItem: 'Asia', url: '/asia' },
     { id: 15, listItem: 'Europa', url: '/europe' },
-    { id: 11, listItem: 'Oceânia', url: '/oceania' }
+    { id: 18, listItem: 'Oceânia', url: '/oceania' }
   ];
   const socialItem = [
     { id: 211, listItem: 'Facebook', url: 'https://facebook.com' },
