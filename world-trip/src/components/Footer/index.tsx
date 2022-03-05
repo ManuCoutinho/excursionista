@@ -5,7 +5,7 @@ import { MenuList } from './MenuList';
 
 export const Footer: React.FC = () => {
   const menuItem = [
-    { id: 11, listItem: 'África', url: '/afric' },
+    { id: 11, listItem: 'África', url: '/africa' },
     { id: 12, listItem: 'América do Norte', url: '/north-america' },
     { id: 13, listItem: 'América do Sul', url: '/latam' },
     { id: 14, listItem: 'Asia', url: '/asia' },

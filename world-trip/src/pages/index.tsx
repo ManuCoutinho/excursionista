@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { Banner } from '../components/Banner';
+import { Banner } from '../components/BannerHome';
 import { MiddleSection } from '../components/MiddleSection';
 
 const Home: NextPage = () => {
