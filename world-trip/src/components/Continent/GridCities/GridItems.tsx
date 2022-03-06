@@ -10,9 +10,9 @@ interface GridItemsProps {
   url: string;
 }
 
-export const GridItems = () => {
+export const GridItems = ({ city, country, flag, img, url }: GridItemsProps) => {
   return (
-    <Link href='/'>
+    <Link href={url}>
       <VStack
         border='1px'
         borderColor='orange.100'
@@ -23,28 +23,18 @@ export const GridItems = () => {
           transform: 'scale(0.98)'
         }}>
         <Box>
-          <Image
-            src='/assets/continents/europe/london-card.jpg'
-            alt='london'
-            width={250}
-            height={173}
-          />
+          <Image src={img} alt={city} width={250} height={173} />
         </Box>
         <HStack spacing={8} px={4} py={6}>
           <Box>
             <Text color='gray.700' fontWeight='medium' fontSize='medium'>
-              Londres
+              {city}
             </Text>
             <Text color='gray.400' fontSize='xs'>
-              Reino Unido
+              {country}
             </Text>
           </Box>
-          <ChakraImage
-            src='https://flagcdn.com/w40/gb.png'
-            alt='Londres'
-            borderRadius='full'
-            boxSize='30px'
-          />
+          <ChakraImage src={flag} alt={city} borderRadius='full' boxSize='30px' />
         </HStack>
       </VStack>
     </Link>

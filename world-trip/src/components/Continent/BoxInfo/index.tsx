@@ -2,12 +2,18 @@ import { HStack, Tooltip } from '@chakra-ui/react';
 import { HiOutlineInformationCircle } from 'react-icons/hi';
 import { CardInfo } from './CardInfo';
 
-export const BoxInfo = () => {
+interface BoxInfoProps {
+  country: string;
+  language: string;
+  city: string;
+}
+
+export const BoxInfo = ({ city, country, language }: BoxInfoProps) => {
   return (
     <HStack spacing={12} justify='center'>
-      <CardInfo number='50' description='países' />
-      <CardInfo number='60' description='línguas' />
-      <CardInfo number='27' description='cidades +100'>
+      <CardInfo number={country} description='países' />
+      <CardInfo number={language} description='línguas' />
+      <CardInfo number={city} description='cidades +100'>
         <Tooltip
           hasArrow
           label='Top 100 cidades mais visitadas no mundo'
