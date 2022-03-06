@@ -7,7 +7,7 @@ export const Footer: React.FC = () => {
   const menuItem = [
     { id: 11, listItem: 'África', url: '/africa' },
     { id: 12, listItem: 'América do Norte', url: '/north-america' },
-    { id: 13, listItem: 'América do Sul', url: '/latam' },
+    { id: 13, listItem: 'América do Sul', url: '/south-america' },
     { id: 14, listItem: 'Asia', url: '/asia' },
     { id: 15, listItem: 'Europa', url: '/europe' },
     { id: 18, listItem: 'Oceânia', url: '/oceania' }

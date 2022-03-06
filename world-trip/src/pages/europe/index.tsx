@@ -23,7 +23,7 @@ const Europe: NextPage = () => {
       <Head>
         <title>World Trip | Europa</title>
       </Head>
-      <BannerContinent continent='Europa' image='europe/london' />
+      <BannerContinent continent='Europa' image='europe/london' color='gray.50' />
       <Container maxW='container.lg'>
         <Grid as='section' templateColumns='repeat(2, 1fr)' gap={12} my={16}>
           <ContinentContent text={bio} />

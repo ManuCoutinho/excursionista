@@ -34,7 +34,7 @@ export const GridItems = ({ city, country, flag, img, url }: GridItemsProps) => 
               {country}
             </Text>
           </Box>
-          <ChakraImage src={flag} alt={city} borderRadius='full' boxSize='30px' />
+          <ChakraImage src={flag} alt={city} borderRadius='full' boxSize='40px' />
         </HStack>
       </VStack>
     </Link>

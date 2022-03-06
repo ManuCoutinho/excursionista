@@ -3,9 +3,10 @@ import { Flex, Heading } from '@chakra-ui/react';
 interface ContinentBannerProps {
   continent: string;
   image: string;
+  color: string;
 }
 
-export const BannerContinent = ({ continent, image }: ContinentBannerProps) => {
+export const BannerContinent = ({ continent, image, color }: ContinentBannerProps) => {
   const path = `url(/assets/continents/${image}.jpg)`;
   return (
     <Flex
@@ -16,7 +17,7 @@ export const BannerContinent = ({ continent, image }: ContinentBannerProps) => {
       bgRepeat='no-repeat'
       bgSize='cover'
       alignItems='flex-end'>
-      <Heading ml={24} mb={8} color='gray.50' fontSize='5xl' fontWeight='semibold'>
+      <Heading ml={24} mb={8} fontSize='5xl' fontWeight='semibold' color={color}>
         {continent}
       </Heading>
     </Flex>
