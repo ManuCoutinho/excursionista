@@ -46,7 +46,11 @@ Status
 
 ## :dart: About
 
-(coming soon...)
+<p>Esta aplicação foi desenvolvida com base num protótipo fornecido ao longo do curso Ignite. A proposta inicial era, desenvolver do zero, uma aplicação Next utilizando Chakra e Swiper, bastando entregar a home page, a página do continente europeu, cabeçalho e o formato para telas de 375px.</p>
+<p>No entanto, após realizar pequenas personalizações no layout, incrementei o projeto incluindo rodapé com menu navegável e as páginas de todos os continentes, buscando informações reais para alimentar todas as 6 rotas, além de fornecer tais informações por meio de um arquivo no formato JSON e utilização de TypeScript.</p>
+<p>Os dados são fornecidos por arquivos no formato JSON para ‘simular’ uma chamada externa, vez que a aplicação no estado atual comporta tal método. Contudo, para simplificar o deploy, foi realizado desta maneira.</p>
+<p>A aplicação conta com componentes facilmente reutilizáveis, pois a maioria deles têm os dados gerados de forma dinâmica.</p>
+<p>Atualmente a aplicação conta com dark mode, podendo ser acessada sem quebras pelos devices mais utilizados.</p>
 
 ## :sparkles: Features
 
