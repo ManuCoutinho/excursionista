@@ -13,7 +13,7 @@ interface MenuItemProps {
 }
 export function MenuList({ menuItem, text }: MenuItemProps) {
   return (
-    <>
+    <nav>
       <Heading fontSize='lg' fontWeight='semibold' color='red.600' mb={4}>
         {text}
       </Heading>
@@ -32,6 +32,6 @@ export function MenuList({ menuItem, text }: MenuItemProps) {
           </Link>
         ))}
       </List>
-    </>
+    </nav>
   );
 }

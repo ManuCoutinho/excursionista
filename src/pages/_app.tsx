@@ -1,7 +1,7 @@
-import { ChakraProvider } from '@chakra-ui/react';
 import { NextPage } from 'next';
 import type { AppProps } from 'next/app';
 import { ReactElement, ReactNode } from 'react';
+import { ChakraProvider } from '@chakra-ui/react';
 import Layout from '../components/Layout';
 import { theme } from '../styles/theme';
 
@@ -16,7 +16,7 @@ type AppPropsWithLayout = AppProps & {
 export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   const getLayout = Component.getLayout ?? ((page) => page);
   return getLayout(
-    <ChakraProvider theme={theme}>
+    <ChakraProvider theme={theme} resetCSS>
       <Layout>
         <Component {...pageProps} />
       </Layout>

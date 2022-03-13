@@ -1,11 +1,27 @@
-import { Switch, useColorMode } from '@chakra-ui/react';
+import { Box, IconButton, useColorMode } from '@chakra-ui/react';
+import { MdOutlineWbSunny } from 'react-icons/md';
+import { RiMoonClearLine } from 'react-icons/ri';
 
 export function ToggleColor() {
   const { colorMode, toggleColorMode } = useColorMode();
-  console.log(colorMode);
   return (
-    <>
-      <Switch onClick={toggleColorMode}>{colorMode === 'light' ? 'dark' : 'light'}</Switch>
-    </>
+    <Box>
+      <IconButton
+        onClick={toggleColorMode}
+        icon={
+          colorMode === 'light' ? <MdOutlineWbSunny size={25} /> : <RiMoonClearLine size={25} />
+        }
+        aria-label='change color'
+        p={4}
+        variant='unstyled'
+        color='purple.300'
+        _hover={{
+          color: 'yellow.500'
+        }}
+        _focus={{
+          outline: 0
+        }}
+      />
+    </Box>
   );
 }

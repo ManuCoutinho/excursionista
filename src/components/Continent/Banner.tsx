@@ -11,7 +11,7 @@ export const BannerContinent = ({ continent, image, color }: ContinentBannerProp
   return (
     <Flex
       w='100%'
-      h='500px'
+      h='600px'
       bgImage={path}
       bgPosition='center'
       bgRepeat='no-repeat'
