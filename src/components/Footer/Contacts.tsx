@@ -4,7 +4,7 @@ import { FiMail } from 'react-icons/fi';
 
 export function Contacts() {
   return (
-    <VStack display='flex' justify='center' alignSelf='flex-start' spacing={4}>
+    <VStack display='flex' justify='center' alignSelf='flex-start' spacing={4} color='gray.600'>
       <HStack spacing={4} p={2} display='flex' alignSelf='flex-start'>
         <IconButton
           colorScheme='purple'
@@ -27,7 +27,7 @@ export function Contacts() {
           size='lg'
           variant='outline'
         />
-        <Text>contato@contato.com</Text>
+        <Text>contato.excursionista@gmail.com</Text>
       </HStack>
     </VStack>
   );

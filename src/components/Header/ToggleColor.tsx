@@ -13,6 +13,7 @@ export function ToggleColor() {
         }
         aria-label='change color'
         p={4}
+        bg='transparent'
         variant='unstyled'
         color='purple.300'
         _hover={{

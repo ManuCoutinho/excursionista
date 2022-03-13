@@ -17,7 +17,7 @@ export function MenuList({ menuItem, text }: MenuItemProps) {
       <Heading fontSize='lg' fontWeight='semibold' color='red.600' mb={4}>
         {text}
       </Heading>
-      <List fontSize='sm'>
+      <List fontSize='sm' color='gray.600'>
         {menuItem.map((item) => (
           <Link href={item.url} key={item.id}>
             <a>

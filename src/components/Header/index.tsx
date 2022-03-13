@@ -1,10 +1,11 @@
-import { Box, IconButton, Flex } from '@chakra-ui/react';
+import { Box, Flex, useColorModeValue } from '@chakra-ui/react';
 
 import { Logo } from './Logo';
 import { NavButton } from './NavButton';
 import { ToggleColor } from './ToggleColor';
 
 export const Header: React.FC = () => {
+  const color = useColorModeValue('gray.50', 'gray.800');
   return (
     <Flex
       as='header'
@@ -12,7 +13,7 @@ export const Header: React.FC = () => {
       p={4}
       pos='fixed'
       w='100%'
-      bgColor='gray.50'
+      bgColor={color}
       zIndex={1}
       boxShadow='md'>
       <NavButton />

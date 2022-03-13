@@ -14,6 +14,7 @@ const styles = {
     }
   })
 };
+
 const baseTheme = {
   colors: {
     gray: {
@@ -40,4 +41,4 @@ const baseTheme = {
   }
 };
 
-export const theme = extendTheme(baseTheme, config);
+export const theme = extendTheme(styles, baseTheme, config);
