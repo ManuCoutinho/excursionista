@@ -11,7 +11,7 @@ const NorthAmerica: NextPage = () => {
   return (
     <>
       <Head>
-        <title>World Trip | América do Norte</title>
+        <title>Excursionista | América do Norte</title>
       </Head>
       <BannerContinent continent='América do Norte' image='northAmerica/usa' color='yellow.500' />
       <Container maxW='container.lg'>

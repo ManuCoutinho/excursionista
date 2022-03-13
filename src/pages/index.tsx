@@ -7,7 +7,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>World Trip | Home</title>
+        <title>Excursionista | Home</title>
       </Head>
       <Banner />
       <MiddleSection />

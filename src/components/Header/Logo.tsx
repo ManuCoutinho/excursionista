@@ -5,9 +5,9 @@ export const Logo = () => {
     <a>
       <Image
         src='/assets/logo/logo.svg'
-        alt='logo World Trip'
-        height={45}
-        width={186}
+        alt='logo Excursionista'
+        height={50}
+        width={300}
         role='brand'
       />
     </a>

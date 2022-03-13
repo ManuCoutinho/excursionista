@@ -12,7 +12,7 @@ const Africa: NextPage = () => {
   return (
     <>
       <Head>
-        <title>World Trip | África</title>
+        <title>Excursionista | África</title>
       </Head>
       <BannerContinent continent='África' image='africa/africa' color='purple.300' />
       <Container maxW='container.lg'>

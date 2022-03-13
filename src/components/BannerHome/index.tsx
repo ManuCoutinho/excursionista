@@ -27,7 +27,3 @@ export const Banner: React.FC = () => {
     </Flex>
   );
 };
-
-//* bg2 top
-//* bg center
-// ? 4 top == cores da paleta light

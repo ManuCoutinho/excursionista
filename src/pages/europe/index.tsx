@@ -21,7 +21,7 @@ const Europe: NextPage = () => {
   return (
     <>
       <Head>
-        <title>World Trip | Europa</title>
+        <title>Excursionista | Europa</title>
       </Head>
       <BannerContinent continent='Europa' image='europe/london' color='gray.50' />
       <Container maxW='container.lg'>

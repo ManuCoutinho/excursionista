@@ -14,7 +14,7 @@ const Asia: NextPage = () => {
   return (
     <>
       <Head>
-        <title>World Trip | Ásia</title>
+        <title>Excursionista | Ásia</title>
       </Head>
       <BannerContinent continent='Ásia' image='asia/asia' color='gray.50' />
       <Container maxW='container.lg'>

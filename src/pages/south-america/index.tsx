@@ -14,7 +14,7 @@ const SouthAmerica: NextPage = () => {
   return (
     <>
       <Head>
-        <title>World Trip | América do Sul</title>
+        <title>Excursionista | América do Sul</title>
       </Head>
       <BannerContinent continent='América do Sul' image='latam/latam' color='gray.50' />
       <Container maxW='container.lg'>

@@ -12,7 +12,7 @@ const Oceania: NextPage = () => {
   return (
     <>
       <Head>
-        <title>World Trip | Oceânia</title>
+        <title>Excursionista | Oceânia</title>
       </Head>
       <BannerContinent continent='Oceânia' image='oceania/oceania' color='gray.50' />
       <Container maxW='container.lg'>
