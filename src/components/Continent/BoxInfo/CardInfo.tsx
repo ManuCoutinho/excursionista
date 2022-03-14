@@ -10,7 +10,7 @@ interface CardInfoProps {
 export const CardInfo = ({ number, description, children }: CardInfoProps) => {
   return (
     <Box>
-      <Text color='yellow.500' fontSize='5xl' fontWeight='bold'>
+      <Text color='yellow.500' fontSize={['lg', 'xl', '3xl', '5xl']} fontWeight='bold'>
         {number}
       </Text>
       <HStack>

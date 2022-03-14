@@ -6,15 +6,6 @@ const config: ThemeConfig = {
   useSystemColorMode: true
 };
 
-const styles = {
-  global: (props: StyleFunctionProps) => ({
-    body: {
-      bg: mode('gray.50', 'gray.900')(props),
-      color: mode('gray.900', 'white')(props)
-    }
-  })
-};
-
 const baseTheme = {
   colors: {
     gray: {
@@ -38,7 +29,15 @@ const baseTheme = {
   fonts: {
     heading: "'Poppins', sans-serif",
     body: "'Poppins', sans-serif"
+  },
+  styles: {
+    global: (props: StyleFunctionProps) => ({
+      body: {
+        bg: mode('gray.50', 'gray.800')(props),
+        color: mode('gray.900', 'white')(props)
+      }
+    })
   }
 };
 
-export const theme = extendTheme(styles, baseTheme, config);
+export const theme = extendTheme(baseTheme, config);

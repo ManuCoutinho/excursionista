@@ -4,12 +4,12 @@ export const CTAButton: React.FC = () => {
   return (
     <Box
       as='button'
-      maxW='container.md'
+      w='100%'
       color='gray.600'
       textAlign='center'
       fontWeight='medium'
       lineHeight='tall'
-      fontSize='3xl'
+      fontSize={['xl', '2xl', '3xl']}
       _hover={{
         transform: 'scale(0.98)',
         textDecoration: 'underline'

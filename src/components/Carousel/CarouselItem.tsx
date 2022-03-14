@@ -1,4 +1,4 @@
-import { Flex, Heading, Text } from '@chakra-ui/react';
+import { Flex, Heading, Text, useMediaQuery } from '@chakra-ui/react';
 
 interface CarouselItemsProps {
   text: string;
@@ -7,6 +7,7 @@ interface CarouselItemsProps {
 }
 
 export const CarouselItem = ({ text, bgImg, description }: CarouselItemsProps) => {
+  const [isMobile] = useMediaQuery('(min-width: 425px)');
   return (
     <Flex
       w='100%'
@@ -19,12 +20,14 @@ export const CarouselItem = ({ text, bgImg, description }: CarouselItemsProps) =
       alignItems='center'
       direction='column'
       color='yellow.500'>
-      <Heading mb={4} fontWeight='bold' fontSize='5xl'>
+      <Heading mb={4} fontWeight='bold' fontSize={['2xl', '4xl', '5xl']}>
         {text}
       </Heading>
-      <Text fontWeight='bold' fontSize='2xl'>
-        {description}
-      </Text>
+      {!!isMobile && (
+        <Text fontWeight='bold' fontSize={['lg', 'xl', '2xl']}>
+          {description}
+        </Text>
+      )}
     </Flex>
   );
 };

@@ -10,7 +10,7 @@ interface BoxInfoProps {
 
 export const BoxInfo = ({ city, country, language }: BoxInfoProps) => {
   return (
-    <HStack spacing={12} justify='center'>
+    <HStack spacing={[4, 6, 8, 12]} justify='center'>
       <CardInfo number={country} description='países' />
       <CardInfo number={language} description='línguas' />
       <CardInfo number={city} description='cidades +100'>

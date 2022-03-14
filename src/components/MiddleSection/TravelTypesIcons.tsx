@@ -7,7 +7,7 @@ interface TravelTypesProps {
 
 export function TravelTypesIcons({ text, ariaLabel, iconTravel }: TravelTypesProps) {
   return (
-    <Flex w={150} alignItems='center' direction='column'>
+    <Flex w={[40, 55, 80, 100, 150]} alignItems='center' direction='column' justify='center'>
       <IconButton
         aria-label={ariaLabel}
         icon={iconTravel}
@@ -18,10 +18,10 @@ export function TravelTypesIcons({ text, ariaLabel, iconTravel }: TravelTypesPro
       />
       <Text
         w='inherit'
-        mt='6'
+        mt={[2, 4, 6]}
         color='gray.600'
-        fontSize='xl'
-        fontWeight='semibold'
+        fontSize={['10px', 'xs,', 'sm', 'md', 'lg', 'xl']}
+        fontWeight={['normal', 'medium', 'semibold']}
         textAlign='center'>
         {text}
       </Text>

@@ -1,10 +1,9 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { Container, Grid } from '@chakra-ui/react';
+import { Container } from '@chakra-ui/react';
 import { BannerContinent } from '../../components/Continent/Banner';
-import { BoxInfo } from '../../components/Continent/BoxInfo';
-import { ContinentContent } from '../../components/Continent/Content';
 import { GridCities } from '../../components/Continent/GridCities';
+import { GridContent } from '../../components/Continent/GridContent';
 
 type Props = {
   img: string;
@@ -25,10 +24,7 @@ const Europe: NextPage = () => {
       </Head>
       <BannerContinent continent='Europa' image='europe/london' color='gray.50' />
       <Container maxW='container.lg'>
-        <Grid as='section' templateColumns='repeat(2, 1fr)' gap={12} my={16}>
-          <ContinentContent text={bio} />
-          <BoxInfo country='50' language='60' city='27' />
-        </Grid>
+        <GridContent text={bio} country='50' language='60' city='27' />
         <GridCities
           city='Londres'
           country='Reino Unido'

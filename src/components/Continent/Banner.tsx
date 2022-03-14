@@ -10,7 +10,7 @@ export const BannerContinent = ({ continent, image, color }: ContinentBannerProp
   const path = `url(/assets/continents/${image}.jpg)`;
   return (
     <Flex
-      w='100%'
+      w='auto'
       h='600px'
       bgImage={path}
       bgPosition='center'
