@@ -1,5 +1,4 @@
-import { Box, HStack, Text, VStack, Image as ChakraImage } from '@chakra-ui/react';
-import Image from 'next/image';
+import { Box, HStack, Text, VStack, Image } from '@chakra-ui/react';
 import Link from 'next/link';
 
 interface GridItemsProps {
@@ -23,7 +22,14 @@ export const GridItems = ({ city, country, flag, img, url }: GridItemsProps) => 
           transform: 'scale(0.98)'
         }}>
         <Box>
-          <Image src={img} alt={city} width={250} height={173} />
+          <Image
+            src={`https://unsplash.com/photos/${img}`}
+            alt={city}
+            htmlWidth={350}
+            htmlHeight={173}
+            loading='lazy'
+            align='center'
+          />
         </Box>
         <HStack spacing={8} px={4} py={6}>
           <Box>
@@ -34,7 +40,7 @@ export const GridItems = ({ city, country, flag, img, url }: GridItemsProps) => 
               {country}
             </Text>
           </Box>
-          <ChakraImage
+          <Image
             src={`https://flagcdn.com/w80/${flag}.png`}
             srcSet={`https://flagcdn.com/w80/${flag}.webp,
                     https://flagcdn.com/w160/${flag}.webp 2x`}

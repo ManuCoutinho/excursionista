@@ -1,18 +1,14 @@
+import { ReactNode } from 'react';
 import { Box } from '@chakra-ui/react';
-import { GridComponent } from './GridComponent';
 import { HeadingComponent } from './Heading';
 interface GridCitiesProps {
-  img: string;
-  city: string;
-  country: string;
-  flag: string;
-  url: string;
+  children: ReactNode;
 }
-export const GridCities = ({ city, country, flag, img, url }: GridCitiesProps) => {
+export const GridCities = ({ children }: GridCitiesProps) => {
   return (
     <Box as='section'>
       <HeadingComponent />
-      <GridComponent city={city} country={country} flag={flag} img={img} url={url} />
+      {children}
     </Box>
   );
 };
