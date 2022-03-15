@@ -19,7 +19,7 @@ const Oceania: NextPage = () => {
         <GridCities
           city='Aukland'
           country='Nova Zelândia'
-          flag='https://flagcdn.com/w80/nz.png'
+          flag='nz'
           img='/assets/continents/oceania/aukland.jpg'
           url='/'
         />

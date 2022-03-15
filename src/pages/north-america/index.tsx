@@ -18,7 +18,7 @@ const NorthAmerica: NextPage = () => {
         <GridCities
           city='Montreal'
           country='Canadá'
-          flag='https://flagcdn.com/w80/ca.png'
+          flag='ca'
           img='/assets/continents/northAmerica/montreal.jpg'
           url='/'
         />

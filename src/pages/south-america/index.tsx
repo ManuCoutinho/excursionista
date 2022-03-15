@@ -22,7 +22,7 @@ const SouthAmerica: NextPage = () => {
         <GridCities
           city='Punta Cana'
           country='República Dominicana'
-          flag='https://flagcdn.com/w80/do.png'
+          flag='do'
           img='/assets/continents/latam/punta.jpg'
           url='/'
         />

@@ -8,7 +8,7 @@ export const MiddleSection: React.FC = () => {
   return (
     <Flex as='section' justify='center' direction='column' w='100%'>
       {!!isMobile && <WrapperIcons />}
-      <Flex justify='center' mb={14}>
+      <Flex justify='center' mb={[10, 14]}>
         <CTAButton />
       </Flex>
       <Flex>

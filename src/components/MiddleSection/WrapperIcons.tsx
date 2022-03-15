@@ -9,8 +9,13 @@ export const WrapperIcons: React.FC = () => {
   const iconSize = isMobile ? '2.5em' : '1.25em';
 
   return (
-    <Box mt={[8, 12, 16, 20, 28]} mb={[8, 12, 16, 20]}>
-      <Wrap spacing={[4, 6, 10, 16, 20]} mx='auto' justify='center'>
+    <Box>
+      <Wrap
+        spacing={[4, 6, 10, 16, 20]}
+        mx='auto'
+        justify='center'
+        mt={[8, 12, 16, 20, 28]}
+        mb={[8, 12, 16, 20]}>
         <IconContext.Provider value={{ style: { verticalAlign: 'middle' }, size: iconSize }}>
           <TravelTypesIcons
             iconTravel={<FaCocktail />}

@@ -34,7 +34,19 @@ export const GridItems = ({ city, country, flag, img, url }: GridItemsProps) => 
               {country}
             </Text>
           </Box>
-          <ChakraImage src={flag} alt={city} borderRadius='full' boxSize='40px' />
+          <ChakraImage
+            src={`https://flagcdn.com/w80/${flag}.png`}
+            srcSet={`https://flagcdn.com/w80/${flag}.webp,
+                    https://flagcdn.com/w160/${flag}.webp 2x`}
+            borderRadius='full'
+            boxSize='45px'
+            loading='lazy'
+            htmlWidth={40}
+            htmlHeight={40}
+            fit='fill'
+            align='center'
+            alt={country}
+          />
         </HStack>
       </VStack>
     </Link>

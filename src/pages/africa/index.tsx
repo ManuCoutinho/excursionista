@@ -19,7 +19,7 @@ const Africa: NextPage = () => {
         <GridCities
           city='Marrakech'
           country='Marrocos'
-          flag='https://flagcdn.com/w20/ma.png'
+          flag='ma'
           img='/assets/continents/africa/marakesh.jpg'
           url='/'
         />

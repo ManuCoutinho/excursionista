@@ -12,7 +12,8 @@ export const CTAButton: React.FC = () => {
       fontSize={['xl', '2xl', '3xl']}
       _hover={{
         transform: 'scale(0.98)',
-        textDecoration: 'underline'
+        textDecoration: 'underline',
+        color: 'purple.300'
       }}>
       <Divider />
       <Text mt='14'>Vamos nessa?</Text>

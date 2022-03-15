@@ -21,7 +21,7 @@ const Asia: NextPage = () => {
         <GridCities
           city='Macau'
           country='China'
-          flag='https://flagcdn.com/w80/cn.png'
+          flag='cn'
           img='/assets/continents/asia/macau.jpg'
           url='/'
         />

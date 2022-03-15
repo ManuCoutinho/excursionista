@@ -28,7 +28,7 @@ const Europe: NextPage = () => {
         <GridCities
           city='Londres'
           country='Reino Unido'
-          flag='https://flagcdn.com/w20/gb.png'
+          flag='gb'
           img='/assets/continents/europe/london-card.jpg'
           url='/'
         />
