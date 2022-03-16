@@ -1,4 +1,4 @@
-import { Box, Divider, Text } from '@chakra-ui/react';
+import { Box, Text } from '@chakra-ui/react';
 
 export const CTAButton: React.FC = () => {
   return (
@@ -14,8 +14,8 @@ export const CTAButton: React.FC = () => {
         transform: 'scale(0.98)',
         textDecoration: 'underline',
         color: 'purple.300'
-      }}>
-      <Divider />
+      }}
+      mb={[10, 14]}>
       <Text mt='14'>Vamos nessa?</Text>
       <Text>Então escolha seu continente</Text>
     </Box>

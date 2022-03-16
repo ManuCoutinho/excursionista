@@ -1,13 +1,26 @@
 import { Grid } from '@chakra-ui/react';
 import { ReactNode } from 'react';
+import { GridItems } from './GridItems';
 interface GridComponentsProps {
   children: ReactNode;
 }
 
-export const GridComponent = ({ children }: GridComponentsProps) => {
+interface ItemsProps {
+  items: Array<{
+    image: string;
+    city: string;
+    country: string;
+    flag: string;
+    path: string;
+  }>;
+}
+
+export const GridComponent = ({ items }: ItemsProps) => {
   return (
-    <Grid templateColumns='repeat(auto-fit, minmax(230px, 1fr))' gap={6}>
-      {children}
+    <Grid templateColumns='repeat(auto-fit, minmax(230px, 1fr))' gap={[6, 8]}>
+      {items.map((item) => {
+        return <GridItems items={item} />;
+      })}
     </Grid>
   );
 };

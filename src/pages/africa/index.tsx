@@ -21,7 +21,7 @@ const Africa: NextPage = () => {
       <Head>
         <title>Excursionista | África</title>
       </Head>
-      <BannerContinent continent='África' image='africa/africa' color='purple.300' />
+      <BannerContinent continent='África' image='africa/africa' color='yellow.500' />
       <Box as='section' w={['300', '700', '1024']} p={[4, 6, 12]} mx='auto'>
         <GridContent
           text={africa.bio}
@@ -30,20 +30,7 @@ const Africa: NextPage = () => {
           city={infos.numberTopCity}
         />
         <GridCities>
-          <GridComponent>
-            {continent.map((info) => {
-              return (
-                <GridItems
-                  city={info.city}
-                  country={info.country}
-                  flag={info.flag}
-                  img={info.image}
-                  url={info.path}
-                  key={idGenerator()}
-                />
-              );
-            })}
-          </GridComponent>
+          <GridComponent items={continent} />
         </GridCities>
       </Box>
     </>

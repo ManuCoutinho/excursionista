@@ -17,7 +17,7 @@ export const BannerContinent = ({ continent, image, color }: ContinentBannerProp
       bgRepeat='no-repeat'
       bgSize='cover'
       alignItems='flex-end'>
-      <Heading ml={24} mb={8} fontSize='5xl' fontWeight='semibold' color={color}>
+      <Heading ml={44} mb={8} fontSize='5xl' fontWeight='semibold' color={color}>
         {continent}
       </Heading>
     </Flex>
