@@ -16,6 +16,7 @@ const Africa: NextPage = () => {
   const { africa } = bio;
   const { africa: continent } = citiesInfo;
   const { africa: infos } = infosBox;
+
   return (
     <>
       <Head>

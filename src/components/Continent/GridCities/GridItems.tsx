@@ -1,5 +1,7 @@
 import { Box, HStack, Text, VStack, Image } from '@chakra-ui/react';
 import Link from 'next/link';
+import { useQuery } from 'react-query';
+import { api } from '../../../api/api';
 
 interface GridItemsProps {
   items: {
@@ -11,7 +13,20 @@ interface GridItemsProps {
   };
 }
 
+type UnsplashProps = {
+  regular: string;
+  full: string;
+};
+
+//if isLoading : error (spinner/error.msg)
+
 export const GridItems = ({ items }: GridItemsProps) => {
+  const { data, isLoading, error } = useQuery('unsplash', async () => {
+    const response = await api.get(items.image);
+    const data = await response.data;
+    console.log(data);
+  });
+
   return (
     <Link href={items.path}>
       <VStack
@@ -25,7 +40,8 @@ export const GridItems = ({ items }: GridItemsProps) => {
         }}>
         <Box>
           <Image
-            src={`https://unsplash.com/photos/${items.image}`}
+            src={''}
+            srcSet={''}
             alt={items.city}
             htmlWidth={350}
             htmlHeight={173}
