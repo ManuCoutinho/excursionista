@@ -9,7 +9,7 @@ export function ToggleColor() {
       <IconButton
         onClick={toggleColorMode}
         icon={
-          colorMode === 'light' ? <MdOutlineWbSunny size={25} /> : <RiMoonClearLine size={25} />
+          colorMode === 'light' ? <RiMoonClearLine size={25} /> : <MdOutlineWbSunny size={25} />
         }
         aria-label='change color'
         p={4}

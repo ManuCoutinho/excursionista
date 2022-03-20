@@ -6,7 +6,7 @@ interface GridCitiesProps {
 }
 export const GridCities = ({ children }: GridCitiesProps) => {
   return (
-    <Box as='section' p={[16]} mx='auto'>
+    <Box as='section' w={['300', '700', '1024']} p={[4, 6, 12, 16]} mx='auto'>
       <HeadingComponent />
       {children}
     </Box>

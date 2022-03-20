@@ -23,7 +23,7 @@ const Africa: NextPage = () => {
         <title>Excursionista | África</title>
       </Head>
       <BannerContinent continent='África' image='africa/africa' color='yellow.500' />
-      <Box as='section' w={['300', '700', '1024']} p={[4, 6, 12]} mx='auto'>
+      <Box as='section' w={['300', '700', '1024']} p={[4, 6, 12, 16]} mx='auto'>
         <GridContent
           text={africa.bio}
           country={infos.numberCountry}

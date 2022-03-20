@@ -14,7 +14,7 @@ export const GridContent = ({ city, country, language, text }: GridContentProps)
       templateColumns='repeat(auto-fit, minmax(250px, 1fr))'
       gap={[4, 6, 8, 12]}
       my={16}
-      px={[16]}
+      px={[2, 4, 6, 14]}
       mx='auto'>
       <ContinentContent text={text} />
       <BoxInfo country={country} language={language} city={city} />
