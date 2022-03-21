@@ -8,7 +8,7 @@ interface GridContentProps {
   language: string;
   text: string;
 }
-export const GridContent = ({ city, country, language, text }: GridContentProps) => {
+const GridContent = ({ city, country, language, text }: GridContentProps) => {
   return (
     <Grid
       templateColumns='repeat(auto-fit, minmax(250px, 1fr))'
@@ -21,3 +21,4 @@ export const GridContent = ({ city, country, language, text }: GridContentProps)
     </Grid>
   );
 };
+export default GridContent;

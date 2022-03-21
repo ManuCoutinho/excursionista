@@ -1,5 +1,5 @@
+import dynamic from 'next/dynamic';
 import { ReactElement } from 'react';
-import { Footer } from '../Footer';
 import { Header } from '../Header';
 
 interface LayoutProps {
@@ -7,11 +7,12 @@ interface LayoutProps {
 }
 
 export default function Layout({ children }: LayoutProps) {
+  const FooterComponent = dynamic(() => import('../Footer').then((mod) => mod.Footer));
   return (
     <>
       <Header />
       <main>{children}</main>
-      <Footer />
+      <FooterComponent />
     </>
   );
 }

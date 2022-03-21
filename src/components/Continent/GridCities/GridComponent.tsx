@@ -16,7 +16,7 @@ interface ItemsProps {
   }>;
 }
 
-export const GridComponent = ({ items }: ItemsProps) => {
+const GridComponent = ({ items }: ItemsProps) => {
   return (
     <Grid templateColumns='repeat(auto-fit, minmax(250px, 1fr))' gap={[6, 8]}>
       {items.map((item) => {
@@ -25,3 +25,5 @@ export const GridComponent = ({ items }: ItemsProps) => {
     </Grid>
   );
 };
+
+export default GridComponent;
