@@ -165,7 +165,7 @@ const citiesInfo = {
       city: 'Luxor',
       country: 'Egito',
       flag: 'eg',
-      image: '',
+      image: 'a8ZSKCBE1xk',
       path: '/'
     }
   ],

@@ -5,7 +5,8 @@
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
     "prettier",
-    "prettier/react"
+    "prettier/react",
+    "plugin:jsx-a11y/recommended"
   ],
   "parser": "@typescript-eslint/parser/babel-eslint",
   "parserOptions": {
@@ -18,7 +19,7 @@
   "plugins": ["react", "@typescript-eslint"],
   "rules": {
     "prettier/prettier": "error",
-    "react/jsc-filename-extension": [
+    "react/jsx-filename-extension": [
       "warn",
       {
         "extensions": [".js", ".jsx", ".ts", ".tsx"]

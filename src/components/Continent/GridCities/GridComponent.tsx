@@ -1,10 +1,6 @@
 import { Grid } from '@chakra-ui/react';
-import { ReactNode } from 'react';
 import { GridItems } from './GridItems';
 import { idGenerator } from '../../../utils/idGenerator';
-interface GridComponentsProps {
-  children: ReactNode;
-}
 
 interface ItemsProps {
   items: Array<{
@@ -15,6 +11,10 @@ interface ItemsProps {
     path: string;
   }>;
 }
+
+//todo import lazy
+//if isLoading : error (spinner/error.msg)
+// todo transformar chamada em hook
 
 const GridComponent = ({ items }: ItemsProps) => {
   return (
