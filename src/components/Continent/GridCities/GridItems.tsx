@@ -1,11 +1,7 @@
 import { Box, HStack, Text, VStack, Image } from '@chakra-ui/react';
 import Link from 'next/link';
-import { useEffect, useMemo, useState } from 'react';
-import { useQuery } from 'react-query';
-import { api } from '../../../api/api';
-import { useFetch } from '../../../hooks/useFetch';
+import { useMemo, useState } from 'react';
 import { useQueryImages } from '../../../hooks/useQueryImages';
-import { queryClient } from '../../../services/QueryClient';
 
 interface GridItemsProps {
   items: {
@@ -16,18 +12,23 @@ interface GridItemsProps {
     path: string;
   };
 }
-interface IGetImagesResponse {
-  data: Array<{}>;
-}
-
-type UnsplashProps = {
-  regular: string;
-  full: string;
-};
 
 export const GridItems = ({ items }: GridItemsProps) => {
+  const [imageRegular, setImageRegular] = useState<string>();
+  const [imageFull, setImageFull] = useState<string>();
+
   const images = items.image;
   const { data } = useQueryImages<Array<{}>>(images);
+
+  useMemo(() => {
+    if (data !== null) {
+      const transformObject = Object.entries(data);
+      const filterItem = transformObject[10][1];
+      setImageRegular(filterItem.regular);
+      setImageFull(filterItem.full);
+    }
+    return { imageRegular, imageFull };
+  }, []);
 
   return (
     <Link href={items.path}>
@@ -42,8 +43,8 @@ export const GridItems = ({ items }: GridItemsProps) => {
         }}>
         <Box>
           <Image
-            src={''}
-            srcSet={''}
+            src={imageRegular}
+            srcSet={imageFull}
             alt={items.city}
             htmlWidth={350}
             htmlHeight={173}

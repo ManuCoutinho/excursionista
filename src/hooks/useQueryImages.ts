@@ -1,20 +1,27 @@
 import { useEffect, useState } from 'react';
 import { api } from '../api/api';
 import { queryClient } from '../services/QueryClient';
+import { idGenerator } from '../utils/idGenerator';
 
 export function useQueryImages<T = unknown>(img: string) {
   const [data, setData] = useState<T | null>(null);
+  const id = idGenerator();
   useEffect(() => {
-    queryClient.prefetchQuery(
-      ['unsplash', img],
-      async () => {
-        const response = await api.get(`${img}`);
-        return setData(response.data);
-      },
-      {
-        staleTime: 1000 * 60 * 10 // 10 minutos
-      }
-    );
+    try {
+      queryClient.prefetchQuery(
+        [`unsplash-${id}`],
+        async () => {
+          const response = await api.get(`${img}`);
+          return setData(response.data);
+        },
+        {
+          staleTime: 1000 * 60 * 10 // 10 minutos
+        }
+      );
+    } catch (error) {
+      console.log(error);
+    } finally {
+    }
   }, [img]);
 
   return { data };

@@ -1,8 +1,9 @@
 import { NextPage } from 'next';
 import type { AppProps } from 'next/app';
-import { QueryClient, QueryClientProvider } from 'react-query';
+import { QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 import { ReactElement, ReactNode } from 'react';
+import { queryClient } from '../services/QueryClient';
 import { ChakraProvider } from '@chakra-ui/react';
 import Layout from '../components/Layout';
 import { theme } from '../styles/theme';
@@ -14,8 +15,6 @@ type NextPageWithLayout = NextPage & {
 type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout;
 };
-
-const queryClient = new QueryClient();
 
 export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   const getLayout = Component.getLayout ?? ((page) => page);

@@ -74,7 +74,7 @@ const citiesInfo = {
       city: 'Entebe',
       country: 'Uganda',
       flag: 'ug',
-      image: 'wIp5JCijJfo',
+      image: 'vHkHv5wSxMI',
       path: '/'
     },
     {
