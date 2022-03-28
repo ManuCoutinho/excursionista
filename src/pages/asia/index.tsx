@@ -1,31 +1,42 @@
 import type { NextPage } from 'next';
+import dynamic from 'next/dynamic';
 import Head from 'next/head';
-import { Container } from '@chakra-ui/react';
+import { Box, Spinner } from '@chakra-ui/react';
 import { BannerContinent } from '../../components/Continent/Banner';
 import { GridCities } from '../../components/Continent/GridCities';
-import { GridContent } from '../../components/Continent/GridContent';
+
+import bio from '../../utils/continentBio';
+import citiesInfo from '../../utils/citiesInfos';
+import infosBox from '../../utils/infosBox';
 
 const Asia: NextPage = () => {
-  const bio = `A Ásia é o maior dos continentes, tanto em área como em população. Abrange um terço das 
-  partes sólidas da superfície da Terra e é responsável por abrigar quase três quintos da população mundial.
-  A cultura da Ásia é o agregado artificial da herança de muitas nacionalidades, sociedades, 
-  religiões, e grupos étnicos na região, tradicionalmente chamada um continente de uma perspectiva central ocidental.`;
+  const { asia } = bio;
+  const { asia: continent } = citiesInfo;
+  const { asia: infos } = infosBox;
+
+  const Content = dynamic(() => import('../../components/Continent/GridContent'));
+  const Cities = dynamic(() => import('../../components/Continent/GridCities/GridComponent'), {
+    loading: () => {
+      return <Spinner color='yellow.500' size='lg' />;
+    }
+  });
   return (
     <>
       <Head>
         <title>Excursionista | Ásia</title>
       </Head>
       <BannerContinent continent='Ásia' image='asia/asia' color='gray.50' />
-      <Container maxW='container.lg'>
-        <GridContent country='50' language='100' city='30' text={bio} />
-        <GridCities
-          city='Macau'
-          country='China'
-          flag='cn'
-          img='/assets/continents/asia/macau.jpg'
-          url='/'
+      <Box as='section' w={['300', '700', '1024']} p={[4, 6, 12, 16]} mx='auto'>
+        <Content
+          text={asia.bio}
+          country={infos.numberCountry}
+          language={infos.numberLanguage}
+          city={infos.numberTopCity}
         />
-      </Container>
+        <GridCities>
+          <Cities items={continent} />
+        </GridCities>
+      </Box>
     </>
   );
 };

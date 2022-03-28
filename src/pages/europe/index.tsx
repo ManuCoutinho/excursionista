@@ -1,38 +1,42 @@
 import type { NextPage } from 'next';
+import dynamic from 'next/dynamic';
 import Head from 'next/head';
-import { Container } from '@chakra-ui/react';
+import { Box, Spinner } from '@chakra-ui/react';
 import { BannerContinent } from '../../components/Continent/Banner';
 import { GridCities } from '../../components/Continent/GridCities';
-import { GridContent } from '../../components/Continent/GridContent';
 
-type Props = {
-  img: string;
-  city: string;
-  country: string;
-  flag: string;
-  url: string;
-};
+import bio from '../../utils/continentBio';
+import citiesInfo from '../../utils/citiesInfos';
+import infosBox from '../../utils/infosBox';
 
 const Europe: NextPage = () => {
-  const bio = `A Europa é, por convenção, um dos seis continentes do mundo. Compreendendo a península
-  ocidental da Eurásia, a Europa geralmente divide-se da Ásia a leste pela divisória de águas
-  dos montes Urais, o rio Ural, o mar Cáspio, o Cáucaso, e o mar Negro a sudeste.`;
+  const { europe } = bio;
+  const { europe: continent } = citiesInfo;
+  const { europe: infos } = infosBox;
+
+  const Content = dynamic(() => import('../../components/Continent/GridContent'));
+  const Cities = dynamic(() => import('../../components/Continent/GridCities/GridComponent'), {
+    loading: () => {
+      return <Spinner color='yellow.500' size='lg' />;
+    }
+  });
   return (
     <>
       <Head>
         <title>Excursionista | Europa</title>
       </Head>
       <BannerContinent continent='Europa' image='europe/london' color='gray.50' />
-      <Container maxW='container.lg'>
-        <GridContent text={bio} country='50' language='60' city='27' />
-        <GridCities
-          city='Londres'
-          country='Reino Unido'
-          flag='gb'
-          img='/assets/continents/europe/london-card.jpg'
-          url='/'
+      <Box as='section' w={['300', '700', '1024']} p={[4, 6, 12, 16]} mx='auto'>
+        <Content
+          text={europe.bio}
+          country={infos.numberCountry}
+          language={infos.numberLanguage}
+          city={infos.numberTopCity}
         />
-      </Container>
+        <GridCities>
+          <Cities items={continent} />
+        </GridCities>
+      </Box>
     </>
   );
 };
