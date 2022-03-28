@@ -1,29 +1,43 @@
 import type { NextPage } from 'next';
+import dynamic from 'next/dynamic';
 import Head from 'next/head';
-import { Container } from '@chakra-ui/react';
+import { Box, Spinner } from '@chakra-ui/react';
 import { BannerContinent } from '../../components/Continent/Banner';
 import { GridCities } from '../../components/Continent/GridCities';
-import { GridContent } from '../../components/Continent/GridContent';
+
+import bio from '../../utils/continentBio';
+import citiesInfo from '../../utils/citiesInfos';
+import infosBox from '../../utils/infosBox';
 
 const Oceania: NextPage = () => {
-  const bio = `A Oceania é chamada de Novíssimo Mundo, pois foi o último continente a ser invadido pelos europeus, que lá chegaram no século XVII.
-  Quase todas as ilhas da Oceania têm a população composta majoritariamente por indígenas. `;
+  const { oceania } = bio;
+  const { oceania: continent } = citiesInfo;
+  const { oceania: infos } = infosBox;
+
+  const Content = dynamic(() => import('../../components/Continent/GridContent'));
+  const Cities = dynamic(() => import('../../components/Continent/GridCities/GridComponent'), {
+    loading: () => {
+      return <Spinner color='yellow.500' size='lg' />;
+    }
+  });
+
   return (
     <>
       <Head>
         <title>Excursionista | Oceânia</title>
       </Head>
       <BannerContinent continent='Oceânia' image='oceania/oceania' color='gray.50' />
-      <Container maxW='container.lg'>
-        <GridContent country='16' language='18' city='3' text={bio} />
-        <GridCities
-          city='Aukland'
-          country='Nova Zelândia'
-          flag='nz'
-          img='/assets/continents/oceania/aukland.jpg'
-          url='/'
+      <Box as='section' w={['300', '700', '1024']} p={[4, 6, 12, 16]} mx='auto'>
+        <Content
+          text={oceania.bio}
+          country={infos.numberCountry}
+          language={infos.numberLanguage}
+          city={infos.numberTopCity}
         />
-      </Container>
+        <GridCities>
+          <Cities items={continent} />
+        </GridCities>
+      </Box>
     </>
   );
 };
