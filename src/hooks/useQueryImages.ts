@@ -8,7 +8,7 @@ export function useQueryImages<T = unknown>(img: string) {
   const id = idGenerator();
   useEffect(() => {
     try {
-      queryClient.prefetchQuery(
+      queryClient.fetchQuery(
         [`unsplash-${id}`],
         async () => {
           const response = await api.get(`${img}`);
@@ -20,7 +20,6 @@ export function useQueryImages<T = unknown>(img: string) {
       );
     } catch (error) {
       console.log(error);
-    } finally {
     }
   }, [img]);
 

@@ -1,6 +1,6 @@
 import { Box, HStack, Text, VStack, Image } from '@chakra-ui/react';
 import Link from 'next/link';
-import { useMemo, useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useQueryImages } from '../../../hooks/useQueryImages';
 
 interface GridItemsProps {
@@ -12,23 +12,28 @@ interface GridItemsProps {
     path: string;
   };
 }
+interface ItemsProps {
+  urls: {
+    imageRegular: string;
+    imageFull: string;
+  };
+}
 
 export const GridItems = ({ items }: GridItemsProps) => {
-  const [imageRegular, setImageRegular] = useState<string>();
-  const [imageFull, setImageFull] = useState<string>();
+  const [imageRegular, setImageRegular] = useState('');
+  const [imageFull, setImageFull] = useState('');
 
   const images = items.image;
-  const { data } = useQueryImages<Array<{}>>(images);
+  const { data } = useQueryImages<ItemsProps>(images);
 
-  useMemo(() => {
+  useEffect(() => {
     if (data !== null) {
       const transformObject = Object.entries(data);
       const filterItem = transformObject[10][1];
       setImageRegular(filterItem.regular);
       setImageFull(filterItem.full);
     }
-    return { imageRegular, imageFull };
-  }, []);
+  }, [images]);
 
   return (
     <Link href={items.path}>

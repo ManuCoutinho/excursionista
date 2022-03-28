@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, A11y, Lazy, Autoplay } from 'swiper';
 import { CarouselItem } from './CarouselItem';
@@ -15,32 +16,43 @@ export const Carousel: React.FC = () => {
       id: 321,
       text: 'África',
       description: 'O continente mais antigo',
-      img: '/assets/carousel/africa.jpg'
+      img: '/assets/carousel/africa.jpg',
+      route: '/africa'
     },
     {
       id: 322,
       text: 'Europa',
       description: 'O continente multicultural',
-      img: '/assets/carousel/europe.jpg'
+      img: '/assets/carousel/europe.jpg',
+      route: '/europe'
     },
-    { id: 323, text: 'Asia', description: 'Culturas exóticas', img: '/assets/carousel/asia.jpg' },
+    {
+      id: 323,
+      text: 'Asia',
+      description: 'Culturas exóticas',
+      img: '/assets/carousel/asia.jpg',
+      route: '/asia'
+    },
     {
       id: 324,
       text: 'América do Sul',
       description: 'O continente mais caliente',
-      img: '/assets/carousel/latam.jpg'
+      img: '/assets/carousel/latam.jpg',
+      route: '/south-america'
     },
     {
       id: 325,
       text: 'América do Norte',
       description: 'O continente mais cosmopolitan',
-      img: '/assets/carousel/northAmerica.jpg'
+      img: '/assets/carousel/northAmerica.jpg',
+      route: '/north-america'
     },
     {
       id: 326,
       text: 'Oceânia',
       description: 'Desbrave o Outback',
-      img: '/assets/carousel/oceania.jpg'
+      img: '/assets/carousel/oceania.jpg',
+      route: '/oceania'
     }
   ];
   return (
@@ -60,12 +72,14 @@ export const Carousel: React.FC = () => {
         delay: 3500,
         disableOnInteraction: false
       }}
-      pagination={{ clickable: true }}
-      onSwiper={(swiper) => console.log(swiper)}
-      onSlideChange={() => console.log('slide change')}>
+      pagination={{ clickable: true }}>
       {carouselItem.map((item) => (
         <SwiperSlide key={item.id}>
-          <CarouselItem text={item.text} description={item.description} bgImg={item.img} />
+          <Link href={item.route}>
+            <a>
+              <CarouselItem text={item.text} description={item.description} bgImg={item.img} />
+            </a>
+          </Link>
         </SwiperSlide>
       ))}
     </Swiper>
