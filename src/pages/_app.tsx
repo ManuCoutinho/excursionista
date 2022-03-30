@@ -1,7 +1,6 @@
 import { NextPage } from 'next';
 import type { AppProps } from 'next/app';
 import { QueryClientProvider } from 'react-query';
-import { ReactQueryDevtools } from 'react-query/devtools';
 import { ReactElement, ReactNode } from 'react';
 import { queryClient } from '../services/QueryClient';
 import { ChakraProvider } from '@chakra-ui/react';
@@ -25,7 +24,6 @@ export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
           <Component {...pageProps} />
         </Layout>
       </ChakraProvider>
-      <ReactQueryDevtools />
     </QueryClientProvider>
   );
 }

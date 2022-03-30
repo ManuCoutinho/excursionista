@@ -1,8 +1,7 @@
 import { Box, HStack, Text, VStack, Image } from '@chakra-ui/react';
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import { useState, useMemo } from 'react';
 import { useQueryImages } from '../../../hooks/useQueryImages';
-import { useFetch } from '../../../hooks/useFetch';
 interface GridItemsProps {
   items: {
     image: string;
@@ -12,12 +11,6 @@ interface GridItemsProps {
     path: string;
   };
 }
-interface ItemsProps {
-  urls: {
-    imageRegular: string;
-    imageFull: string;
-  };
-}
 
 export const GridItems = ({ items }: GridItemsProps) => {
   const [imageRegular, setImageRegular] = useState('');
@@ -25,11 +18,10 @@ export const GridItems = ({ items }: GridItemsProps) => {
 
   const images = items.image;
   const { data, error } = useQueryImages(images);
-  error ? console.log(error) : null;
-  // const transformObject = Object.entries(data);
-  // const imagesFiltered = transformObject.map((data) => data[1]).concat();
 
-  useEffect(() => {
+  error ? console.log(error) : null;
+
+  useMemo(() => {
     if (data) {
       const imgRegular = data.data.urls.regular;
       const imgFull = data.data.urls.full;
@@ -49,6 +41,7 @@ export const GridItems = ({ items }: GridItemsProps) => {
         borderRadius='lg'
         boxShadow='md'
         cursor='pointer'
+        p={1}
         _hover={{
           transform: 'scale(0.98)'
         }}>
@@ -60,7 +53,10 @@ export const GridItems = ({ items }: GridItemsProps) => {
             htmlWidth={350}
             htmlHeight={173}
             loading='lazy'
-            align='center'
+            objectFit='cover'
+            boxSize='300px'
+            maxH='250px'
+            borderRadius='md'
           />
         </Box>
         <HStack spacing={8} px={4} py={6}>

@@ -10,6 +10,7 @@ const baseTheme = {
   colors: {
     gray: {
       '900': '#0B0A07',
+      '850': '#1A202C',
       '800': '#181B23',
       '700': '#47585B'
     },
@@ -33,7 +34,7 @@ const baseTheme = {
   styles: {
     global: (props: StyleFunctionProps) => ({
       body: {
-        bg: mode('gray.50', 'gray.800')(props),
+        bg: mode('gray.50', 'gray.850')(props),
         color: mode('gray.900', 'white')(props)
       }
     })
