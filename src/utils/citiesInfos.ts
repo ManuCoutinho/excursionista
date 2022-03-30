@@ -186,6 +186,111 @@ const citiesInfo = {
       flag: '',
       image: '',
       path: '/'
+    },
+    {
+      city: '',
+      country: '',
+      flag: '',
+      image: '',
+      path: '/'
+    },
+    {
+      city: '',
+      country: '',
+      flag: '',
+      image: '',
+      path: '/'
+    },
+    {
+      city: '',
+      country: '',
+      flag: '',
+      image: '',
+      path: '/'
+    },
+    {
+      city: '',
+      country: '',
+      flag: '',
+      image: '',
+      path: '/'
+    },
+    {
+      city: '',
+      country: '',
+      flag: '',
+      image: '',
+      path: '/'
+    },
+    {
+      city: '',
+      country: '',
+      flag: '',
+      image: '',
+      path: '/'
+    },
+    {
+      city: '',
+      country: '',
+      flag: '',
+      image: '',
+      path: '/'
+    },
+    {
+      city: '',
+      country: '',
+      flag: '',
+      image: '',
+      path: '/'
+    },
+    {
+      city: '',
+      country: '',
+      flag: '',
+      image: '',
+      path: '/'
+    },
+    {
+      city: '',
+      country: '',
+      flag: '',
+      image: '',
+      path: '/'
+    },
+    {
+      city: '',
+      country: '',
+      flag: '',
+      image: '',
+      path: '/'
+    },
+    {
+      city: '',
+      country: '',
+      flag: '',
+      image: '',
+      path: '/'
+    },
+    {
+      city: '',
+      country: '',
+      flag: '',
+      image: '',
+      path: '/'
+    },
+    {
+      city: '',
+      country: '',
+      flag: '',
+      image: '',
+      path: '/'
+    },
+    {
+      city: '',
+      country: '',
+      flag: '',
+      image: '',
+      path: '/'
     }
   ],
   northAmerica: [
@@ -193,7 +298,98 @@ const citiesInfo = {
       city: 'Montreal',
       country: 'Canadá',
       flag: 'ca',
-      image: '',
+      image: '36B-WO8yCMs',
+      path: '/'
+    },
+    {
+      city: 'Orlando',
+      country: 'Estados Unidos',
+      flag: 'us',
+      image: '7VHsb9sGBKs',
+      path: '/'
+    },
+    {
+      city: 'Cancun',
+      country: 'México',
+      flag: 'mx',
+      image: 'b6Ew0oqPYuo',
+      path: '/'
+    },
+    {
+      city: 'Las Vegas',
+      country: 'Estados Unidos',
+      flag: 'us',
+      image: 'sNLdpqkr2YE',
+      path: '/'
+    },
+    {
+      city: 'Los Angeles',
+      country: 'Estados Unidos',
+      flag: 'us',
+      image: 'aNrRsB2wLDk',
+      path: '/'
+    },
+    {
+      city: 'Miami',
+      country: 'Estados Unidos',
+      flag: 'us',
+      image: 'G2PC6Gp6OS4',
+      path: '/'
+    },
+    {
+      city: 'Nova York',
+      country: 'Estados Unidos',
+      flag: 'us',
+      image: 'sf8b4ucpdkg',
+      path: '/'
+    },
+    {
+      city: 'Toronto',
+      country: 'Canadá',
+      flag: 'ca',
+      image: 'qlKaN7eqay8',
+      path: '/'
+    },
+    {
+      city: 'Vancouver',
+      country: 'Canadá',
+      flag: 'ca',
+      image: '2yN10KHNTzM',
+      path: '/'
+    },
+    {
+      city: 'São Francisco',
+      country: 'Estados Unidos',
+      flag: 'us',
+      image: 'HksFlo1t8iA',
+      path: '/'
+    },
+    {
+      city: 'Honolulu',
+      country: 'Estados Unidos',
+      flag: 'us',
+      image: '4fz7KpKGYZs',
+      path: '/'
+    },
+    {
+      city: 'Austin',
+      country: 'Estados Unidos',
+      flag: 'us',
+      image: 'Ui_7PiqnNbs',
+      path: '/'
+    },
+    {
+      city: 'Cidade do México',
+      country: 'México',
+      flag: 'mx',
+      image: 'N2hiyUWvuNs',
+      path: '/'
+    },
+    {
+      city: 'Washington D.C',
+      country: 'Estados Unidos',
+      flag: 'us',
+      image: 'PuJc2Sodi94',
       path: '/'
     }
   ],
@@ -362,9 +558,44 @@ const citiesInfo = {
   ],
   oceania: [
     {
-      city: '',
-      country: '',
-      flag: '',
+      city: 'Sidney',
+      country: 'Austrália',
+      flag: 'au',
+      image: '',
+      path: '/'
+    },
+    {
+      city: 'Melbourne',
+      country: 'Austrália',
+      flag: 'au',
+      image: '',
+      path: '/'
+    },
+    {
+      city: 'Auckland',
+      country: 'Austrália',
+      flag: 'au',
+      image: '',
+      path: '/'
+    },
+    {
+      city: 'Queenstown',
+      country: 'Nova Zelândia',
+      flag: 'nz',
+      image: '',
+      path: '/'
+    },
+    {
+      city: 'Hobart',
+      country: 'Austrália',
+      flag: 'au',
+      image: '',
+      path: '/'
+    },
+    {
+      city: 'Brisbane',
+      country: 'Austrália',
+      flag: 'au',
       image: '',
       path: '/'
     }
