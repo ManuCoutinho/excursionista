@@ -9,24 +9,15 @@
 <h1 align="center">Excursionista</h1>
 
 <p align="center">
-  <img alt="Github top language" src="https://img.shields.io/github/languages/top/ManuCoutinho/123traveling?color=56BEB8">
+  <img alt="Github top language" src="https://img.shields.io/github/languages/top/ManuCoutinho/123traveling?color=FE4A49">
 
-  <img alt="Github language count" src="https://img.shields.io/github/languages/count/ManuCoutinho/123traveling?color=56BEB8">
+  <img alt="Github language count" src="https://img.shields.io/github/languages/count/ManuCoutinho/123traveling?color=FE4A49">
 
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/ManuCoutinho/123traveling?color=56BEB8">
-
-  <img alt="License" src="https://img.shields.io/github/license/ManuCoutinho/123traveling?color=56BEB8">
-
-  <!-- <img alt="Github issues" src="https://img.shields.io/github/issues/ManuCoutinho/123traveling?color=56BEB8" /> -->
-
-  <!-- <img alt="Github forks" src="https://img.shields.io/github/forks/ManuCoutinho/123traveling?color=56BEB8" /> -->
-
-  <!-- <img alt="Github stars" src="https://img.shields.io/github/stars/ManuCoutinho/123traveling?color=56BEB8" /> -->
+  <img alt="License" src="https://img.shields.io/github/license/ManuCoutinho/123traveling?color=FE4A49">
 </p>
 
-Status
-
 <h4 align="center"> 
+Status:
 	🚧  Excursionista 🚀 Under construction...  🚧
 </h4>
 
@@ -46,17 +37,23 @@ Status
 
 ## :dart: About
 
-<p>Esta aplicação foi desenvolvida com base num protótipo fornecido ao longo do curso Ignite. A proposta inicial era, desenvolver do zero, uma aplicação Next utilizando Chakra e Swiper, bastando entregar a home page, a página do continente europeu, cabeçalho e o formato para telas de 375px.</p>
-<p>No entanto, após realizar pequenas personalizações no layout, incrementei o projeto incluindo rodapé com menu navegável e as páginas de todos os continentes, buscando informações reais para alimentar todas as 6 rotas, além de fornecer tais informações por meio de um arquivo no formato JSON e utilização de TypeScript.</p>
-<p>Os dados são fornecidos por arquivos no formato JSON para ‘simular’ uma chamada externa, vez que a aplicação no estado atual comporta tal método. Contudo, para simplificar o deploy, foi realizado desta maneira.</p>
-<p>A aplicação conta com componentes facilmente reutilizáveis, pois a maioria deles têm os dados gerados de forma dinâmica (prop drilling).</p>
-<p>Atualmente a aplicação conta com dark mode, podendo ser acessada sem quebras pelos devices mais utilizados.</p>
+This application was developed based on a prototype provided during the Ignite course. The initial proposal was to develop from scratch a Next application using Chakra and Swiper, just delivering the home page, the European continent page, header and the format for 375px screens.
+
+However, after making small customizations to the layout, I increased the project including footer with navigable menu and pages from all continents, looking for real information to feed all 6 routes, in addition to providing such information through a file that provides all the information for the application.
+
+The data is provided by files to 'simulate' an external call, as the application in its current state supports such a method. However, to simplify the deployment, it was done in this way. The images are generated through the Unsplash API and the flags through the CDN Flag.
+
+The application has easily reusable components, as most of them have static data dynamically distributed through prop drilling and context.
+
+Currently the application has dark mode, and can be accessed without layout breaks by the most used devices on the market.
+
+New features may be added in the future.
 
 ## :sparkles: Features
 
-:heavy_check_mark: Feature 1;\
-:heavy_check_mark: Feature 2;\
-:heavy_check_mark: Feature 3;
+:heavy_check_mark: Unsplash API;
+:heavy_check_mark: Cache with React-Query;
+:heavy_check_mark: Performance optimization with code spliting, lazy loading, cache, etc.
 
 ## :rocket: Technologies
 
@@ -65,7 +62,9 @@ The following tools were used in this project:
 - [Next](https://nextjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Chakra UI](https://www.chakra/)
-- [Swiper](https://www.swiper/)
+- [React-Query](https://react-query.tanstack.com/)
+- [React-Icons](https://react-icons.github.io/react-icons)
+- [Axios](https://axios-http.com)
 
 ## :white_check_mark: Requirements
 
@@ -84,7 +83,7 @@ $ cd world-trip
 $ yarn
 
 # Run the project
-$ yarn start
+$ yarn dev
 
 # The server will initialize in the <http://localhost:3000>
 ```
