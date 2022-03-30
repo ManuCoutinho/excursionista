@@ -123,7 +123,7 @@ const citiesInfo = {
       city: 'Marrakesh',
       country: 'Marrocos',
       flag: 'ma',
-      image: '/CFKksjYRSQ8',
+      image: 'CFKksjYRSQ8',
       path: '/'
     },
     {
@@ -199,10 +199,164 @@ const citiesInfo = {
   ],
   southAmerica: [
     {
-      city: '',
-      country: '',
-      flag: '',
-      image: '',
+      city: 'Buenos Aires',
+      country: 'Argentina',
+      flag: 'ar',
+      image: '-8Oe2Dopm4o',
+      path: '/'
+    },
+    {
+      city: 'Rio de Janeiro',
+      country: 'Brasil',
+      flag: 'br',
+      image: '7F65HDP0-E0',
+      path: '/'
+    },
+    {
+      city: 'São Paulo',
+      country: 'Brasil',
+      flag: 'br',
+      image: 'nxkinK7hhOk',
+      path: '/'
+    },
+    {
+      city: 'Brasília',
+      country: 'Brasil',
+      flag: 'br',
+      image: 'RWWHa5TUF8w',
+      path: '/'
+    },
+    {
+      city: 'Bogotá',
+      country: 'Colômbia',
+      flag: 'co',
+      image: 'TAjm9HNb7tA',
+      path: '/'
+    },
+    {
+      city: 'Lima',
+      country: 'Peru',
+      flag: 'pe',
+      image: 'Yrqyn1Gb80k',
+      path: '/'
+    },
+    {
+      city: 'Jericoacoara',
+      country: 'Brasil',
+      flag: 'br',
+      image: '-fN9KBLAZOg',
+      path: '/'
+    },
+    {
+      city: 'Santiago',
+      country: 'Chile',
+      flag: 'cl',
+      image: 'dfGpXNm1ioY',
+      path: '/'
+    },
+    {
+      city: 'Gramado',
+      country: 'Brasil',
+      flag: 'br',
+      image: 'VKNubD5j0CA',
+      path: '/'
+    },
+    {
+      city: 'Cartagena',
+      country: 'Colômbia',
+      flag: 'co',
+      image: 'GcHar4P8V_Q',
+      path: '/'
+    },
+    {
+      city: 'Bariloche',
+      country: 'Argentina',
+      flag: 'ar',
+      image: 'RNFiXahfnpg',
+      path: '/'
+    },
+    {
+      city: 'Mendonza',
+      country: 'Argentina',
+      flag: 'ar',
+      image: 'eNWcXCbE5fI',
+      path: '/'
+    },
+    {
+      city: 'Cusco',
+      country: 'Peru',
+      flag: 'pe',
+      image: 'PO7CGnoDFUI',
+      path: '/'
+    },
+    {
+      city: 'Punta Cana',
+      country: 'República Dominicana',
+      flag: 'do',
+      image: '463yKm6_Q-4',
+      path: '/'
+    },
+    {
+      city: 'Havana',
+      country: 'Cuba',
+      flag: 'cu',
+      image: '6NT7jy6OU9I',
+      path: '/'
+    },
+    {
+      city: 'Medelín',
+      country: 'Colômbia',
+      flag: 'co',
+      image: 'ys36QtOnjU8',
+      path: '/'
+    },
+    {
+      city: 'Salvador',
+      country: 'Brasil',
+      flag: 'br',
+      image: 'J6L2uT15K1o',
+      path: '/'
+    },
+    {
+      city: 'Valparaiso',
+      country: 'Chile',
+      flag: 'cl',
+      image: 'b6pqIe5eFh8',
+      path: '/'
+    },
+    {
+      city: 'La Paz',
+      country: 'Bolívia',
+      flag: 'bo',
+      image: 'j4KLR4F-Tfg',
+      path: '/'
+    },
+    {
+      city: 'Ushuaia',
+      country: 'Argentina',
+      flag: 'ar',
+      image: 'hNdDLuLgz-I',
+      path: '/'
+    },
+    {
+      city: 'Montevideo',
+      country: 'Uruguai',
+      flag: 'uy',
+      image: 'B9YoUi7RYiE',
+      path: '/'
+    },
+    {
+      city: 'San Pedro de Atacama',
+      country: 'Chile',
+      flag: 'cl',
+      image: 'T_g9kq1PanQ',
+      path: '/'
+    },
+    {
+      city: 'El Calafate',
+      country: 'Argentina',
+      flag: 'ar',
+      image: 'SH_oYiwg224',
       path: '/'
     }
   ],
@@ -212,7 +366,7 @@ const citiesInfo = {
       country: '',
       flag: '',
       image: '',
-      path: ''
+      path: '/'
     }
   ]
 };
