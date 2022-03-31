@@ -1,4 +1,4 @@
-import { Box, HStack, Text, VStack, Image } from '@chakra-ui/react';
+import { AspectRatio, Box, HStack, Text, VStack, Image } from '@chakra-ui/react';
 import Link from 'next/link';
 import { useState, useMemo } from 'react';
 import { useQueryImages } from '../../../hooks/useQueryImages';
@@ -41,6 +41,7 @@ export const GridItems = ({ items }: GridItemsProps) => {
         borderRadius='lg'
         boxShadow='md'
         cursor='pointer'
+        bgColor='alphaWhite.300'
         p={1}
         _hover={{
           transform: 'scale(0.98)'
@@ -62,22 +63,23 @@ export const GridItems = ({ items }: GridItemsProps) => {
         </Box>
         <HStack spacing={[4, 6, 10, 12]} px={4} py={6}>
           <Box>
-            <Text color='gray.700' fontWeight='medium' fontSize='medium'>
+            <Text color='blackAlpha.800' fontWeight='medium' fontSize='medium'>
               {items.city}
             </Text>
-            <Text color='gray.400' fontSize='xs'>
+            <Text color='gray.700' fontSize='xs'>
               {items.country}
             </Text>
           </Box>
           <Image
-            src={`https://flagcdn.com/256x192/${items.flag}.png`}
-            srcSet={`https://flagcdn.com/256x192/${items.flag}.webp`}
-            borderRadius='sm'
-            boxSize='45px'
+            src={`https://flagcdn.com/w40/${items.flag}.png`}
+            srcSet={`https://flagcdn.com/w40/${items.flag}.webp,
+                    https://flagcdn.com/w80/${items.flag}.webp 2x`}
+            borderRadius='md'
+            boxSize='40px'
             loading='lazy'
             htmlWidth={40}
             htmlHeight={40}
-            fit='fill'
+            fit='unset'
             align='center'
             alt={items.country}
           />

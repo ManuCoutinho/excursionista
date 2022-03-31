@@ -31,7 +31,7 @@ export const NavFooter: React.FC = () => {
         </Box>
       )}
       <Box>
-        <Divider mb={4} />
+        <Divider mb={4} role='separator' />
         <Flex gap={[6, 8, 10]} direction='row'>
           <Box>
             <MenuList menuItem={menuItem} text='Menu' />

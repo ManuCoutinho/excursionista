@@ -7,7 +7,7 @@ export const Logo = () => {
       alt='logo Excursionista'
       height={50}
       width={300}
-      role='brand'
+      role='img'
     />
   );
 };
