@@ -49,17 +49,18 @@ export const GridItems = ({ items }: GridItemsProps) => {
           <Image
             src={imageRegular}
             srcSet={imageFull}
+            fallbackSrc='/logo/logo.svg'
             alt={items.city}
-            htmlWidth={350}
+            htmlWidth={450}
             htmlHeight={173}
             loading='lazy'
             objectFit='cover'
-            boxSize='300px'
+            boxSize={[400, 450, 350]}
             maxH='250px'
             borderRadius='md'
           />
         </Box>
-        <HStack spacing={8} px={4} py={6}>
+        <HStack spacing={[4, 6, 10, 12]} px={4} py={6}>
           <Box>
             <Text color='gray.700' fontWeight='medium' fontSize='medium'>
               {items.city}
@@ -69,10 +70,9 @@ export const GridItems = ({ items }: GridItemsProps) => {
             </Text>
           </Box>
           <Image
-            src={`https://flagcdn.com/w80/${items.flag}.png`}
-            srcSet={`https://flagcdn.com/w80/${items.flag}.webp,
-                    https://flagcdn.com/w160/${items.flag}.webp 2x`}
-            borderRadius='full'
+            src={`https://flagcdn.com/256x192/${items.flag}.png`}
+            srcSet={`https://flagcdn.com/256x192/${items.flag}.webp`}
+            borderRadius='sm'
             boxSize='45px'
             loading='lazy'
             htmlWidth={40}

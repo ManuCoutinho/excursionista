@@ -169,127 +169,329 @@ const citiesInfo = {
       path: '/'
     }
   ],
-
   asia: [
     {
-      city: '',
-      country: '',
-      flag: '',
-      image: '',
+      city: 'Riyadh',
+      country: 'Árabia Saudita',
+      flag: 'sa',
+      image: 'IOBIgKmjm1Y',
+      path: '/'
+    },
+    {
+      city: 'Ha Long',
+      country: 'Vietnã',
+      flag: 'vn',
+      image: 'sbp5-76bwIw',
+      path: '/'
+    },
+    {
+      city: 'Jaipur',
+      country: 'índia',
+      flag: 'in',
+      image: '3EwYQ09ZHh8',
+      path: '/'
+    },
+    {
+      city: 'Johor Bahru',
+      country: 'Malásia',
+      flag: 'my',
+      image: 'mLJvhZgXkuM',
+      path: '/'
+    },
+    {
+      city: 'Chennai',
+      country: 'índia',
+      flag: 'in',
+      image: 'GNs2DsNStbc',
+      path: '/'
+    },
+    {
+      city: 'Denpasar (Bali)',
+      country: 'Indonésia',
+      flag: 'id',
+      image: 'QqPcxfFKqfU',
+      path: '/'
+    },
+    {
+      city: 'Ho chi minh',
+      country: 'Vietnã',
+      flag: 'vn',
+      image: 'ItQlOVJt6OU',
+      path: '/'
+    },
+    {
+      city: 'Xangai',
+      country: 'China',
+      flag: 'cn',
+      image: 'uKyzXEc2k_s',
+      path: '/'
+    },
+    {
+      city: 'Osaka',
+      country: 'Japão',
+      flag: 'jp',
+      image: '9zYjlA4LqTU',
+      path: '/'
+    },
+    {
+      city: 'Agra',
+      country: 'Índia',
+      flag: 'in',
+      image: 'FrFQuL2on4o',
+      path: '/'
+    },
+    {
+      city: 'Seoul',
+      country: 'Coréia do Sul',
+      flag: 'kr',
+      image: 'Zj0dXKoLHnc',
+      path: '/'
+    },
+    {
+      city: 'Medina',
+      country: 'Arábia Saudita',
+      flag: 'sa',
+      image: '4w41qRrfHRY',
+      path: '/'
+    },
+    {
+      city: 'Guangzhou',
+      country: 'China',
+      flag: 'cn',
+      image: 'BZG5p-u35tI',
+      path: '/'
+    },
+    {
+      city: 'Mecca',
+      country: 'Arábia Saudita',
+      flag: 'sa',
+      image: '66Tu10CxYY0',
+      path: '/'
+    },
+    {
+      city: 'Taipei',
+      country: 'Taiwan',
+      flag: 'tw',
+      image: 'jVUOh2zqQb4',
+      path: '/'
+    },
+    {
+      city: 'Pattaya',
+      country: 'Tailândia',
+      flag: 'th',
+      image: 'lx4m-069aQ4',
+      path: '/'
+    },
+    {
+      city: 'Tóquio',
+      country: 'Japão',
+      flag: 'jp',
+      image: '2cdvYh6ULCs',
+      path: '/'
+    },
+    {
+      city: 'Phuket',
+      country: 'Tailândia',
+      flag: 'th',
+      image: 'Of_u2aPwugw',
+      path: '/'
+    },
+    {
+      city: 'Mumbai',
+      country: 'Índia',
+      flag: 'in',
+      image: 'B_ufwLFEZPE',
+      path: '/'
+    },
+    {
+      city: 'Shenzen',
+      country: 'China',
+      flag: 'cn',
+      image: 'dJ1TGyNr5I0',
+      path: '/'
+    },
+    {
+      city: 'Antalya',
+      country: 'Turquia',
+      flag: 'tr',
+      image: '3u3Mx_R41-c',
+      path: '/'
+    },
+    {
+      city: 'Nova Delhi',
+      country: 'Índia',
+      flag: 'in',
+      image: 'wwEE3qtFtvU',
+      path: '/'
+    },
+    {
+      city: 'Istambul',
+      country: 'Turquia',
+      flag: 'tr',
+      image: 'c_CfyjFGY_k',
+      path: '/'
+    },
+    {
+      city: 'Kuala Lampur',
+      country: 'Malásia',
+      flag: 'my',
+      image: 'gyKmF0vnfBs',
+      path: '/'
+    },
+    {
+      city: 'Dubai',
+      country: 'Emirados Árabes',
+      flag: 'ae',
+      image: '7tb-b37yHx4',
+      path: '/'
+    },
+    {
+      city: 'Singapura',
+      country: 'Singapura',
+      flag: 'sg',
+      image: '__cBlRzLSTg',
+      path: '/'
+    },
+    {
+      city: 'Macau',
+      country: 'China',
+      flag: 'cn',
+      image: 'ij2N2PWiFbs',
+      path: '/'
+    },
+    {
+      city: 'Bangkok',
+      country: 'Tailândia',
+      flag: 'th',
+      image: 'xHCDhUua-fM',
+      path: '/'
+    },
+    {
+      city: 'Hong Kong',
+      country: 'China',
+      flag: 'cn',
+      image: '6xxj2JTLWc4',
       path: '/'
     }
   ],
   europe: [
     {
-      city: '',
-      country: '',
-      flag: '',
-      image: '',
+      city: 'Dublin',
+      country: 'Irlanda',
+      flag: 'ie',
+      image: 'NL2ORrGh8KM',
       path: '/'
     },
     {
-      city: '',
-      country: '',
-      flag: '',
-      image: '',
+      city: 'Veneza',
+      country: 'Itália',
+      flag: 'it',
+      image: 'hFXZ5cNfkOk',
       path: '/'
     },
     {
-      city: '',
-      country: '',
-      flag: '',
-      image: '',
+      city: 'Moscou',
+      country: 'Rússia',
+      flag: 'ru',
+      image: 'QJ2HGuSSQz0',
       path: '/'
     },
     {
-      city: '',
-      country: '',
-      flag: '',
-      image: '',
+      city: 'Atenas',
+      country: 'Grécia',
+      flag: 'gr',
+      image: 'EvMearrxas4',
       path: '/'
     },
     {
-      city: '',
-      country: '',
-      flag: '',
-      image: '',
+      city: 'Berlim',
+      country: 'Alemanha',
+      flag: 'de',
+      image: '1uWanmgkd5g',
       path: '/'
     },
     {
-      city: '',
-      country: '',
-      flag: '',
-      image: '',
+      city: 'Viena',
+      country: 'Áustria',
+      flag: 'at',
+      image: 'MgiCmxjbCQg',
       path: '/'
     },
     {
-      city: '',
-      country: '',
-      flag: '',
-      image: '',
+      city: 'Milão',
+      country: 'Itália',
+      flag: 'it',
+      image: 'BBigUtobEYo',
       path: '/'
     },
     {
-      city: '',
-      country: '',
-      flag: '',
-      image: '',
+      city: 'Barcelona',
+      country: 'Espanha',
+      flag: 'es',
+      image: 'd0xjEv-WJQk',
       path: '/'
     },
     {
-      city: '',
-      country: '',
-      flag: '',
-      image: '',
+      city: 'Amsterdã',
+      country: 'Noruega',
+      flag: 'no',
+      image: '2Hs8zbwOLDA',
       path: '/'
     },
     {
-      city: '',
-      country: '',
-      flag: '',
-      image: '',
+      city: 'Praga',
+      country: 'República Tcheca',
+      flag: 'cz',
+      image: 'S2Wek5-5oEc',
       path: '/'
     },
     {
-      city: '',
-      country: '',
-      flag: '',
-      image: '',
+      city: 'Roma',
+      country: 'Itália',
+      flag: 'it',
+      image: 'bisRQszCNWc',
       path: '/'
     },
     {
-      city: '',
-      country: '',
-      flag: '',
-      image: '',
+      city: 'Paris',
+      country: 'França',
+      flag: 'fr',
+      image: 'DH3WvGPXxWo',
       path: '/'
     },
     {
-      city: '',
-      country: '',
-      flag: '',
-      image: '',
+      city: 'Londres',
+      country: 'Reino Unido',
+      flag: 'gb',
+      image: 'LKSHvr3emEQ',
       path: '/'
     },
     {
-      city: '',
-      country: '',
-      flag: '',
-      image: '',
+      city: 'Oslo',
+      country: 'Noruega',
+      flag: 'no',
+      image: 'taxOQpGcjYw',
       path: '/'
     },
     {
-      city: '',
-      country: '',
-      flag: '',
-      image: '',
+      city: 'Warsaw',
+      country: 'Polônia',
+      flag: 'pl',
+      image: 'oOHHxQ65dFE',
       path: '/'
     },
     {
-      city: '',
-      country: '',
-      flag: '',
-      image: '',
+      city: 'Helsink',
+      country: 'Finlândia',
+      flag: 'fi',
+      image: 'For4352Fgwg',
+      path: '/'
+    },
+    {
+      city: 'Madrid',
+      country: 'Espanha',
+      flag: 'es',
+      image: 'CRMjqDZwxS4',
       path: '/'
     }
   ],
@@ -561,42 +763,84 @@ const citiesInfo = {
       city: 'Sidney',
       country: 'Austrália',
       flag: 'au',
-      image: '',
+      image: 'r2L6vCKaVRk',
       path: '/'
     },
     {
       city: 'Melbourne',
       country: 'Austrália',
       flag: 'au',
-      image: '',
+      image: 'o3TZx8_j7FE',
       path: '/'
     },
     {
       city: 'Auckland',
       country: 'Austrália',
       flag: 'au',
-      image: '',
+      image: 'xCalkXtdYiQ',
       path: '/'
     },
     {
       city: 'Queenstown',
       country: 'Nova Zelândia',
       flag: 'nz',
-      image: '',
+      image: 'lsGniAlxL0I',
       path: '/'
     },
     {
       city: 'Hobart',
       country: 'Austrália',
       flag: 'au',
-      image: '',
+      image: 'RlIwgRukcxo',
       path: '/'
     },
     {
       city: 'Brisbane',
       country: 'Austrália',
       flag: 'au',
-      image: '',
+      image: 'q19ZRZE4tGI',
+      path: '/'
+    },
+    {
+      city: 'Taiti',
+      country: 'Polinésia Francesa',
+      flag: 'pf',
+      image: 'RaLkVPQaAAQ',
+      path: '/'
+    },
+    {
+      city: 'Ilha do Sul',
+      country: 'Nova Zelândia',
+      flag: 'nz',
+      image: 'RC5UFOeMZS8',
+      path: '/'
+    },
+    {
+      city: 'Bora Bora',
+      country: 'Polinésia Francesa',
+      flag: 'pf',
+      image: 'y2zSXQgiboI',
+      path: '/'
+    },
+    {
+      city: 'Suva',
+      country: 'Fiji',
+      flag: 'fj',
+      image: 'b8RQN7Wtu34',
+      path: '/'
+    },
+    {
+      city: 'Uluru-Kata',
+      country: 'Austrália',
+      flag: 'au',
+      image: 'DXQ2_6nk644',
+      path: '/'
+    },
+    {
+      city: 'Ilha Kangaroo',
+      country: 'Austrália',
+      flag: 'au',
+      image: 'vojafW3wEAs',
       path: '/'
     }
   ]
