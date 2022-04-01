@@ -1,26 +1,28 @@
 import { Heading, List, ListItem, Link as ChakraLink } from '@chakra-ui/react';
 import Link from 'next/link';
+import { idGenerator } from '../../utils/idGenerator';
 
-interface MenuItemProps {
-  menuItem: [
-    {
-      id: number;
-      listItem: string;
-      url: string;
-    }
-  ];
-  text: string;
+interface IMenuItem {
+  listItem?: string;
+  url: string;
+  text?: string;
 }
-export function MenuList({ menuItem, text }: MenuItemProps) {
+
+type MenuItemProps = {
+  menuItem: Array<IMenuItem>;
+};
+export function MenuList({ menuItem }: MenuItemProps) {
   return (
     <nav>
-      <Heading fontSize='lg' fontWeight='semibold' color='red.600' mb={4}>
-        {text}
-      </Heading>
+      {menuItem.map((item) => (
+        <Heading fontSize='lg' fontWeight='semibold' color='red.600' mb={4} key={idGenerator()}>
+          {item.text}
+        </Heading>
+      ))}
       <List fontSize={['xs', 'sm']} color='gray.600'>
         {menuItem.map((item) => (
-          <Link href={item.url} key={item.id} passHref>
-            {text === 'Redes Sociais' ? (
+          <Link href={item.url} key={idGenerator()} passHref>
+            {item.text === 'Redes Sociais' ? (
               <ListItem
                 aria-label={item.listItem}
                 role='listitem'

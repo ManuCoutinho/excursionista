@@ -55,13 +55,12 @@ export const Carousel: React.FC = () => {
       route: '/oceania'
     }
   ];
+
   return (
     <Swiper
-      style={{
-        '--swiper-navigation-color': '#FFC759',
-        '--swiper-pagination-color': '#FFC759',
-        '--swiper-navigation-size': '50px',
-        '--swiper-pagination-bullet-size': '16px'
+      a11y={{
+        prevSlideMessage: 'Previous slide',
+        nextSlideMessage: 'Next slide'
       }}
       modules={[Navigation, Pagination, A11y, Lazy, Autoplay]}
       slidesPerView={1}

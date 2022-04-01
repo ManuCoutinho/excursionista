@@ -17,7 +17,7 @@ class MyDocument extends Document {
             href='https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap'
             rel='stylesheet'
           />
-          <link rel='icon' sizes='16x16' href='/assets/favicon.png' type='image/png' />
+          <link rel='icon' sizes='16x16' href='/assets/favicon.ico' type='image' />
           <link rel='shortcut icon' href='/assets/favicon.ico' />
         </Head>
         <body>

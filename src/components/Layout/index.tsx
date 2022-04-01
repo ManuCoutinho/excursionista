@@ -7,7 +7,7 @@ interface LayoutProps {
 }
 
 export default function Layout({ children }: LayoutProps) {
-  const FooterComponent = dynamic(() => import('../Footer').then((mod) => mod.Footer));
+  const FooterComponent = dynamic(() => import('../Footer'));
   return (
     <>
       <Header />

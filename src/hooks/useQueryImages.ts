@@ -1,24 +1,17 @@
 import { useQuery } from 'react-query';
 import { api } from '../services/api';
+interface DataImage {
+  regular: string;
+  full: string;
+  thumb: string;
+}
 
-type DataImage = {
-  data: {
-    data: {
-      urls: {
-        regular: string;
-        full: string;
-        thumb: string;
-      };
-    };
-  };
-};
-
-type GetImageResponse = {
-  data: DataImage[];
-};
-
-export async function getImages(img: string): Promise<GetImageResponse> {
-  return await api.get(`${img}`);
+export async function getImages(img: string): Promise<DataImage> {
+  const { data } = await api.get(`${img}`);
+  const regular = data.urls.regular;
+  const thumb = data.urls.thumb;
+  const full = data.urls.full;
+  return { regular, thumb, full };
 }
 
 export function useQueryImages(img: string) {
