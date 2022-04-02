@@ -39,7 +39,7 @@ Status:
 
 This application was developed based on a prototype provided during the Ignite course. The initial proposal was to develop from scratch a Next application using Chakra and Swiper, just delivering the home page, the European continent page, header and the format for 375px screens.
 
-However, after making small customizations to the layout, I increased the project including footer with navigable menu and pages from all continents, looking for real information to feed all 6 routes, in addition to providing such information through a file that provides all the information for the application.
+However, after making small customizations to the layout, I increased the project including header and footer with navigable menu and pages from all continents, looking for real information to feed all 6 routes, in addition to providing such information through a file that provides all the information for the application.
 
 The data is provided by files to 'simulate' an external call, as the application in its current state supports such a method. However, to simplify the deployment, it was done in this way. The images are generated through the Unsplash API and the flags through the CDN Flag.
 

@@ -80,7 +80,6 @@ export const GridItems = ({ items }: GridItemsProps) => {
                 alt={items.city}
                 htmlWidth={450}
                 htmlHeight={173}
-                loading='lazy'
                 objectFit='cover'
                 boxSize={[400, 450, 350]}
                 maxH='250px'
