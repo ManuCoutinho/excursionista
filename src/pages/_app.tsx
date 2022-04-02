@@ -7,8 +7,6 @@ import { ChakraProvider } from '@chakra-ui/react';
 import Layout from '../components/Layout';
 import { theme } from '../styles/theme';
 
-import { ReactQueryDevtools } from 'react-query/devtools';
-
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode;
 };
@@ -26,7 +24,6 @@ export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
           <Component {...pageProps} />
         </Layout>
       </ChakraProvider>
-      <ReactQueryDevtools />
     </QueryClientProvider>
   );
 }
