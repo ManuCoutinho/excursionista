@@ -16,6 +16,7 @@ interface GridItemsProps {
 export const GridItems = ({ items }: GridItemsProps) => {
   const [imageRegular, setImageRegular] = useState<string | undefined>('');
   const [imageFull, setImageFull] = useState<string | undefined>('');
+  const [author, setAuthor] = useState<string | undefined>('');
   const images = items.image;
   const { data, isError, isLoading } = useQueryImages(images);
 
@@ -25,18 +26,22 @@ export const GridItems = ({ items }: GridItemsProps) => {
     if (data && !isError) {
       const imgRegular = data.regular;
       const imgFull = data.full;
+      const authorName = data.author;
 
       setImageRegular(imgRegular);
       setImageFull(imgFull);
+      setAuthor(authorName);
     }
-    return toast({
-      status: 'error',
-      title: 'Ocorreu um erro!',
-      description: 'Algo não saiu como esperado, tente novamente.',
-      duration: 3000,
-      isClosable: true,
-      variant: 'left-accent'
-    });
+    if (isError) {
+      toast({
+        status: 'error',
+        title: 'Ocorreu um erro!',
+        description: 'Algo não saiu como esperado, tente novamente.',
+        duration: 3000,
+        isClosable: true,
+        variant: 'left-accent'
+      });
+    }
   }, [data]);
 
   if (isError) {
@@ -67,19 +72,24 @@ export const GridItems = ({ items }: GridItemsProps) => {
               fadeDuration={0.8}
             />
           ) : (
-            <Image
-              src={imageRegular}
-              srcSet={imageFull}
-              fallbackSrc='/logo/logo.svg'
-              alt={items.city}
-              htmlWidth={450}
-              htmlHeight={173}
-              loading='lazy'
-              objectFit='cover'
-              boxSize={[400, 450, 350]}
-              maxH='250px'
-              borderRadius='md'
-            />
+            <>
+              <Image
+                src={imageRegular}
+                srcSet={imageFull}
+                fallbackSrc='/logo/logo.svg'
+                alt={items.city}
+                htmlWidth={450}
+                htmlHeight={173}
+                loading='lazy'
+                objectFit='cover'
+                boxSize={[400, 450, 350]}
+                maxH='250px'
+                borderRadius='md'
+              />
+              <Text fontSize='xs' color='blackAlpha.600' mt='2' px='2' textAlign='right'>
+                Photo by {author} on Unsplash
+              </Text>
+            </>
           )}
         </Box>
         <HStack spacing={[4, 6, 10, 12]} px={4} py={6}>

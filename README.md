@@ -52,7 +52,7 @@ New features may be added in the future.
 ## :sparkles: Features
 
 :heavy_check_mark: Unsplash API;
-:heavy_check_mark: Cache with React-Query;
+:heavy_check_mark: Caching with React-Query;
 :heavy_check_mark: Performance optimization with code spliting, lazy loading, cache, etc.
 
 ## :rocket: Technologies
