@@ -1,8 +1,9 @@
-import { Box, Flex, useColorModeValue } from '@chakra-ui/react';
+import { Box, Flex, HStack, useColorModeValue } from '@chakra-ui/react';
+import { HomeButton } from './HomeButton';
+import { ToggleColor } from './ToggleColor';
+import { NavButton } from './NavButton';
 
 import { Logo } from './Logo';
-import { NavButton } from './NavButton';
-import { ToggleColor } from './ToggleColor';
 
 export const Header: React.FC = () => {
   const color = useColorModeValue('gray.50', 'gray.800');
@@ -16,7 +17,10 @@ export const Header: React.FC = () => {
       bgColor={color}
       zIndex={1}
       boxShadow='md'>
-      <NavButton />
+      <HStack align='center' spacing={[2, 4, 8]}>
+        <NavButton />
+        <HomeButton />
+      </HStack>
       <Box>
         <Logo />
       </Box>

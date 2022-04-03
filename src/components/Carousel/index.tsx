@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, A11y, Lazy, Autoplay } from 'swiper';
+import { Link as ChakraLink } from '@chakra-ui/react';
 import { CarouselItem } from './CarouselItem';
 
 import 'swiper/css';
@@ -74,10 +75,13 @@ export const Carousel: React.FC = () => {
       pagination={{ clickable: true }}>
       {carouselItem.map((item) => (
         <SwiperSlide key={item.id}>
-          <Link href={item.route}>
-            <a>
+          <Link href={item.route} passHref>
+            <ChakraLink
+              _hover={{
+                textDecoration: 'none'
+              }}>
               <CarouselItem text={item.text} description={item.description} bgImg={item.img} />
-            </a>
+            </ChakraLink>
           </Link>
         </SwiperSlide>
       ))}

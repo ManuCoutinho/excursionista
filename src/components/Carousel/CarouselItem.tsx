@@ -19,12 +19,12 @@ export const CarouselItem = ({ text, bgImg, description }: CarouselItemsProps) =
       justify='center'
       alignItems='center'
       direction='column'
-      color='yellow.500'>
+      color='blackAlpha.800'>
       <Heading mb={4} fontWeight='bold' fontSize={['2xl', '4xl', '5xl']}>
         {text}
       </Heading>
       {!!isMobile && (
-        <Text fontWeight='bold' fontSize={['lg', 'xl', '2xl']}>
+        <Text fontWeight='bold' fontSize={['lg', 'xl', '3xl']}>
           {description}
         </Text>
       )}

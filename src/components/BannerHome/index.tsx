@@ -23,7 +23,13 @@ export const Banner: React.FC = () => {
         </Box>
         {isLargerThan1024 && (
           <Flex justify='flex-end' align='baseline' mt={275}>
-            <Image src='/assets/banner/airplane.svg' alt='Airplane' width={417} height={270} />
+            <Image
+              src='/assets/banner/airplane.svg'
+              alt='Airplane'
+              width={417}
+              height={270}
+              loading='lazy'
+            />
           </Flex>
         )}
       </Flex>
