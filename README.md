@@ -1,18 +1,15 @@
 <div align="center" id="top"> 
-  <img src="./.github/app.gif" alt="Excursionista" />
+  <img src="https://ibb.co/7nH9SZF" alt="Excursionista" />
 
 &#xa0;
 
-  <!-- <a href="https://worldtrip.netlify.app">Demo</a> -->
 </div>
 
-<h1 align="center">Excursionista</h1>
+<a href="https://excursionista.vercel.app/"><h1 align="center">Excursionista<span style="font-size: 14px; margin-left: 8px">🔗</span></h1></a>
 
 <p align="center">
   <img alt="Github top language" src="https://img.shields.io/github/languages/top/ManuCoutinho/123traveling?color=FE4A49">
-
   <img alt="Github language count" src="https://img.shields.io/github/languages/count/ManuCoutinho/123traveling?color=FE4A49">
-
   <img alt="License" src="https://img.shields.io/github/license/ManuCoutinho/123traveling?color=FE4A49">
 </p>
 
@@ -47,7 +44,9 @@ The application has easily reusable components, as most of them have static data
 
 Currently the application has dark mode, and can be accessed without layout breaks by the most used devices on the market.
 
-New features may be added in the future.
+New features may be added in the future!
+
+Preview on [Excursionista 🔗](https://excursionista.vercel.app/)
 
 ## :sparkles: Features
 
@@ -83,7 +82,7 @@ $ cd world-trip
 $ yarn
 
 # Run the project
-$ yarn dev
+$ yarn start
 
 # The server will initialize in the <http://localhost:3000>
 ```
