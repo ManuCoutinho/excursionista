@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import { Box, Flex, HStack, useColorModeValue } from '@chakra-ui/react';
 import { HomeButton } from './HomeButton';
 import { ToggleColor } from './ToggleColor';
@@ -7,6 +8,8 @@ import { Logo } from './Logo';
 
 export const Header: React.FC = () => {
   const color = useColorModeValue('gray.50', 'gray.800');
+  const { pathname } = useRouter();
+
   return (
     <Flex
       as='header'
@@ -16,10 +19,10 @@ export const Header: React.FC = () => {
       w='100%'
       bgColor={color}
       zIndex={1}
-      boxShadow='md'>
+      boxShadow='lg'>
       <HStack align='center' spacing={[2, 4, 8]}>
         <NavButton />
-        <HomeButton />
+        {pathname !== '/' && <HomeButton />}
       </HStack>
       <Box>
         <Logo />
