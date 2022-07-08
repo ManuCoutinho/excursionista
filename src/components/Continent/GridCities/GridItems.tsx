@@ -1,7 +1,11 @@
-import { Box, HStack, Text, VStack, Image, Skeleton, useToast, Link } from '@chakra-ui/react';
-import { useState, useMemo } from 'react';
+import { useState, useMemo,FormEvent } from 'react';
+import { Box, HStack, Text, VStack, Image, Skeleton, useToast, Link as ChakraLink, IconButton, Tooltip } from '@chakra-ui/react';
+import {BsDownload} from "react-icons/bs"
 import { useQueryImages } from '../../../hooks/useQueryImages';
 import { Error } from '../Error/Error';
+
+import { useDownloadImage } from '../../../hooks/useDownloadImage';
+import axios from 'axios';
 interface GridItemsProps {
   items: {
     image: string;
@@ -16,24 +20,31 @@ export const GridItems = ({ items }: GridItemsProps) => {
   const [imageRegular, setImageRegular] = useState<string | undefined>('');
   const [imageFull, setImageFull] = useState<string | undefined>('');
   const [author, setAuthor] = useState<string | undefined>('');
+  const [downloadLink, setDownloadLink] = useState<string>('');
   const [backLink, setBackLink] =  useState<string | undefined>('')
-  const images = items.image;
-  const { data, isError, isLoading } = useQueryImages(images);
-
+  const { data, isError, isLoading } = useQueryImages(items?.image);
+  const {data: download} = useDownloadImage(downloadLink)
+ const fileName =  data?.download
   const toast = useToast();
 
+  async function handleDownload(){
+    const request = await axios.get(`${download?.url}`)
+    console.log('🍓', request.data)
+  }
   useMemo(() => {
     if (data && !isError) {
-      const imgRegular = data.regular;
-      const imgFull = data.full;
-      const authorName = data.author;
-      const userLink = data.userLink
+      const imgRegular = data?.regular;
+      const imgFull = data?.full;
+      const authorName = data?.author;
+      const userLink = data?.userLink
+      const download = data?.download
 
       setImageRegular(imgRegular);
       setImageFull(imgFull);
       setAuthor(authorName);
       setBackLink(userLink)
-    }
+      setDownloadLink(download)
+    }   
     if (isError) {
       toast({
         status: 'error',
@@ -44,12 +55,15 @@ export const GridItems = ({ items }: GridItemsProps) => {
         variant: 'left-accent'
       });
     }
-  }, [data]);
+  }, [data])
+
+///url: "https://images.unsplash.com/photo-1526958977630-bc61b30a2009?ixlib=rb-1.2.1&q=80&cs=tinysrgb&fm=jpg&crop=entropy"
+//https://unsplash.com/photos/p0yAVdnx5cU/download?ixid=MnwxMjA3fDB8MXx0b3BpY3x8Ym84alFLVGFFMFl8fHx8fDJ8fDE2NTczMDgyMjE&force=true
   if (isError) {
-    return <Error state={!isLoading} />;
+    return <Error state={!isLoading} />
   }
   return (
-    <Link href={items.path}>
+   
       <VStack
         border='1px'
         borderColor='orange.100'
@@ -57,9 +71,11 @@ export const GridItems = ({ items }: GridItemsProps) => {
         boxShadow='md'
         cursor='pointer'
         bgColor='alphaWhite.300'
+        transition= 'all 0.3s ease-in-out'
         p={1}
         _hover={{
-          transform: 'scale(0.98)'
+          transform: 'scale(0.98)',
+          transition: 'all 0.3s ease-in-out'
         }}>
         <Box>
           {isLoading ? (
@@ -86,9 +102,23 @@ export const GridItems = ({ items }: GridItemsProps) => {
                 maxH='250px'
                 borderRadius='md'
               />
-              <Text fontSize='xs' color='blackAlpha.600' mt='2' px='2' textAlign='right'>
-                Photo by <Link href={`${backLink}?utm_source=excursionista&utm_medium=referral`} isExternal>{author}</Link> on <Link href="https://unsplash.com/?utm_source=excursionista&utm_medium=referral" isExternal>Unsplash</Link>
+             <HStack p='2' justifyContent='space-between'>
+               <Text fontSize='xs' color='blackAlpha.600' mt='2' textAlign='left'>
+                Photo by <ChakraLink href={`${backLink}?utm_source=excursionista&utm_medium=referral`} isExternal>{author}</ChakraLink> on <ChakraLink href="https://unsplash.com/?utm_source=excursionista&utm_medium=referral" isExternal>Unsplash</ChakraLink>
               </Text>
+              <Tooltip label='Download'>
+              <IconButton 
+                  aria-label='download image' 
+                  colorScheme='orange' 
+                  variant='ghost' 
+                  rounded='full'
+                  onClick={handleDownload}
+                >
+                    <BsDownload/>
+                </IconButton>
+               
+              </Tooltip>
+             </HStack>
             </>
           )}
         </Box>
@@ -117,6 +147,5 @@ export const GridItems = ({ items }: GridItemsProps) => {
           />
         </HStack>
       </VStack>
-    </Link>
   );
 };
