@@ -1,8 +1,9 @@
-import { Box, HStack, Text, VStack, Image, Skeleton, useToast } from '@chakra-ui/react';
-import Link from 'next/link';
 import { useState, useMemo } from 'react';
+import { Box, HStack, Text, VStack, Image, Skeleton, useToast, Link as ChakraLink, IconButton, Tooltip } from '@chakra-ui/react';
+import {BsDownload} from "react-icons/bs"
 import { useQueryImages } from '../../../hooks/useQueryImages';
 import { Error } from '../Error/Error';
+import { getUrlAndDownload } from './util';
 interface GridItemsProps {
   items: {
     image: string;
@@ -17,21 +18,29 @@ export const GridItems = ({ items }: GridItemsProps) => {
   const [imageRegular, setImageRegular] = useState<string | undefined>('');
   const [imageFull, setImageFull] = useState<string | undefined>('');
   const [author, setAuthor] = useState<string | undefined>('');
-  const images = items.image;
-  const { data, isError, isLoading } = useQueryImages(images);
-
+  const [fileName, setFileName] = useState<string>('');
+  const [backLink, setBackLink] =  useState<string | undefined>('')
+  const [urlLocation, setUrlLocation] =  useState<string | undefined>('')
+  const { data, isError, isLoading } = useQueryImages(items?.image);
   const toast = useToast();
 
+  
   useMemo(() => {
     if (data && !isError) {
-      const imgRegular = data.regular;
-      const imgFull = data.full;
-      const authorName = data.author;
+      const imgRegular = data?.regular;
+      const imgFull = data?.full;
+      const authorName = data?.author;
+      const userLink = data?.userLink
+      const title = data?.alt
+      const urlLocation = data.downloadLocation
 
       setImageRegular(imgRegular);
       setImageFull(imgFull);
       setAuthor(authorName);
-    }
+      setBackLink(userLink)
+      setFileName(title)
+      setUrlLocation(urlLocation)
+    }   
     if (isError) {
       toast({
         status: 'error',
@@ -42,13 +51,16 @@ export const GridItems = ({ items }: GridItemsProps) => {
         variant: 'left-accent'
       });
     }
-  }, [data]);
+  }, [data])
+
+  
+
 
   if (isError) {
-    return <Error state={!isLoading} />;
+    return <Error state={!isLoading} />
   }
   return (
-    <Link href={items.path}>
+   
       <VStack
         border='1px'
         borderColor='orange.100'
@@ -56,9 +68,11 @@ export const GridItems = ({ items }: GridItemsProps) => {
         boxShadow='md'
         cursor='pointer'
         bgColor='alphaWhite.300'
+        transition= 'all 0.3s ease-in-out'
         p={1}
         _hover={{
-          transform: 'scale(0.98)'
+          transform: 'scale(0.98)',
+          transition: 'all 0.3s ease-in-out'
         }}>
         <Box>
           {isLoading ? (
@@ -85,15 +99,40 @@ export const GridItems = ({ items }: GridItemsProps) => {
                 maxH='250px'
                 borderRadius='md'
               />
-              <Text fontSize='xs' color='blackAlpha.600' mt='2' px='2' textAlign='right'>
-                Photo by {author} on Unsplash
+             <HStack p='2' justifyContent='space-between'>
+               <Text fontSize='x-small' color='gray.600' mt='2' textAlign='left'>
+                Photo by <ChakraLink href={`${backLink}?utm_source=excursionista&utm_medium=referral`} isExternal>
+                  {author}
+                </ChakraLink> 
+                {' '}on{' '}
+                <ChakraLink href="https://unsplash.com/?utm_source=excursionista&utm_medium=referral" isExternal>
+                  Unsplash
+                </ChakraLink>
               </Text>
+              <Tooltip 
+                label='Download'
+                aria-label='info'
+                placement='bottom'
+                bgColor='gray.100'
+                color='gray.800'
+                fontWeight='normal'>           
+               <IconButton 
+                  aria-label='download image' 
+                  colorScheme='orange' 
+                  variant='ghost' 
+                  rounded='full'
+                  onClick={() => getUrlAndDownload(imageFull, fileName, urlLocation)}
+                >
+                    <BsDownload/>
+                </IconButton>               
+              </Tooltip>
+             </HStack>
             </>
           )}
         </Box>
-        <HStack spacing={[4, 6, 10, 12]} px={4} py={6}>
+        <Box display='flex' px={4} py={6} justifyContent='space-between' width='full'>
           <Box>
-            <Text color='blackAlpha.800' fontWeight='medium' fontSize='medium'>
+            <Text color='purple.300' fontWeight='medium' fontSize='medium'>
               {items.city}
             </Text>
             <Text color='gray.700' fontSize='xs'>
@@ -101,21 +140,21 @@ export const GridItems = ({ items }: GridItemsProps) => {
             </Text>
           </Box>
           <Image
-            src={`https://flagcdn.com/w40/${items.flag}.png`}
-            srcSet={`https://flagcdn.com/w40/${items.flag}.webp,
-                  https://flagcdn.com/w80/${items.flag}.webp 2x`}
+            src={`https://flagcdn.com/w640/${items.flag}.png`}
+            srcSet={`https://flagcdn.com/w1280/${items.flag}.webp,
+                  https://flagcdn.com/w2560/${items.flag}.webp 2x`}
             borderRadius='full'
-            boxSize='45px'
+            boxSize='50px'
             boxShadow='lg'
             loading='lazy'
             htmlWidth={40}
             htmlHeight={40}
-            fit='unset'
+            objectFit='fill'
             align='center'
             alt={items.country}
+            crossOrigin='anonymous'
           />
-        </HStack>
+        </Box>
       </VStack>
-    </Link>
   );
 };
