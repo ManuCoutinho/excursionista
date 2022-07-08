@@ -5,6 +5,7 @@ interface DataImage {
   full: string;
   thumb: string;
   author: string;
+ userLink: string
 }
 
 export async function getImages(img: string): Promise<DataImage> {
@@ -13,7 +14,8 @@ export async function getImages(img: string): Promise<DataImage> {
   const thumb = data.urls.thumb;
   const full = data.urls.full;
   const author = data.user.name;
-  return { regular, thumb, full, author };
+  const userLink = data.user.links.html
+  return { regular, thumb, full, author, userLink };
 }
 
 export function useQueryImages(img: string) {

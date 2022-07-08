@@ -1,5 +1,4 @@
-import { Box, HStack, Text, VStack, Image, Skeleton, useToast } from '@chakra-ui/react';
-import Link from 'next/link';
+import { Box, HStack, Text, VStack, Image, Skeleton, useToast, Link } from '@chakra-ui/react';
 import { useState, useMemo } from 'react';
 import { useQueryImages } from '../../../hooks/useQueryImages';
 import { Error } from '../Error/Error';
@@ -17,6 +16,7 @@ export const GridItems = ({ items }: GridItemsProps) => {
   const [imageRegular, setImageRegular] = useState<string | undefined>('');
   const [imageFull, setImageFull] = useState<string | undefined>('');
   const [author, setAuthor] = useState<string | undefined>('');
+  const [backLink, setBackLink] =  useState<string | undefined>('')
   const images = items.image;
   const { data, isError, isLoading } = useQueryImages(images);
 
@@ -27,10 +27,12 @@ export const GridItems = ({ items }: GridItemsProps) => {
       const imgRegular = data.regular;
       const imgFull = data.full;
       const authorName = data.author;
+      const userLink = data.userLink
 
       setImageRegular(imgRegular);
       setImageFull(imgFull);
       setAuthor(authorName);
+      setBackLink(userLink)
     }
     if (isError) {
       toast({
@@ -43,7 +45,6 @@ export const GridItems = ({ items }: GridItemsProps) => {
       });
     }
   }, [data]);
-
   if (isError) {
     return <Error state={!isLoading} />;
   }
@@ -86,7 +87,7 @@ export const GridItems = ({ items }: GridItemsProps) => {
                 borderRadius='md'
               />
               <Text fontSize='xs' color='blackAlpha.600' mt='2' px='2' textAlign='right'>
-                Photo by {author} on Unsplash
+                Photo by <Link href={`${backLink}?utm_source=excursionista&utm_medium=referral`} isExternal>{author}</Link> on <Link href="https://unsplash.com/?utm_source=excursionista&utm_medium=referral" isExternal>Unsplash</Link>
               </Text>
             </>
           )}
