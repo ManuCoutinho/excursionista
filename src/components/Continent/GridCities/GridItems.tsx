@@ -31,7 +31,7 @@ export const GridItems = ({ items }: GridItemsProps) => {
       const imgFull = data?.full;
       const authorName = data?.author;
       const userLink = data?.userLink
-      const title = data?.alt.replaceAll(' ', '_')
+      const title = data?.alt
       const urlLocation = data.downloadLocation
 
       setImageRegular(imgRegular);
@@ -100,16 +100,22 @@ export const GridItems = ({ items }: GridItemsProps) => {
                 borderRadius='md'
               />
              <HStack p='2' justifyContent='space-between'>
-               <Text fontSize='xs' color='blackAlpha.600' mt='2' textAlign='left'>
+               <Text fontSize='x-small' color='gray.600' mt='2' textAlign='left'>
                 Photo by <ChakraLink href={`${backLink}?utm_source=excursionista&utm_medium=referral`} isExternal>
                   {author}
                 </ChakraLink> 
-                on 
+                {' '}on{' '}
                 <ChakraLink href="https://unsplash.com/?utm_source=excursionista&utm_medium=referral" isExternal>
                   Unsplash
                 </ChakraLink>
               </Text>
-              <Tooltip label='Download'>           
+              <Tooltip 
+                label='Download'
+                aria-label='info'
+                placement='bottom'
+                bgColor='gray.100'
+                color='gray.800'
+                fontWeight='normal'>           
                <IconButton 
                   aria-label='download image' 
                   colorScheme='orange' 
@@ -124,9 +130,9 @@ export const GridItems = ({ items }: GridItemsProps) => {
             </>
           )}
         </Box>
-        <HStack spacing={[4, 6, 10, 12]} px={4} py={6}>
+        <Box display='flex' px={4} py={6} justifyContent='space-between' width='full'>
           <Box>
-            <Text color='blackAlpha.800' fontWeight='medium' fontSize='medium'>
+            <Text color='purple.300' fontWeight='medium' fontSize='medium'>
               {items.city}
             </Text>
             <Text color='gray.700' fontSize='xs'>
@@ -134,20 +140,21 @@ export const GridItems = ({ items }: GridItemsProps) => {
             </Text>
           </Box>
           <Image
-            src={`https://flagcdn.com/w40/${items.flag}.png`}
-            srcSet={`https://flagcdn.com/w40/${items.flag}.webp,
-                  https://flagcdn.com/w80/${items.flag}.webp 2x`}
+            src={`https://flagcdn.com/w640/${items.flag}.png`}
+            srcSet={`https://flagcdn.com/w1280/${items.flag}.webp,
+                  https://flagcdn.com/w2560/${items.flag}.webp 2x`}
             borderRadius='full'
-            boxSize='45px'
+            boxSize='50px'
             boxShadow='lg'
             loading='lazy'
             htmlWidth={40}
             htmlHeight={40}
-            fit='unset'
+            objectFit='fill'
             align='center'
             alt={items.country}
+            crossOrigin='anonymous'
           />
-        </HStack>
+        </Box>
       </VStack>
   );
 };

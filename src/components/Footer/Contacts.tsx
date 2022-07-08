@@ -1,4 +1,4 @@
-import { HStack, IconButton, Text, VStack } from '@chakra-ui/react';
+import { HStack, IconButton, Text, VStack, Link } from '@chakra-ui/react';
 import { IconContext } from 'react-icons';
 import { AiOutlinePhone } from 'react-icons/ai';
 import { FiMail } from 'react-icons/fi';
@@ -26,6 +26,7 @@ export function Contacts() {
           <Text>+55 (41) 99999-9999</Text>
         </HStack>
         <HStack spacing={[2, 4]} display='flex' alignSelf='flex-start'>
+         <Link href='mailto:contato.excursionista@gmail.com' isExternal display='flex' gap='2' alignItems='center'>
           <IconButton
             colorScheme='purple'
             aria-label='telefone'
@@ -36,6 +37,7 @@ export function Contacts() {
             variant='outline'
           />
           <Text>contato.excursionista@gmail.com</Text>
+         </Link>
         </HStack>
       </VStack>
     </IconContext.Provider>

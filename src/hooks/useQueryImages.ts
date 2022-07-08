@@ -19,8 +19,8 @@ export async function getImages(img: string): Promise<DataImage> {
   const author = data.user.name;
   const userLink = data.user.links.html
   const downloadLocation = data.links.download_location.split('https://api.unsplash.com/photos/')[1]
-  const alt =  data.alt_description
-  console.log("🐬", data)
+  const alt =  data.alt_description.replaceAll(' ', '_')
+
   return { regular, thumb, full, author, userLink, downloadLocation, alt };
 }
 
