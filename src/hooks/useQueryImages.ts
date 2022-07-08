@@ -6,7 +6,9 @@ interface DataImage {
   thumb: string;
   author: string;
   userLink: string
-  download: string
+  downloadLocation: string
+  alt: string
+  
 }
 
 export async function getImages(img: string): Promise<DataImage> {
@@ -16,9 +18,10 @@ export async function getImages(img: string): Promise<DataImage> {
   const full = data.urls.full;
   const author = data.user.name;
   const userLink = data.user.links.html
-  const download = data.links.download_location.split('https://api.unsplash.com/photos/')[1]
+  const downloadLocation = data.links.download_location.split('https://api.unsplash.com/photos/')[1]
+  const alt =  data.alt_description
   console.log("🐬", data)
-  return { regular, thumb, full, author, userLink, download };
+  return { regular, thumb, full, author, userLink, downloadLocation, alt };
 }
 
 export function useQueryImages(img: string) {
