@@ -6,6 +6,7 @@ import { queryClient } from '../services/QueryClient';
 import { ChakraProvider } from '@chakra-ui/react';
 import Layout from '../components/Layout';
 import { theme } from '../styles/theme';
+import '../styles/styles.css'
 
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode;

@@ -34,13 +34,12 @@ Status:
 
 ## :dart: About
 
-This application was developed based on a prototype provided during the Ignite course. The initial proposal was to develop from scratch a Next application using Chakra and Swiper, just delivering the home page, the European continent page, header and the format for 375px screens.
+This project is based on the 100 most visited cities in the world. The six routes compile images and information from the most visited continents and cities, based on research made available in recent years.
 
-However, after making small customizations to the layout, I increased the project including header and footer with navigable menu and pages from all continents, looking for real information to feed all 6 routes, in addition to providing such information through a file that provides all the information for the application.
+The data is compiled and distributed by files to 'simulate' an external call, as the application in its current state supports such a method. In the future, they will be received through their own API.
+Images are received via the Unsplash API, which contains all tracking data (UTM links, download, author, etc...) and flags via the CDN Flag.
 
-The data is provided by files to 'simulate' an external call, as the application in its current state supports such a method. However, to simplify the deployment, it was done in this way. The images are generated through the Unsplash API and the flags through the CDN Flag.
-
-The application has easily reusable components, as most of them have static data dynamically distributed through prop drilling and context.
+The application has easily reusable components, as most of them have data dynamically distributed through contexts and SSR call.
 
 Currently the application has dark mode, and can be accessed without layout breaks by the most used devices on the market.
 
@@ -50,9 +49,11 @@ Preview on [Excursionista 🔗](https://excursionista.vercel.app/)
 
 ## :sparkles: Features
 
-:heavy_check_mark: Unsplash API;
-:heavy_check_mark: Caching with React-Query;
-:heavy_check_mark: Performance optimization with code spliting, lazy loading, cache, etc.
+:heavy_check_mark: Unsplash API
+:heavy_check_mark: Caching with React-Query
+:heavy_check_mark: Performance optimization
+:heavy_check_mark: Mobile friendly
+:heavy_check_mark: Dark mode
 
 ## :rocket: Technologies
 

@@ -11,6 +11,7 @@ import 'swiper/css/effect-flip';
 import 'swiper/css/a11y';
 import 'swiper/css/autoplay';
 
+
 export const Carousel: React.FC = () => {
   const carouselItem = [
     {
