@@ -3,7 +3,7 @@ import { IconContext } from 'react-icons'
 import { AiOutlinePhone } from 'react-icons/ai'
 import { FiMail } from 'react-icons/fi'
 
-export function Contacts() {
+export const Contacts: React.FC = () => {
   return (
     <IconContext.Provider value={{ style: { verticalAlign: 'middle' } }}>
       <VStack

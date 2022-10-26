@@ -1,4 +1,4 @@
-import { api } from '../../../services/api'
+import { api } from '../../../api/api'
 
 export async function getUrlAndDownload(link = '', filename: string, url = '') {
   const callUnsplash = await api.get(`${url}`)

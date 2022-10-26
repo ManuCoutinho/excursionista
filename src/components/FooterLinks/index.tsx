@@ -1,28 +1,18 @@
 import { Heading, List, ListItem, Link as ChakraLink } from '@chakra-ui/react'
 import Link from 'next/link'
-import { idGenerator } from '../../utils/idGenerator'
+import { idGenerator } from 'utils/idGenerator'
+import { FooterLinkProps } from './types'
 
-interface IMenuItem {
-  listItem?: string
-  url: string
-  text?: string
-}
-
-type MenuItemProps = {
-  menuItem: Array<IMenuItem>
-}
-export function MenuList({ menuItem }: MenuItemProps) {
+export const FooterLinks: React.FC<FooterLinkProps> = ({ links, subtitle }) => {
   return (
     <nav>
-      {menuItem.map((item) => (
-        <Heading fontSize='lg' fontWeight='semibold' color='red.600' mb={4} key={idGenerator()}>
-          {item.text}
-        </Heading>
-      ))}
+      <Heading fontSize='lg' fontWeight='semibold' color='red.600' mb={4} key={idGenerator()}>
+        {subtitle}
+      </Heading>
       <List fontSize={['xs', 'sm']} color='gray.600'>
-        {menuItem.map((item) => (
+        {links?.map((item) => (
           <Link href={item.url} key={idGenerator()} passHref>
-            {item.text === 'Redes Sociais' ? (
+            {subtitle === 'Redes Sociais' ? (
               <ListItem
                 aria-label={item.listItem}
                 role='listitem'

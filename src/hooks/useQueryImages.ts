@@ -1,5 +1,5 @@
 import { useQuery } from 'react-query'
-import { api } from '../services/api'
+import { api } from 'api/api'
 interface DataImage {
   regular: string
   full: string
