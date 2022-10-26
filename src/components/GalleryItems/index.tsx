@@ -21,7 +21,7 @@ export const GalleryItems: React.FC<GalleryItemsProps> = ({ image, city, country
   const { isOpen, onOpen, onClose } = useDisclosure()
   const [fileName, setFileName] = useState<string>('')
   const { data, isError, isLoading } = useQueryImages(image)
-  const loadingState = isLoading || isError ? true : false
+  const loadingState = isLoading || isError ? false : false
 
   useMemo(() => {
     if (data && !isError) {

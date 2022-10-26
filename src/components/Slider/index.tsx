@@ -47,9 +47,10 @@ export const Slider: React.FC = () => {
                 bgRepeat='no-repeat'
                 bgSize='cover'
                 justify='center'
+                py={4}
                 alignItems='center'
                 direction='column'
-                color='gray.200'>
+                color='whiteAlpha.900'>
                 <Heading mb={4} fontWeight='semibold' fontSize={['2xl', '4xl', '5xl']}>
                   {item.text}
                 </Heading>
