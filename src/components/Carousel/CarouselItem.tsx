@@ -1,13 +1,13 @@
-import { Flex, Heading, Text, useMediaQuery } from '@chakra-ui/react';
+import { Flex, Heading, Text, useMediaQuery } from '@chakra-ui/react'
 
 interface CarouselItemsProps {
-  text: string;
-  bgImg: string;
-  description: string;
+  text: string
+  bgImg: string
+  description: string
 }
 
 export const CarouselItem = ({ text, bgImg, description }: CarouselItemsProps) => {
-  const [isMobile] = useMediaQuery('(min-width: 425px)');
+  const [isMobile] = useMediaQuery('(min-width: 425px)')
   return (
     <Flex
       w='100%'
@@ -29,5 +29,5 @@ export const CarouselItem = ({ text, bgImg, description }: CarouselItemsProps) =
         </Text>
       )}
     </Flex>
-  );
-};
+  )
+}

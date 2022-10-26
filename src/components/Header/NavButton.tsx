@@ -1,6 +1,6 @@
-import Link from 'next/link';
-import { IconButton, Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/react';
-import { IoMdMenu } from 'react-icons/io';
+import Link from 'next/link'
+import { IconButton, Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/react'
+import { IoMdMenu } from 'react-icons/io'
 
 export const NavButton: React.FC = () => {
   const listItem = [
@@ -10,7 +10,7 @@ export const NavButton: React.FC = () => {
     { listItem: 'Asia', url: '/asia' },
     { listItem: 'Europa', url: '/europe' },
     { listItem: 'Oceânia', url: '/oceania' }
-  ];
+  ]
   return (
     <Menu isLazy aria-haspopup>
       <MenuButton
@@ -37,5 +37,5 @@ export const NavButton: React.FC = () => {
         ))}
       </MenuList>
     </Menu>
-  );
-};
+  )
+}

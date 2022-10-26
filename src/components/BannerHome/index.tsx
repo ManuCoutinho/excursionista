@@ -1,8 +1,8 @@
-import { Box, Flex, Heading, Text, useMediaQuery } from '@chakra-ui/react';
-import Image from 'next/image';
+import { Box, Flex, Heading, Text, useMediaQuery } from '@chakra-ui/react'
+import Image from 'next/image'
 
 export const Banner: React.FC = () => {
-  const [isLargerThan1024] = useMediaQuery('(min-width: 1024px)');
+  const [isLargerThan1024] = useMediaQuery('(min-width: 1024px)')
   return (
     <Flex
       as='section'
@@ -34,5 +34,5 @@ export const Banner: React.FC = () => {
         )}
       </Flex>
     </Flex>
-  );
-};
+  )
+}

@@ -1,10 +1,10 @@
-import { Box, HStack, Text } from '@chakra-ui/react';
-import { ReactNode } from 'react';
+import { Box, HStack, Text } from '@chakra-ui/react'
+import { ReactNode } from 'react'
 
 interface CardInfoProps {
-  number: string;
-  description: string;
-  children?: ReactNode;
+  number: string
+  description: string
+  children?: ReactNode
 }
 
 export const CardInfo = ({ number, description, children }: CardInfoProps) => {
@@ -20,5 +20,5 @@ export const CardInfo = ({ number, description, children }: CardInfoProps) => {
         <span>{children}</span>
       </HStack>
     </Box>
-  );
-};
+  )
+}

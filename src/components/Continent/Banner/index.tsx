@@ -1,13 +1,13 @@
-import { Flex, Heading } from '@chakra-ui/react';
+import { Flex, Heading } from '@chakra-ui/react'
 
 interface ContinentBannerProps {
-  continent: string;
-  image: string;
-  color: string;
+  continent: string
+  image: string
+  color: string
 }
 
 export const BannerContinent = ({ continent, image, color }: ContinentBannerProps) => {
-  const path = `url(/assets/continents/${image}.jpg)`;
+  const path = `url(/assets/continents/${image}.jpg)`
   return (
     <Flex
       w='auto'
@@ -21,5 +21,5 @@ export const BannerContinent = ({ continent, image, color }: ContinentBannerProp
         {continent}
       </Heading>
     </Flex>
-  );
-};
+  )
+}

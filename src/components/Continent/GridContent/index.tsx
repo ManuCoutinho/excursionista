@@ -1,12 +1,12 @@
-import { Grid } from '@chakra-ui/react';
-import { BoxInfo } from '../BoxInfo';
-import { ContinentContent } from './Content';
+import { Grid } from '@chakra-ui/react'
+import { BoxInfo } from '../BoxInfo'
+import { ContinentContent } from './Content'
 
 interface GridContentProps {
-  city: string;
-  country: string;
-  language: string;
-  text: string;
+  city: string
+  country: string
+  language: string
+  text: string
 }
 const GridContent = ({ city, country, language, text }: GridContentProps) => {
   return (
@@ -19,6 +19,6 @@ const GridContent = ({ city, country, language, text }: GridContentProps) => {
       <ContinentContent text={text} />
       <BoxInfo country={country} language={language} city={city} />
     </Grid>
-  );
-};
-export default GridContent;
+  )
+}
+export default GridContent

@@ -1,6 +1,6 @@
-import { Box, IconButton } from '@chakra-ui/react';
-import Link from 'next/link';
-import { IoHomeOutline } from 'react-icons/io5';
+import { Box, IconButton } from '@chakra-ui/react'
+import Link from 'next/link'
+import { IoHomeOutline } from 'react-icons/io5'
 
 export const HomeButton: React.FC = () => {
   return (
@@ -24,5 +24,5 @@ export const HomeButton: React.FC = () => {
         />
       </Link>
     </Box>
-  );
-};
+  )
+}

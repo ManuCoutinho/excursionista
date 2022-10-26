@@ -1,6 +1,6 @@
-import { Box, Text } from '@chakra-ui/react';
+import { Box, Text } from '@chakra-ui/react'
 interface ContentProps {
-  text: string;
+  text: string
 }
 
 export const ContinentContent = ({ text }: ContentProps) => {
@@ -10,5 +10,5 @@ export const ContinentContent = ({ text }: ContentProps) => {
         {text}
       </Text>
     </Box>
-  );
-};
+  )
+}

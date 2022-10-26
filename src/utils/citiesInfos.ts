@@ -844,6 +844,6 @@ const citiesInfo = {
       path: '/new-page'
     }
   ]
-};
+}
 
-export default citiesInfo;
+export default citiesInfo

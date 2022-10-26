@@ -1,11 +1,11 @@
-import { HStack, Tooltip } from '@chakra-ui/react';
-import { HiOutlineInformationCircle } from 'react-icons/hi';
-import { CardInfo } from './CardInfo';
+import { HStack, Tooltip } from '@chakra-ui/react'
+import { HiOutlineInformationCircle } from 'react-icons/hi'
+import { CardInfo } from './CardInfo'
 
 interface BoxInfoProps {
-  country: string;
-  language: string;
-  city: string;
+  country: string
+  language: string
+  city: string
 }
 
 export const BoxInfo = ({ city, country, language }: BoxInfoProps) => {
@@ -28,5 +28,5 @@ export const BoxInfo = ({ city, country, language }: BoxInfoProps) => {
         </Tooltip>
       </CardInfo>
     </HStack>
-  );
-};
+  )
+}

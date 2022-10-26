@@ -1,9 +1,9 @@
-import { NextPage } from 'next';
-import { useRouter } from 'next/router';
-import { Button, Flex, Text } from '@chakra-ui/react';
+import { NextPage } from 'next'
+import { useRouter } from 'next/router'
+import { Button, Flex, Text } from '@chakra-ui/react'
 
 const NewPage: NextPage = () => {
-  const router = useRouter();
+  const router = useRouter()
   return (
     <Flex h='100vh' w='100vw' justify='center' align='center' direction='column'>
       <Text fontSize='4xl' textAlign='center' fontWeight='bold' color='blackAlpha.800'>
@@ -21,7 +21,7 @@ const NewPage: NextPage = () => {
         Voltar
       </Button>
     </Flex>
-  );
-};
+  )
+}
 
-export default NewPage;
+export default NewPage

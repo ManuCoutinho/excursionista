@@ -1,7 +1,7 @@
-import { Button, Heading, Flex, Skeleton, SkeletonCircle, SkeletonText } from '@chakra-ui/react';
+import { Button, Heading, Flex, Skeleton, SkeletonCircle, SkeletonText } from '@chakra-ui/react'
 
 interface ErrorProps {
-  state: boolean;
+  state: boolean
 }
 
 export function Error({ state }: ErrorProps): JSX.Element {
@@ -23,5 +23,5 @@ export function Error({ state }: ErrorProps): JSX.Element {
         Clique aqui para tentar novamente
       </Button>
     </Flex>
-  );
+  )
 }

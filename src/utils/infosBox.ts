@@ -41,5 +41,5 @@ const infosBox = {
     numberLanguage: '150',
     numberTopCity: '8'
   }
-};
-export default infosBox;
+}
+export default infosBox

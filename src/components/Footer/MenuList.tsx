@@ -1,16 +1,16 @@
-import { Heading, List, ListItem, Link as ChakraLink } from '@chakra-ui/react';
-import Link from 'next/link';
-import { idGenerator } from '../../utils/idGenerator';
+import { Heading, List, ListItem, Link as ChakraLink } from '@chakra-ui/react'
+import Link from 'next/link'
+import { idGenerator } from '../../utils/idGenerator'
 
 interface IMenuItem {
-  listItem?: string;
-  url: string;
-  text?: string;
+  listItem?: string
+  url: string
+  text?: string
 }
 
 type MenuItemProps = {
-  menuItem: Array<IMenuItem>;
-};
+  menuItem: Array<IMenuItem>
+}
 export function MenuList({ menuItem }: MenuItemProps) {
   return (
     <nav>
@@ -47,5 +47,5 @@ export function MenuList({ menuItem }: MenuItemProps) {
         ))}
       </List>
     </nav>
-  );
+  )
 }

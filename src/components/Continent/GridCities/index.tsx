@@ -1,8 +1,8 @@
-import { ReactNode } from 'react';
-import { Box } from '@chakra-ui/react';
-import { HeadingComponent } from './Heading';
+import { ReactNode } from 'react'
+import { Box } from '@chakra-ui/react'
+import { HeadingComponent } from './Heading'
 interface GridCitiesProps {
-  children: ReactNode;
+  children: ReactNode
 }
 export const GridCities = ({ children }: GridCitiesProps) => {
   return (
@@ -10,5 +10,5 @@ export const GridCities = ({ children }: GridCitiesProps) => {
       <HeadingComponent />
       {children}
     </Box>
-  );
-};
+  )
+}

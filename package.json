@@ -8,7 +8,17 @@
     "directory": "git",
     "url": "https://github.com/ManuCoutinho/excursionista"
   },
-  "keywords": [],
+  "keywords": [
+    "next.js",
+    "node",
+    "react",
+    "trip",
+    "excursionista",
+    "unsplash",
+    "pictures",
+    "landscapes",
+    "chakra-ui"
+  ],
   "engines": {
     "node": ">=16.15.1",
     "npm": "8.11"
@@ -17,17 +27,17 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint eslint",
-    "lint:fix": "eslint --fix",
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
     "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "test": "jest --watch"
   },
- "lint-staged": {
-    ".{ts,tsx}": [
-      "npm run lint --fix",
-      "npm run test --findRelatedTests --bail"
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint src --fix"
     ],
-    ".{json,md}": [
+    "*.{json,md, yaml, yml}": [
       "prettier --write"
     ]
   },
@@ -51,14 +61,18 @@
     "@types/node": "^18.11.5",
     "@types/react": "^18.0.23",
     "@types/react-icons": "^3.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.41.0",
     "eslint": "^8.26.0",
     "eslint-config-next": "12.1.0",
     "eslint-config-prettier": "^8.4.0",
     "eslint-plugin-prettier": "^4.0.0",
     "husky": "^8.0.1",
     "jest": "^29.2.2",
+    "jest-environment-jsdom": "^29.2.2",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
+    "ts-jest": "^29.0.3",
+    "ts-node": "^10.9.1",
     "typescript": "^4.8.4"
   }
 }

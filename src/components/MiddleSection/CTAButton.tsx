@@ -1,4 +1,4 @@
-import { Box, Text } from '@chakra-ui/react';
+import { Box, Text } from '@chakra-ui/react'
 
 export const CTAButton: React.FC = () => {
   return (
@@ -19,5 +19,5 @@ export const CTAButton: React.FC = () => {
       <Text mt='14'>Vamos nessa?</Text>
       <Text>Então escolha seu continente</Text>
     </Box>
-  );
-};
+  )
+}

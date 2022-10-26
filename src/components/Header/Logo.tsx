@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from 'next/image'
 
 export const Logo = () => {
   return (
@@ -9,5 +9,5 @@ export const Logo = () => {
       width={300}
       role='img'
     />
-  );
-};
+  )
+}

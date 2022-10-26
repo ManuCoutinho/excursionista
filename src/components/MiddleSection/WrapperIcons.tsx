@@ -1,12 +1,12 @@
-import { Box, useMediaQuery, Wrap } from '@chakra-ui/react';
-import { IconContext } from 'react-icons';
-import { BsBuilding, BsBank } from 'react-icons/bs';
-import { FaCocktail, FaUmbrellaBeach, FaGlobeAfrica } from 'react-icons/fa';
-import { TravelTypesIcons } from './TravelTypesIcons';
+import { Box, useMediaQuery, Wrap } from '@chakra-ui/react'
+import { IconContext } from 'react-icons'
+import { BsBuilding, BsBank } from 'react-icons/bs'
+import { FaCocktail, FaUmbrellaBeach, FaGlobeAfrica } from 'react-icons/fa'
+import { TravelTypesIcons } from './TravelTypesIcons'
 
 export const WrapperIcons: React.FC = () => {
-  const [isMobile] = useMediaQuery('(min-width: 800px)');
-  const iconSize = isMobile ? '2.5em' : '1.25em';
+  const [isMobile] = useMediaQuery('(min-width: 800px)')
+  const iconSize = isMobile ? '2.5em' : '1.25em'
 
   return (
     <Box>
@@ -29,5 +29,5 @@ export const WrapperIcons: React.FC = () => {
         </IconContext.Provider>
       </Wrap>
     </Box>
-  );
-};
+  )
+}

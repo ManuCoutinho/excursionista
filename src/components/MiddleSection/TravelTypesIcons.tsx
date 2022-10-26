@@ -1,8 +1,8 @@
-import { Flex, IconButton, Text } from '@chakra-ui/react';
+import { Flex, IconButton, Text } from '@chakra-ui/react'
 interface TravelTypesProps {
-  text: string;
-  ariaLabel: string;
-  iconTravel?: JSX.Element;
+  text: string
+  ariaLabel: string
+  iconTravel?: JSX.Element
 }
 
 export function TravelTypesIcons({ text, ariaLabel, iconTravel }: TravelTypesProps) {
@@ -31,5 +31,5 @@ export function TravelTypesIcons({ text, ariaLabel, iconTravel }: TravelTypesPro
         {text}
       </Text>
     </Flex>
-  );
+  )
 }

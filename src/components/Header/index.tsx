@@ -1,14 +1,14 @@
-import { useRouter } from 'next/router';
-import { Box, Flex, HStack, useColorModeValue } from '@chakra-ui/react';
-import { HomeButton } from './HomeButton';
-import { ToggleColor } from './ToggleColor';
-import { NavButton } from './NavButton';
+import { useRouter } from 'next/router'
+import { Box, Flex, HStack, useColorModeValue } from '@chakra-ui/react'
+import { HomeButton } from './HomeButton'
+import { ToggleColor } from './ToggleColor'
+import { NavButton } from './NavButton'
 
-import { Logo } from './Logo';
+import { Logo } from './Logo'
 
 export const Header: React.FC = () => {
-  const color = useColorModeValue('gray.50', 'gray.800');
-  const { pathname } = useRouter();
+  const color = useColorModeValue('gray.50', 'gray.800')
+  const { pathname } = useRouter()
 
   return (
     <Flex
@@ -29,5 +29,5 @@ export const Header: React.FC = () => {
       </Box>
       <ToggleColor />
     </Flex>
-  );
-};
+  )
+}

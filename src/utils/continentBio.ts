@@ -17,5 +17,5 @@ const bio = {
   southAmerica: {
     bio: 'A cultura sul-americana está presente de diversas maneiras a nível mundial. A cultura indígena de origem pré-colombiana teve forte influência no Peru, Bolívia e algumas regiões da Amazônia. Por causa da ampla mistura étnica na América do Sul, a culinária tem influências africanas, asiáticas e europeias. O estado brasileiro da Bahia é especialmente conhecido pela influência da culinária da África Ocidental.'
   }
-};
-export default bio;
+}
+export default bio

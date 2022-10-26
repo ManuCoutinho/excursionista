@@ -1,16 +1,15 @@
-import Link from 'next/link';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, A11y, Lazy, Autoplay } from 'swiper';
-import { Link as ChakraLink } from '@chakra-ui/react';
-import { CarouselItem } from './CarouselItem';
+import Link from 'next/link'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Navigation, Pagination, A11y, Lazy, Autoplay } from 'swiper'
+import { Link as ChakraLink } from '@chakra-ui/react'
+import { CarouselItem } from './CarouselItem'
 
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/effect-flip';
-import 'swiper/css/a11y';
-import 'swiper/css/autoplay';
-
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
+import 'swiper/css/effect-flip'
+import 'swiper/css/a11y'
+import 'swiper/css/autoplay'
 
 export const Carousel: React.FC = () => {
   const carouselItem = [
@@ -56,7 +55,7 @@ export const Carousel: React.FC = () => {
       img: '/assets/carousel/oceania.jpg',
       route: '/oceania'
     }
-  ];
+  ]
 
   return (
     <Swiper
@@ -87,5 +86,5 @@ export const Carousel: React.FC = () => {
         </SwiperSlide>
       ))}
     </Swiper>
-  );
-};
+  )
+}
