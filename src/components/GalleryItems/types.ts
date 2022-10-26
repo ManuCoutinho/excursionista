@@ -3,5 +3,4 @@ export type GalleryItemsProps = {
   city: string
   country: string
   flag: string
-  path: string
 }
