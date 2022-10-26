@@ -6,5 +6,6 @@ export type FooterLinkProps = {
 export type MenuLink = {
   listItem?: string
   url: string
+  id?: string
   text?: string
 }

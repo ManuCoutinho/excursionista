@@ -1,18 +1,18 @@
 import { Flex, useMediaQuery } from '@chakra-ui/react'
-import { CTAButton } from './CTAButton'
-import { Carousel } from '../Carousel'
-import { WrapperIcons } from './WrapperIcons'
+import { ActionButton } from 'components/ActionButton'
+import { Slider } from 'components/Slider'
+import { TravelIcons } from 'components/TravelIcons'
 
 const MiddleSection: React.FC = () => {
   const [isMobile] = useMediaQuery('(min-width: 375px)')
   return (
     <Flex as='section' justify='center' direction='column' w='100%'>
-      {!!isMobile && <WrapperIcons />}
+      {!!isMobile && <TravelIcons />}
       <Flex justify='center'>
-        <CTAButton />
+        <ActionButton />
       </Flex>
       <Flex>
-        <Carousel />
+        <Slider />
       </Flex>
     </Flex>
   )

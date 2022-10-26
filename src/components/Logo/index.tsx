@@ -7,6 +7,7 @@ export const Logo: React.FC = () => {
       height={50}
       width={300}
       role='img'
+      aria-label='logo'
     />
   )
 }

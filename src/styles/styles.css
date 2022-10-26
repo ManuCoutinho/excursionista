@@ -1,11 +1,10 @@
-.swiper-button-next { 
-  color: #F5A300;
+
+.swiper-pagination-bullet {
+  background:#C53030!important;
+  opacity: 1 !important;
+  padding: 0.5rem;
 }
 
-.swiper-button-prev { 
-  color: #F5A300;
-}
-
-.swiper-pagination {
-  color: #F5A300;
+.swiper-pagination-bullet-active {
+  background:#C53030!important;
 }

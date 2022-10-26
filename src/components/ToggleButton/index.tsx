@@ -2,7 +2,7 @@ import { Box, IconButton, useColorMode } from '@chakra-ui/react'
 import { MdOutlineWbSunny } from 'react-icons/md'
 import { RiMoonClearLine } from 'react-icons/ri'
 
-export function ToggleColor() {
+export const ToggleButton: React.FC = () => {
   const { colorMode, toggleColorMode } = useColorMode()
   return (
     <Box>

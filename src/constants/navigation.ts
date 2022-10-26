@@ -1,10 +1,10 @@
 const menuLinks = [
-  { listItem: 'África', url: '/africa' },
-  { listItem: 'América do Norte', url: '/north-america' },
-  { listItem: 'América do Sul', url: '/south-america' },
-  { listItem: 'Asia', url: '/asia' },
-  { listItem: 'Europa', url: '/europe' },
-  { listItem: 'Oceânia', url: '/oceania' }
+  { listItem: 'África', url: '/africa', id: 'africa' },
+  { listItem: 'América do Norte', url: '/northAmerica', id: 'northAmerica' },
+  { listItem: 'América do Sul', url: '/southAmerica', id: 'southAmerica' },
+  { listItem: 'Asia', url: '/asia', id: 'asia' },
+  { listItem: 'Europa', url: '/europe', id: 'europe' },
+  { listItem: 'Oceânia', url: '/oceania', id: 'oceania' }
 ]
 
 const socialLinks = [

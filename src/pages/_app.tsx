@@ -7,6 +7,7 @@ import { ChakraProvider } from '@chakra-ui/react'
 import Layout from 'components/Layout'
 import { theme } from 'styles/theme'
 import 'styles/styles.css'
+import 'swiper/css/bundle'
 
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode

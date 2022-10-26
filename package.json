@@ -52,7 +52,8 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.3.1",
     "react-query": "^3.39.2",
-    "swiper": "^8.4.4"
+    "swiper": "^8.4.4",
+    "uuidv4": "^6.2.13"
   },
   "devDependencies": {
     "@testing-library/dom": "^8.19.0",
