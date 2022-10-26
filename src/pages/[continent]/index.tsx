@@ -37,8 +37,6 @@ const ContinentPage: NextPage = () => {
     }
   }, [continent])
 
-  console.log('🍉', content)
-
   return (
     <>
       <Head>

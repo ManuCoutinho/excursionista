@@ -1,34 +1,30 @@
 import {
-  Button,
-  Heading,
+  Box,
   Flex,
   Skeleton as ChakraSkeleton,
   SkeletonCircle,
-  SkeletonText
+  SkeletonText,
+  VStack
 } from '@chakra-ui/react'
+import { SkeletonType } from './types'
 
-interface ErrorProps {
-  state: boolean
-}
-
-export function Skeleton({ state }: ErrorProps): JSX.Element {
+export const Skeleton: React.FC<SkeletonType> = () => {
   return (
-    <Flex justifyContent='center' alignItems='center' h='100%' flexDir='column'>
-      <Heading>Infelizmente ocorreu um erro =(</Heading>)
+    <VStack spacing={4}>
       <ChakraSkeleton
-        isLoaded={state}
         bg='blackAlpha.100'
-        fadeDuration={0.8}
-        padding='6'
+        fadeDuration={1.5}
+        p={2}
         boxShadow='lg'
-        h='250px'
-        boxSize={[400, 450, 350]}>
+        rounded='md'
+        boxSize={[300, 350, 280]}
+      />
+      <Flex justifyContent='space-between' w='full' gap={6} py='2'>
+        <Box bg='white' w='full'>
+          <SkeletonText mt='4' noOfLines={2} spacing='4' />
+        </Box>
         <SkeletonCircle size='10' />
-        <SkeletonText mt='4' noOfLines={3} spacing='4' />
-      </ChakraSkeleton>
-      <Button py={6} onClick={() => window.location.reload()} mt={4}>
-        Clique aqui para tentar novamente
-      </Button>
-    </Flex>
+      </Flex>
+    </VStack>
   )
 }
