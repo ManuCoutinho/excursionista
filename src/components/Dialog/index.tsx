@@ -29,7 +29,6 @@ export const Dialog: React.FC<DialogProps> = ({
   imgFull,
   fileName,
   author,
-  downloadUrl,
   backLink
 }) => {
   const color = useColorModeValue('white', 'gray.800')
@@ -106,7 +105,7 @@ export const Dialog: React.FC<DialogProps> = ({
                 colorScheme='orange'
                 variant='ghost'
                 rounded='full'
-                onClick={() => getUrlAndDownload(imgFull, fileName, downloadUrl)}>
+                onClick={() => getUrlAndDownload(imgFull, fileName)}>
                 <BsDownload />
               </IconButton>
             </Tooltip>

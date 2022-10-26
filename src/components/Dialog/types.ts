@@ -6,7 +6,6 @@ export interface DialogProps extends DialogContent {
   imgRegular?: string
   imgFull?: string
   author?: string
-  downloadUrl?: string
   backLink?: string
   fileName: string
 }

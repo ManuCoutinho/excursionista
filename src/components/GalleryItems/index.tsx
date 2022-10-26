@@ -26,9 +26,9 @@ export const GalleryItems: React.FC<GalleryItemsProps> = ({ image, city, country
   useMemo(() => {
     if (data && !isError) {
       const title = data?.alt
-      setFileName(title)
+      title !== null ? setFileName(title) : setFileName(city)
     }
-  }, [data, isError])
+  }, [data, isError, city])
 
   return (
     <Fragment>
@@ -92,7 +92,7 @@ export const GalleryItems: React.FC<GalleryItemsProps> = ({ image, city, country
                     colorScheme='orange'
                     variant='ghost'
                     rounded='full'
-                    onClick={() => getUrlAndDownload(data?.full, fileName, data?.downloadLocation)}>
+                    onClick={() => getUrlAndDownload(data?.full, fileName)}>
                     <BsDownload />
                   </IconButton>
                 </Tooltip>
@@ -134,7 +134,6 @@ export const GalleryItems: React.FC<GalleryItemsProps> = ({ image, city, country
         flag={flag}
         imgRegular={data?.regular}
         imgFull={data?.full}
-        downloadUrl={data?.downloadLocation}
         backLink={data?.userLink}
         author={data?.author}
         fileName={fileName}

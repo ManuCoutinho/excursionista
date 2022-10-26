@@ -1,8 +1,6 @@
 import { api } from 'api/api'
 
-export async function getUrlAndDownload(link = '', filename: string, url = '') {
-  const callUnsplash = await api.get(`${url}`)
-
+export async function getUrlAndDownload(link = '', filename: string) {
   await api
     .get(`${link}`, {
       responseType: 'blob'
