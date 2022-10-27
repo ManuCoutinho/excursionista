@@ -1,9 +1,6 @@
-/** @type {import('jest').Config} */
-
 import nextJest from 'next/jest'
 
 const customJestConfig = {
-  preset: 'ts-jest',
   coverageDirectory: 'coverage',
   collectCoverage: false,
   coverageProvider: 'v8',
@@ -29,12 +26,7 @@ const customJestConfig = {
   //   '\\.(css|less|scss|sass)$': 'identity-obj-proxy'
   // },
   testMatch: ['**/__tests__/**/*.[t]s?(x)', '**/?(*.)+(spec|test|tests).[tj]s?(x)'],
-  testPathIgnorePatterns: [
-    '<rootDir>/node_modules/',
-    '<rootDir>/.next/',
-    '<rootDir>/.out/',
-    '/public/'
-  ],
+  testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/.next/'],
   setupFilesAfterEnv: ['<rootDir>/.jest/jest.setup.ts']
 }
 const createJestConfig = nextJest({

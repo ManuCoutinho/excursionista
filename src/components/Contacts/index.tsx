@@ -17,6 +17,7 @@ export const Contacts: React.FC = () => {
           <IconButton
             colorScheme='purple'
             aria-label='telefone'
+            name='phone'
             icon={<AiOutlinePhone />}
             bgColor='transparent'
             color='red.600'
@@ -34,7 +35,8 @@ export const Contacts: React.FC = () => {
             alignItems='center'>
             <IconButton
               colorScheme='purple'
-              aria-label='telefone'
+              name='email'
+              aria-label='email'
               icon={<FiMail />}
               bgColor='transparent'
               color='red.600'

@@ -1,12 +1,7 @@
 import { Flex, Heading } from '@chakra-ui/react'
+import { ContinentBannerProps } from './types'
 
-interface ContinentBannerProps {
-  continent?: string
-  image?: string
-  color: string
-}
-
-export const BannerContinent = ({ continent, image, color }: ContinentBannerProps) => {
+export const BannerContinent: React.FC<ContinentBannerProps> = ({ continent, image, color }) => {
   const path = `url(/assets/continents/${image}.jpg)`
   return (
     <Flex

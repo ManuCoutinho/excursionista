@@ -2,15 +2,10 @@
 
 <p align="center">
   <img alt="Github top language" src="https://img.shields.io/github/languages/top/ManuCoutinho/123traveling?color=FE4A49&style=for-the-badge" style='margin-right:16px'>
- <img src='https://img.shields.io/github/workflow/status/ManuCoutinho/my-portfolio/GitHub%20Actions%20Vercel%20Production%20Deployment?logo=Vercel&style=for-the-badge' alt='vercel status' style='margin-right:16px'/>
+ <img src='https://img.shields.io/github/workflow/status/ManuCoutinho/excursionista/GitHub%20Actions%20Vercel%20Production%20Deployment?logo=Vercel&style=for-the-badge' alt='vercel status' style='margin-right:16px'/>
   <img alt="Vercel" src="https://img.shields.io/badge/Next.js-fff?style=for-the-badge&logo=vercel&logoColor=black"  style='margin-right:16px'>
   <img alt="chakra-ui" src="https://img.shields.io/badge/Chakra--UI-319795?style=for-the-badge&logo=chakra-ui&logoColor=white"  style='margin-right:16px'>
 </p>
-
-<h4 align="center"> 
-Status:
-	🚧  Excursionista 🚀 Under construction...  🚧
-</h4>
 
 <hr>
 

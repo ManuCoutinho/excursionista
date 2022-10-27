@@ -1,6 +1,6 @@
 import { HStack, Tooltip } from '@chakra-ui/react'
 import { HiOutlineInformationCircle } from 'react-icons/hi'
-import { CardInfo } from '../CardInfo/CardInfo'
+import { CardInfo } from 'components/CardInfo'
 import { BoxInfoProps } from './types'
 
 export const BoxInfo: React.FC<BoxInfoProps> = ({ city, country, language }) => {
