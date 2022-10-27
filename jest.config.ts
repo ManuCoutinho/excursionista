@@ -20,13 +20,11 @@ const customJestConfig = {
   ],
   testEnvironment: 'jest-environment-jsdom',
   moduleDirectories: ['node_modules', 'src/'],
-  // moduleNameMapper: {
-  //   '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
-  //     '<rootDir>/__mocks__/fileMock.js',
-  //   '\\.(css|less|scss|sass)$': 'identity-obj-proxy'
-  // },
+  moduleNameMapper: {
+    uuid: require.resolve('uuid')
+  },
   testMatch: ['**/__tests__/**/*.[t]s?(x)', '**/?(*.)+(spec|test|tests).[tj]s?(x)'],
-  testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/.next/'],
+  testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/.next'],
   setupFilesAfterEnv: ['<rootDir>/.jest/jest.setup.ts']
 }
 const createJestConfig = nextJest({

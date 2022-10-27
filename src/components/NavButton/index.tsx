@@ -8,7 +8,6 @@ export const NavButton: React.FC = () => {
       <Link href='/' passHref>
         <IconButton
           aria-label='navigation-home'
-          role='navigation'
           icon={<IoHomeOutline size={25} />}
           bgColor='transparent'
           color='purple.300'

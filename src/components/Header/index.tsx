@@ -7,7 +7,7 @@ import { Logo } from 'components/Logo'
 
 export const Header: React.FC = () => {
   const color = useColorModeValue('white', 'gray.800')
-  const { pathname } = useRouter()
+  const router = useRouter()
 
   return (
     <Flex
@@ -21,7 +21,7 @@ export const Header: React.FC = () => {
       boxShadow='lg'>
       <HStack align='center' spacing={[2, 4, 8]}>
         <Menu />
-        {pathname !== '/' && <NavButton />}
+        {router.pathname !== '/' && <NavButton />}
       </HStack>
       <Box>
         <Logo />

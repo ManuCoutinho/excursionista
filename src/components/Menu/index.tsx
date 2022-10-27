@@ -31,8 +31,7 @@ export const Menu: React.FC = () => {
             }}
             key={item.listItem}
             passHref
-            legacyBehavior
-            prefetch>
+            legacyBehavior>
             <MenuItem role='menuitem'>{item.listItem}</MenuItem>
           </Link>
         ))}

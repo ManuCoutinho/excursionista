@@ -1,18 +1,25 @@
-import { screen } from '@testing-library/react'
+import { screen, fireEvent } from '@testing-library/react'
 import { render } from '__mocks__/customRender'
 import { ToggleButton } from '.'
-import { setMedia } from 'mock-match-media'
+
 describe('<ToggleButton />', () => {
   it('should render the component correctly ', () => {
     render(<ToggleButton />)
-    expect(screen.getByRole('button')).toBeInTheDocument()
+    expect(
+      screen.getByRole('button', {
+        name: /change color/i
+      })
+    ).toBeInTheDocument()
   })
-  it('should render the current color mode ', () => {
-    setMedia({
-      'prefers-color-scheme': 'dark'
-    })
+  it('should render the change color mode ', () => {
     render(<ToggleButton />)
-    expect(screen.getByRole('button')).toBeInTheDocument()
-    screen.debug()
+    const button = screen.getByRole('button')
+    expect(document.body).toHaveClass('chakra-ui-light')
+    fireEvent.click(button)
+    expect(document.body).toHaveClass('chakra-ui-dark')
+  })
+  it('should match to snapshot', () => {
+    const { container } = render(<ToggleButton />)
+    expect(container.firstChild).toMatchSnapshot()
   })
 })
