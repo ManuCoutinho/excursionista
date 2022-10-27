@@ -1,29 +1,55 @@
-import { NextPage } from 'next';
-import type { AppProps } from 'next/app';
-import { QueryClientProvider } from 'react-query';
-import { ReactElement, ReactNode } from 'react';
-import { queryClient } from '../services/QueryClient';
-import { ChakraProvider } from '@chakra-ui/react';
-import Layout from '../components/Layout';
-import { theme } from '../styles/theme';
+import { ReactElement, ReactNode, useEffect } from 'react'
+import { NextPage } from 'next'
+import { useRouter } from 'next/router'
+import type { AppProps } from 'next/app'
+import { QueryClientProvider } from 'react-query'
+import { ReactQueryDevtools } from 'react-query/devtools'
+import { queryClient } from 'api/QueryClient'
+import { ChakraProvider } from '@chakra-ui/react'
+import NProgress from 'nprogress'
+import Layout from 'components/Layout'
+import { theme } from 'styles/theme'
+import 'styles/styles.css'
+import 'swiper/css/bundle'
 
 type NextPageWithLayout = NextPage & {
-  getLayout?: (page: ReactElement) => ReactNode;
-};
+  getLayout?: (page: ReactElement) => ReactNode
+}
 
 type AppPropsWithLayout = AppProps & {
-  Component: NextPageWithLayout;
-};
+  Component: NextPageWithLayout
+}
 
 export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
-  const getLayout = Component.getLayout ?? ((page) => page);
+  const { events } = useRouter()
+  const getLayout = Component.getLayout ?? ((page) => page)
+  useEffect(() => {
+    const handleStart = () => {
+      NProgress.start()
+    }
+
+    const handleStop = () => {
+      NProgress.done()
+    }
+
+    events.on('routeChangeStart', handleStart)
+    events.on('routeChangeComplete', handleStop)
+    events.on('routeChangeError', handleStop)
+
+    return () => {
+      events.off('routeChangeStart', handleStart)
+      events.off('routeChangeComplete', handleStop)
+      events.off('routeChangeError', handleStop)
+    }
+  }, [events])
   return getLayout(
     <QueryClientProvider client={queryClient}>
       <ChakraProvider theme={theme} resetCSS>
         <Layout>
           <Component {...pageProps} />
         </Layout>
+        <ReactQueryDevtools />
       </ChakraProvider>
     </QueryClientProvider>
-  );
+  )
 }

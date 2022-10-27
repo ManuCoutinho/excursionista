@@ -1,18 +1,19 @@
-import dynamic from 'next/dynamic';
-import { ReactElement } from 'react';
-import { Header } from '../Header';
+import dynamic from 'next/dynamic'
+import { Fragment, ReactNode, FC } from 'react'
+import { Header } from 'components/Header'
 
 interface LayoutProps {
-  children: ReactElement;
+  children: ReactNode
 }
 
-export default function Layout({ children }: LayoutProps) {
-  const FooterComponent = dynamic(() => import('../Footer'));
+const Layout: FC<LayoutProps> = ({ children }) => {
+  const Footer = dynamic(() => import('components/Footer'))
   return (
-    <>
+    <Fragment>
       <Header />
       <main>{children}</main>
-      <FooterComponent />
-    </>
-  );
+      <Footer />
+    </Fragment>
+  )
 }
+export default Layout
