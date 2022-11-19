@@ -1,13 +1,16 @@
-import { ReactElement, ReactNode, useEffect } from 'react'
+import { Fragment, ReactElement, ReactNode, useEffect } from 'react'
 import { NextPage } from 'next'
+import Head from 'next/head'
 import { useRouter } from 'next/router'
 import type { AppProps } from 'next/app'
 import { QueryClientProvider } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
 import { queryClient } from 'api/QueryClient'
+import { DefaultSeo } from 'next-seo'
 import { ChakraProvider } from '@chakra-ui/react'
 import NProgress from 'nprogress'
 import Layout from 'components/Layout'
+import SEO from '../../next-seo.config'
 import { theme } from 'styles/theme'
 import 'styles/styles.css'
 import 'swiper/css/bundle'
@@ -43,13 +46,18 @@ export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
     }
   }, [events])
   return getLayout(
-    <QueryClientProvider client={queryClient}>
-      <ChakraProvider theme={theme} resetCSS>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-        <ReactQueryDevtools />
-      </ChakraProvider>
-    </QueryClientProvider>
+    <Fragment>
+      <Head>
+        <DefaultSeo {...SEO} />
+      </Head>
+      <QueryClientProvider client={queryClient}>
+        <ChakraProvider theme={theme} resetCSS>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+          <ReactQueryDevtools />
+        </ChakraProvider>
+      </QueryClientProvider>
+    </Fragment>
   )
 }

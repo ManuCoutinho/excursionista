@@ -11,7 +11,7 @@ interface DataImage {
 }
 
 export async function getImages(img: string): Promise<DataImage> {
-  const request = await api.get(`${img}`)
+  const request = await api.get(`photos/${img}`)
   const regular = request.data.urls.regular
   const thumb = request.data.urls.thumb
   const full = request.data.urls.full

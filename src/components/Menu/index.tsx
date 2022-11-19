@@ -23,16 +23,16 @@ export const Menu: React.FC = () => {
         }}
       />
       <MenuList role='menu' aria-orientation='vertical' mx='auto' mb='10px'>
-        {menuLinks?.map((item) => (
+        {menuLinks?.map(({ url, id, listItem }) => (
           <Link
             href={{
-              pathname: item.url,
-              query: { continent: item.id }
+              pathname: url,
+              query: { continent: id }
             }}
-            key={item.listItem}
+            key={listItem}
             passHref
             legacyBehavior>
-            <MenuItem role='menuitem'>{item.listItem}</MenuItem>
+            <MenuItem role='menuitem'>{listItem}</MenuItem>
           </Link>
         ))}
       </MenuList>
