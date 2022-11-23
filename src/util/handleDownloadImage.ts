@@ -1,4 +1,4 @@
-import { api } from 'api/api'
+import { api } from 'services/api'
 
 export async function getUrlAndDownload(link = '', filename: string) {
   await api

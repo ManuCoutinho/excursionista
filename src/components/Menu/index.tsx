@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { IconButton, Menu as ChakraMenu, MenuButton, MenuItem, MenuList } from '@chakra-ui/react'
 import { IoMdMenu } from 'react-icons/io'
 import { menuLinks } from 'constants/navigation'
-
+//todo: criar context para partilhar slug
 export const Menu: React.FC = () => {
   return (
     <ChakraMenu isLazy aria-haspopup>
