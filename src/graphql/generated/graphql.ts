@@ -1243,7 +1243,7 @@ export type Page = Node & {
   __typename?: 'Page';
   bio: Scalars['String'];
   cities: Array<Scalars['Json']>;
-  cover: Asset;
+  cover: Array<Asset>;
   /** The time the document was created */
   createdAt: Scalars['DateTime'];
   /** User that created this document */
@@ -1274,7 +1274,14 @@ export type Page = Node & {
 
 
 export type PageCoverArgs = {
+  after?: InputMaybe<Scalars['String']>;
+  before?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  last?: InputMaybe<Scalars['Int']>;
   locales?: InputMaybe<Array<Locale>>;
+  orderBy?: InputMaybe<AssetOrderByInput>;
+  skip?: InputMaybe<Scalars['Int']>;
+  where?: InputMaybe<AssetWhereInput>;
 };
 
 
@@ -1337,7 +1344,7 @@ export type PageConnection = {
 export type PageCreateInput = {
   bio: Scalars['String'];
   cities: Array<Scalars['Json']>;
-  cover: AssetCreateOneInlineInput;
+  cover: AssetCreateManyInlineInput;
   createdAt?: InputMaybe<Scalars['DateTime']>;
   name: Scalars['String'];
   numberCountry: Scalars['String'];
@@ -1414,7 +1421,9 @@ export type PageManyWhereInput = {
   bio_not_starts_with?: InputMaybe<Scalars['String']>;
   /** All values starting with the given string. */
   bio_starts_with?: InputMaybe<Scalars['String']>;
-  cover?: InputMaybe<AssetWhereInput>;
+  cover_every?: InputMaybe<AssetWhereInput>;
+  cover_none?: InputMaybe<AssetWhereInput>;
+  cover_some?: InputMaybe<AssetWhereInput>;
   createdAt?: InputMaybe<Scalars['DateTime']>;
   /** All values greater than the given value. */
   createdAt_gt?: InputMaybe<Scalars['DateTime']>;
@@ -1611,7 +1620,7 @@ export enum PageOrderByInput {
 export type PageUpdateInput = {
   bio?: InputMaybe<Scalars['String']>;
   cities?: InputMaybe<Array<Scalars['Json']>>;
-  cover?: InputMaybe<AssetUpdateOneInlineInput>;
+  cover?: InputMaybe<AssetUpdateManyInlineInput>;
   name?: InputMaybe<Scalars['String']>;
   numberCountry?: InputMaybe<Scalars['String']>;
   numberLanguage?: InputMaybe<Scalars['String']>;
@@ -1722,7 +1731,9 @@ export type PageWhereInput = {
   bio_not_starts_with?: InputMaybe<Scalars['String']>;
   /** All values starting with the given string. */
   bio_starts_with?: InputMaybe<Scalars['String']>;
-  cover?: InputMaybe<AssetWhereInput>;
+  cover_every?: InputMaybe<AssetWhereInput>;
+  cover_none?: InputMaybe<AssetWhereInput>;
+  cover_some?: InputMaybe<AssetWhereInput>;
   createdAt?: InputMaybe<Scalars['DateTime']>;
   /** All values greater than the given value. */
   createdAt_gt?: InputMaybe<Scalars['DateTime']>;
@@ -3669,14 +3680,14 @@ export enum _SystemDateTimeFieldVariation {
 export type GetPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetPageQuery = { __typename?: 'Query', pages: Array<{ __typename?: 'Page', id: string, slug: string, bio: string, name: string, numberCountry: string, numberTopCity: string, numberLanguage: string, cities: Array<any>, cover: { __typename?: 'Asset', width?: number | null, height?: number | null, fileName: string, mimeType?: string | null } }> };
+export type GetPageQuery = { __typename?: 'Query', pages: Array<{ __typename?: 'Page', id: string, slug: string, bio: string, name: string, numberCountry: string, numberTopCity: string, numberLanguage: string, cities: Array<any>, cover: Array<{ __typename?: 'Asset', url: string }> }> };
 
 export type GetPageBySlugQueryVariables = Exact<{
   slug: Scalars['String'];
 }>;
 
 
-export type GetPageBySlugQuery = { __typename?: 'Query', page?: { __typename?: 'Page', id: string, slug: string, bio: string, name: string, numberCountry: string, numberTopCity: string, numberLanguage: string, cities: Array<any>, cover: { __typename?: 'Asset', width?: number | null, height?: number | null, fileName: string, mimeType?: string | null } } | null };
+export type GetPageBySlugQuery = { __typename?: 'Query', page?: { __typename?: 'Page', id: string, slug: string, bio: string, name: string, numberCountry: string, numberTopCity: string, numberLanguage: string, cities: Array<any>, cover: Array<{ __typename?: 'Asset', url: string }> } | null };
 
 
 
@@ -4173,7 +4184,7 @@ export type NodeResolvers<ContextType = any, ParentType extends ResolversParentT
 export type PageResolvers<ContextType = any, ParentType extends ResolversParentTypes['Page'] = ResolversParentTypes['Page']> = {
   bio?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   cities?: Resolver<Array<ResolversTypes['Json']>, ParentType, ContextType>;
-  cover?: Resolver<ResolversTypes['Asset'], ParentType, ContextType, Partial<PageCoverArgs>>;
+  cover?: Resolver<Array<ResolversTypes['Asset']>, ParentType, ContextType, Partial<PageCoverArgs>>;
   createdAt?: Resolver<ResolversTypes['DateTime'], ParentType, ContextType>;
   createdBy?: Resolver<Maybe<ResolversTypes['User']>, ParentType, ContextType, Partial<PageCreatedByArgs>>;
   documentInStages?: Resolver<Array<ResolversTypes['Page']>, ParentType, ContextType, RequireFields<PageDocumentInStagesArgs, 'includeCurrent' | 'inheritLocale' | 'stages'>>;

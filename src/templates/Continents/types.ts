@@ -7,12 +7,7 @@ export type ContinentPageProps = {
     numberCountry: string
     numberTopCity: string
     numberLanguage: string
-    cover: {
-      width: number
-      height: number
-      fileName: string
-      mimeType: string
-    }
+    cover: Array<CoverType>
     cities: Array<CitiesGallery>
   }
 }
@@ -22,4 +17,8 @@ export type CitiesGallery = {
   flag: string
   image: string
   country: string
+}
+
+export type CoverType = {
+  url: string
 }

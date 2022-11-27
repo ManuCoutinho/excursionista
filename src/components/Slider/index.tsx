@@ -28,13 +28,7 @@ export const Slider: React.FC = () => {
       }}>
       {carouselItems?.map((item) => (
         <SwiperSlide key={item.id} className='swiper-slide'>
-          <Link
-            passHref
-            legacyBehavior
-            href={{
-              pathname: item.route,
-              query: { continent: item.route }
-            }}>
+          <Link passHref legacyBehavior href={`/continent/${item.route}`}>
             <ChakraLink
               _hover={{
                 textDecoration: 'none'

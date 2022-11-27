@@ -2,12 +2,13 @@ import { Flex, Heading } from '@chakra-ui/react'
 import { ContinentBannerProps } from './types'
 
 export const BannerContinent: React.FC<ContinentBannerProps> = ({ continent, image, color }) => {
-  const path = `url(/assets/continents/${image}.jpg)`
+  const bgImage = `url(${image})`
+
   return (
     <Flex
       w='auto'
       h='600px'
-      bgImage={path}
+      bgImage={bgImage}
       bgPosition='center'
       bgRepeat='no-repeat'
       bgSize='cover'

@@ -14,6 +14,7 @@ import SEO from '../../next-seo.config'
 import { theme } from 'styles/theme'
 import 'styles/styles.css'
 import 'swiper/css/bundle'
+import { NavigationProvider } from 'contexts/navigation'
 
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode
@@ -52,9 +53,11 @@ export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
       </Head>
       <QueryClientProvider client={queryClient}>
         <ChakraProvider theme={theme} resetCSS>
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
+          <NavigationProvider>
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
+          </NavigationProvider>
           <ReactQueryDevtools />
         </ChakraProvider>
       </QueryClientProvider>

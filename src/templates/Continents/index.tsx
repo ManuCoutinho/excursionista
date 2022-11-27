@@ -36,7 +36,7 @@ const ContinentsTemplate: FC<ContinentPageProps> = ({ page }) => {
           }}
         />
       </Head>
-      <BannerContinent continent={page?.name} image={page?.cover.fileName} color='yellow.500' />
+      <BannerContinent continent={page?.name} image={page?.cover[0].url} color='yellow.500' />
       <Box as='section' w={['300', '700', '1024']} p={[4, 6, 12, 16]} mx='auto'>
         <Content
           text={page?.bio}

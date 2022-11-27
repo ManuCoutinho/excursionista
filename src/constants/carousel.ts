@@ -39,6 +39,6 @@ export const carouselItems = [
     text: 'Oceânia',
     description: 'Desbrave o Outback',
     img: '/assets/carousel/oceania.jpg',
-    route: '/oceania'
+    route: 'oceania'
   }
 ]

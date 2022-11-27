@@ -2,13 +2,13 @@ export default {
   openGraph: {
     type: 'website',
     locale: 'pt_BR',
-    url: process.env.NEXT_PUBLIC_CANONICAL,
+    url: process.env.NEXT_PUBLIC_CANONICAL || '',
     images: [
       {
-        url: process.env.NEXT_PUBLIC_PREVIEW,
+        url: process.env.NEXT_PUBLIC_PREVIEW || '',
         width: 1200,
         height: 800,
-        alt: process.env.NEXT_PUBLIC_ALT,
+        alt: process.env.NEXT_PUBLIC_ALT || '',
         type: 'image/png'
       }
     ],

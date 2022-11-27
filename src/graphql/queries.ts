@@ -11,10 +11,7 @@ export const GET_PAGE = gql`
       numberTopCity
       numberLanguage
       cover {
-        width
-        height
-        fileName
-        mimeType
+        url
       }
       cities
     }
@@ -32,10 +29,7 @@ export const GET_PAGE_BY_SLUG = gql`
       numberTopCity
       numberLanguage
       cover {
-        width
-        height
-        fileName
-        mimeType
+        url
       }
       cities
     }

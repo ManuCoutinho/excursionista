@@ -1,9 +1,10 @@
 import Link from 'next/link'
 import { IconButton, Menu as ChakraMenu, MenuButton, MenuItem, MenuList } from '@chakra-ui/react'
 import { IoMdMenu } from 'react-icons/io'
-import { menuLinks } from 'constants/navigation'
-//todo: criar context para partilhar slug
+import { useMenu } from 'hooks/useMenu'
+
 export const Menu: React.FC = () => {
+  const { data } = useMenu()
   return (
     <ChakraMenu isLazy aria-haspopup>
       <MenuButton
@@ -23,16 +24,16 @@ export const Menu: React.FC = () => {
         }}
       />
       <MenuList role='menu' aria-orientation='vertical' mx='auto' mb='10px'>
-        {menuLinks?.map(({ url, id, listItem }) => (
+        {data?.map(({ id, name, slug }) => (
           <Link
             href={{
-              pathname: url,
+              pathname: `/continent/${slug}`,
               query: { continent: id }
             }}
-            key={listItem}
+            key={`menu-:${id}:`}
             passHref
             legacyBehavior>
-            <MenuItem role='menuitem'>{listItem}</MenuItem>
+            <MenuItem role='menuitem'>{name}</MenuItem>
           </Link>
         ))}
       </MenuList>

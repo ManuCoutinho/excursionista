@@ -2,9 +2,11 @@ import { Box, Divider, Flex, useBreakpointValue, useMediaQuery } from '@chakra-u
 import { Logo } from 'components/Logo'
 import { Contacts } from 'components/Contacts'
 import { FooterLinks } from 'components/FooterLinks'
-import { menuLinks, socialLinks } from 'constants/navigation'
+import { socialLinks } from 'constants/socialLinks'
+import { useMenu } from 'hooks/useMenu'
 
 const Footer: React.FC = () => {
+  const { data } = useMenu()
   const [isLargerThan1024] = useMediaQuery('(min-width: 1024px)')
   const showContacts = useBreakpointValue({
     base: false,
@@ -17,7 +19,7 @@ const Footer: React.FC = () => {
   }
   const menuItems = {
     subtitle: 'Menu',
-    links: menuLinks
+    links: data
   }
   return (
     <Flex as='footer' justify='center' w='100%' py={[6, 8, 12, 16]} color='gray.900'>
