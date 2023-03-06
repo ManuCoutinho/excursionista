@@ -64,7 +64,7 @@
     "@types/nprogress": "^0.2.0",
     "@types/react": "^18.0.23",
     "@types/react-icons": "^3.0.0",
-    "@typescript-eslint/eslint-plugin": "^5.41.0",
+    "@typescript-eslint/eslint-plugin": "^5.54.1",
     "eslint": "^8.26.0",
     "eslint-config-next": "12.1.0",
     "eslint-config-prettier": "^8.4.0",
