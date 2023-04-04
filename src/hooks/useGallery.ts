@@ -1,44 +1,96 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable react-hooks/exhaustive-deps */
-import { api } from 'services/api'
-import { useEffect, useState } from 'react'
-import { DataImages } from 'templates/Gallery/types'
+import { useEffect, useReducer } from 'react'
+import { useRouter } from 'next/router'
+import { useQuery } from 'react-query'
+import { getGalleryImages } from 'functions/getGalleryImages'
+import {
+	ActionCreateSearchTerm,
+	ActionCreateTitle,
+	ActionDecrement,
+	ActionImages,
+	ActionIncrement,
+	GalleryActions,
+	GalleryReducer,
+	GalleryStateReducer
+} from 'models/gallery'
 
-export const useGallery = () => {
-  const [data, setData] = useState<DataImages>()
-  const [title, setTitle] = useState('')
-  const [page, setPage] = useState(1)
-  let isLoading = false
+const initialState = {
+	page: 0,
+	title: '',
+	images: undefined,
+	searchTerm: ''
+} as GalleryStateReducer
 
-  async function getImages(param: string, page: number) {
-    try {
-      isLoading = true
-      const { data, status } = await api.get(
-        `search/photos?page=${page}&query=${param}&order_by=relevant&orientation=landscape`
-      )
-      if (data !== undefined && status === 200) {
-        setData(data)
-        isLoading = false
-      }
-      return data
-    } catch (err) {
-      console.error('Oops deu ruim!', err)
-      isLoading = true
-    }
-  }
-  useEffect(() => {
-    const query = window.location.search
-    const urlParams = new URLSearchParams(query)
-    const param = urlParams.get('query')
-    setTitle(param || '')
-    const term = param?.split(' ') || ''
+function reducer(
+	state: GalleryStateReducer,
+	action:
+		| ActionCreateSearchTerm
+		| ActionCreateTitle
+		| ActionIncrement
+		| ActionDecrement
+		| ActionImages
+): GalleryStateReducer {
+	const decrementedState = state.page - 1
+	const incrementedState = state.page + 1
+	switch (action.type) {
+		case GalleryActions.INCREMENT_PAGE:
+			return {
+				...state,
+				page: incrementedState
+			}
+		case GalleryActions.DECREMENT_PAGE:
+			return {
+				...state,
+				page: decrementedState
+			}
+		case GalleryActions.CREATE_SEARCH_TERM:
+			return {
+				...state,
+				title: action.payload
+			}
+		case GalleryActions.CREATE_TITLE:
+			return {
+				...state,
+				searchTerm: action.payload
+			}
+		case GalleryActions.SAVE_IMAGES:
+			return {
+				...state,
+				images: action.payload
+			}
+		default:
+			throw Error('Unknown action.')
+	}
+}
 
-    getImages(term[0].toLocaleLowerCase(), page)
-  }, [page])
+export function useGallery(): GalleryReducer {
+	const [state, dispatch] = useReducer(reducer, initialState)
+	const { query } = useRouter()
+	const queryImages = useQuery(
+		['gallery-img', state.page],
+		() =>
+			getGalleryImages(state.page, state.searchTerm.toLocaleLowerCase()),
+		{
+			keepPreviousData: true,
+			onSuccess: (data) =>
+				dispatch({ type: GalleryActions.SAVE_IMAGES, payload: data }),
+			onError: (error) => console.error(error), //todo: show toast,
+			onSettled: () => console.log('local storage on') //todo: save localStorage
+		}
+	)
 
-  //ver page atual =1 e increment
-  //salvar no state ou localStorage
-  //criar callback
-  //react query
-  return { data, isLoading, title }
+	useEffect(() => {
+		const param = query.query
+		if (param != undefined) {
+			dispatch({
+				type: GalleryActions.CREATE_SEARCH_TERM,
+				payload: param.toString()
+			})
+			dispatch({
+				type: GalleryActions.CREATE_TITLE,
+				payload: param.toString()
+			})
+		}
+	}, [query])
+
+	return { state, dispatch, isLoading: queryImages.isLoading }
 }

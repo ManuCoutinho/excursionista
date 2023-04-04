@@ -12,7 +12,7 @@ exports[`<Header /> should match to snapshot  1`] = `
       aria-expanded="false"
       aria-haspopup="menu"
       aria-label="Options"
-      class="chakra-button chakra-menu__menu-button css-1tsvg04"
+      class="chakra-button chakra-menu__menu-button css-1dnkga9"
       id="menu-button-:r9:"
       role="button"
       type="button"
@@ -39,7 +39,7 @@ exports[`<Header /> should match to snapshot  1`] = `
     >
       <div
         aria-orientation="vertical"
-        class="chakra-menu__menu-list css-skya7f"
+        class="chakra-menu__menu-list css-im7blu"
         id="menu-list-:r9:"
         role="menu"
         style="transform-origin: var(--popper-transform-origin); opacity: 0; visibility: hidden; transform: scale(0.8) translateZ(0);"
@@ -54,7 +54,7 @@ exports[`<Header /> should match to snapshot  1`] = `
       >
         <button
           aria-label="navigation-home"
-          class="chakra-button css-l6mko7"
+          class="chakra-button css-1iyulru"
           type="button"
         >
           <svg
@@ -109,7 +109,7 @@ exports[`<Header /> should match to snapshot  1`] = `
   >
     <button
       aria-label="change color"
-      class="chakra-button css-96jb5o"
+      class="chakra-button css-18nm5yk"
       type="button"
     >
       <svg

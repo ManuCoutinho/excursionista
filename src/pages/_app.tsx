@@ -17,50 +17,62 @@ import 'swiper/css/bundle'
 import { NavigationProvider } from 'contexts/navigation'
 
 type NextPageWithLayout = NextPage & {
-  getLayout?: (page: ReactElement) => ReactNode
+	getLayout?: (page: ReactElement) => ReactNode
 }
 
 type AppPropsWithLayout = AppProps & {
-  Component: NextPageWithLayout
+	Component: NextPageWithLayout
 }
 
-export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
-  const { events } = useRouter()
-  const getLayout = Component.getLayout ?? ((page) => page)
-  useEffect(() => {
-    const handleStart = () => {
-      NProgress.start()
-    }
+export default function MyApp({
+	Component,
+	pageProps
+}: AppPropsWithLayout) {
+	const { events } = useRouter()
+	const getLayout = Component.getLayout ?? ((page) => page)
+	useEffect(() => {
+		const handleStart = () => {
+			NProgress.start()
+		}
 
-    const handleStop = () => {
-      NProgress.done()
-    }
+		const handleStop = () => {
+			NProgress.done()
+		}
 
-    events.on('routeChangeStart', handleStart)
-    events.on('routeChangeComplete', handleStop)
-    events.on('routeChangeError', handleStop)
+		events.on('routeChangeStart', handleStart)
+		events.on('routeChangeComplete', handleStop)
+		events.on('routeChangeError', handleStop)
 
-    return () => {
-      events.off('routeChangeStart', handleStart)
-      events.off('routeChangeComplete', handleStop)
-      events.off('routeChangeError', handleStop)
-    }
-  }, [events])
-  return getLayout(
-    <Fragment>
-      <Head>
-        <DefaultSeo {...SEO} />
-      </Head>
-      <QueryClientProvider client={queryClient}>
-        <ChakraProvider theme={theme} resetCSS>
-          <NavigationProvider>
-            <Layout>
-              <Component {...pageProps} />
-            </Layout>
-          </NavigationProvider>
-          <ReactQueryDevtools />
-        </ChakraProvider>
-      </QueryClientProvider>
-    </Fragment>
-  )
+		return () => {
+			events.off('routeChangeStart', handleStart)
+			events.off('routeChangeComplete', handleStop)
+			events.off('routeChangeError', handleStop)
+		}
+	}, [events])
+	return getLayout(
+		<Fragment>
+			<Head>
+				{/* <!-- Google tag (gtag.js) -->
+          <script async src="https://www.googletagmanager.com/gtag/js?id=G-H6BP4RCMPS"></script>
+          <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-H6BP4RCMPS');
+          </script> */}
+				<DefaultSeo {...SEO} />
+			</Head>
+			<QueryClientProvider client={queryClient}>
+				<ChakraProvider theme={theme} resetCSS>
+					<NavigationProvider>
+						<Layout>
+							<Component {...pageProps} />
+						</Layout>
+					</NavigationProvider>
+					<ReactQueryDevtools />
+				</ChakraProvider>
+			</QueryClientProvider>
+		</Fragment>
+	)
 }
