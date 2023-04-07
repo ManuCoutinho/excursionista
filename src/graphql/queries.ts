@@ -1,37 +1,37 @@
 import { gql } from 'graphql-request'
 
 export const GET_PAGE = gql`
-  query getPage {
-    pages {
-      id
-      slug
-      bio
-      name
-      numberCountry
-      numberTopCity
-      numberLanguage
-      cover {
-        url
-      }
-      cities
-    }
-  }
+	query getPage {
+		pages {
+			id
+			slug
+			bio
+			name
+			numberCountry
+			numberTopCity
+			numberLanguage
+			cover {
+				url
+			}
+			cities
+		}
+	}
 `
 
 export const GET_PAGE_BY_SLUG = gql`
-  query getPageBySlug($slug: String!) {
-    page(where: { slug: $slug }) {
-      id
-      slug
-      bio
-      name
-      numberCountry
-      numberTopCity
-      numberLanguage
-      cover {
-        url
-      }
-      cities
-    }
-  }
+	query getPageBySlug($slug: String!) {
+		page(where: { slug: $slug }) {
+			id
+			slug
+			bio
+			name
+			numberCountry
+			numberTopCity
+			numberLanguage
+			cover {
+				url
+			}
+			cities
+		}
+	}
 `

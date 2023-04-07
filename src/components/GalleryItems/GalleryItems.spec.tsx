@@ -13,8 +13,6 @@ const props = {
 
 const renderGallery = () => renderWithClient(<GalleryItems {...props} />)
 
-const getUrl = jest.fn()
-
 describe('<GalleryItems />', () => {
 	it('should render the ui components correctly', () => {
 		const { getByRole } = renderGallery()

@@ -6,7 +6,7 @@ import type { GetStaticProps, NextPage } from 'next'
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import { useEffect } from 'react'
-import graphqlClient from 'lib/client'
+import graphqlClient from 'services/gqlApi'
 import { Banner } from '../components/BannerHome'
 
 type HomeProps = {

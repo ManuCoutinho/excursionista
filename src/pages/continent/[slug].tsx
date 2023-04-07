@@ -5,12 +5,13 @@ import {
 import { GET_PAGE, GET_PAGE_BY_SLUG } from 'graphql/queries'
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 import { useRouter } from 'next/router'
-import graphqlClient from 'lib/client'
+import graphqlClient from 'services/gqlApi'
 import ContinentsTemplate from 'templates/Continents'
 import { ContinentPageProps } from 'templates/Continents/types'
 
 const ContinentsPage: NextPage<ContinentPageProps> = ({ page }) => {
 	const { isFallback } = useRouter()
+
 	if (isFallback) return null
 
 	return <ContinentsTemplate page={page} />

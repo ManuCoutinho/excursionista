@@ -17,9 +17,3 @@ export interface DataImages {
 	total: number
 	total_pages: number
 }
-
-export type GalleryProps = {
-	loading: boolean
-	title?: string
-	data?: DataImages | undefined
-}

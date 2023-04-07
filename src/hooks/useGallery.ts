@@ -14,7 +14,7 @@ import {
 } from 'models/gallery'
 
 const initialState = {
-	page: 0,
+	page: 1,
 	title: '',
 	images: undefined,
 	searchTerm: ''
@@ -71,6 +71,7 @@ export function useGallery(): GalleryReducer {
 			getGalleryImages(state.page, state.searchTerm.toLocaleLowerCase()),
 		{
 			keepPreviousData: true,
+			refetchOnMount: true,
 			onSuccess: (data) =>
 				dispatch({ type: GalleryActions.SAVE_IMAGES, payload: data }),
 			onError: (error) => console.error(error), //todo: show toast,

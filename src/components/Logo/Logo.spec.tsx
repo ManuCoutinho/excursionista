@@ -3,13 +3,15 @@ import { render } from '__mocks__/customRender'
 import { Logo } from '.'
 
 describe('<Logo />', () => {
-  it('should render Logo img correctly', () => {
-    render(<Logo />)
-    expect(screen.getByAltText(/logo com a expressão Excursionista/i)).toBeInTheDocument()
-  })
-  it('should match to snapshot', () => {
-    const { container } = render(<Logo />)
-    expect(container.firstChild).toMatchInlineSnapshot(`
+	it('should render Logo img correctly', () => {
+		render(<Logo />)
+		expect(
+			screen.getByAltText(/logo com a expressão Excursionista/i)
+		).toBeInTheDocument()
+	})
+	it('should match to snapshot', () => {
+		const { container } = render(<Logo />)
+		expect(container.firstChild).toMatchInlineSnapshot(`
       <img
         alt="logo com a expressão Excursionista"
         aria-label="logo"
@@ -24,5 +26,5 @@ describe('<Logo />', () => {
         width="300"
       />
     `)
-  })
+	})
 })

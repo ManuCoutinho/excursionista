@@ -8,7 +8,8 @@ import {
 	Image,
 	Link as ChakraLink,
 	IconButton,
-	Tooltip
+	Tooltip,
+	useColorMode
 } from '@chakra-ui/react'
 import { BsDownload } from 'react-icons/bs'
 import { Skeleton } from 'components/Skeleton'
@@ -16,6 +17,7 @@ import { useQueryImages } from 'hooks/useQueryImages'
 import { getUrlAndDownload } from 'functions/handleDownloadImage'
 import { GalleryItemsProps } from './types'
 import { handleRemoveAccent } from 'functions/handleRemoveAccent'
+import { tooltipStyles } from 'styles/components/tooltip'
 
 export const GalleryItems: React.FC<GalleryItemsProps> = ({
 	image,
@@ -23,16 +25,23 @@ export const GalleryItems: React.FC<GalleryItemsProps> = ({
 	country,
 	flag
 }) => {
+	const { colorMode } = useColorMode()
 	const [fileName, setFileName] = useState<string>('')
 	const [tripUrl, setTripUrl] = useState<string>('')
 	const { data, isSuccess } = useQueryImages(image)
+	const textColor = colorMode === 'light' ? 'gray.600' : 'whiteAlpha.700'
 
 	useMemo(() => {
 		if (data && !isSuccess) {
 			const title = data?.alt
 			title != null ? setFileName(title) : setFileName(city)
 		}
-		setTripUrl(`${handleRemoveAccent(city.toLocaleLowerCase())}-${flag}`)
+		setTripUrl(
+			`${handleRemoveAccent(city.toLocaleLowerCase()).replaceAll(
+				' ',
+				'-'
+			)}-${flag}`
+		)
 	}, [data, isSuccess, city, flag])
 
 	return (
@@ -72,7 +81,7 @@ export const GalleryItems: React.FC<GalleryItemsProps> = ({
 						<HStack p='2' justifyContent='space-between'>
 							<Text
 								fontSize='x-small'
-								color='gray.600'
+								color={textColor}
 								mt='2'
 								textAlign='left'>
 								Photo by
@@ -92,10 +101,7 @@ export const GalleryItems: React.FC<GalleryItemsProps> = ({
 								label='Download'
 								aria-label='info'
 								placement='bottom'
-								bgColor='whiteAlpha.300'
-								color='gray.800'
-								fontWeight='normal'
-								fontSize='x-small'>
+								{...tooltipStyles}>
 								<IconButton
 									aria-label='download image'
 									colorScheme='orange'
@@ -120,7 +126,7 @@ export const GalleryItems: React.FC<GalleryItemsProps> = ({
 								fontSize='medium'>
 								{city}
 							</Text>
-							<Text color='gray.700' fontSize='xs'>
+							<Text color={textColor} fontSize='xs'>
 								{country}
 							</Text>
 						</Box>

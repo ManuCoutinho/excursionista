@@ -1,17 +1,13 @@
 import { NextPage } from 'next'
-import GalleryTemplate from 'templates/Gallery'
-import { useGallery } from 'hooks/useGallery'
+import dynamic from 'next/dynamic'
+
+const GalleryTemplate = dynamic(() => import('templates/Gallery'), {
+	ssr: false,
+	suspense: true
+})
 
 const GalleryPage: NextPage = () => {
-	const { state, isLoading } = useGallery()
-
-	return (
-		<GalleryTemplate
-			loading={isLoading}
-			data={state.images}
-			title={state.title}
-		/>
-	)
+	return <GalleryTemplate />
 }
 
 export default GalleryPage

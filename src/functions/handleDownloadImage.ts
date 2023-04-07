@@ -1,4 +1,4 @@
-import { api } from 'lib/api'
+import { api } from 'services/unsplashApi'
 
 export async function getUrlAndDownload(link = '', filename: string) {
 	await api
