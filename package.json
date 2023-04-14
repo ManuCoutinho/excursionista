@@ -37,7 +37,8 @@
 	},
 	"lint-staged": {
 		"*.{ts,tsx}": [
-			"eslint src --fix"
+			"eslint src --fix",
+			"jest --passWithNoTests --findRelatedTests"
 		],
 		"*.{json,md, yaml, yml}": [
 			"prettier --write"

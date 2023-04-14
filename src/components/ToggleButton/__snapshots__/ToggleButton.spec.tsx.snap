@@ -6,7 +6,7 @@ exports[`<ToggleButton /> should match to snapshot 1`] = `
 >
   <button
     aria-label="change color"
-    class="chakra-button css-96jb5o"
+    class="chakra-button css-18nm5yk"
     type="button"
   >
     <svg

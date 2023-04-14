@@ -39,6 +39,7 @@ export const TravelIcons: React.FC = () => {
 								color='red.600'
 								size='lg'
 								variant='unstyled'
+								cursor='default'
 							/>
 							<Text
 								w='inherit'
