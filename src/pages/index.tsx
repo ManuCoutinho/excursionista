@@ -1,13 +1,12 @@
-import { NavigationType } from 'contexts/navigation/types'
-import { GetPageQuery } from 'graphql/generated/graphql'
-import { GET_PAGE } from 'graphql/queries'
 import { useEffect } from 'react'
 import type { GetStaticProps, NextPage } from 'next'
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
-import { useMenu } from 'hooks/useMenu'
-import { useLocalStorage } from 'hooks/useLocalStorage'
+import { GetPageQuery } from 'graphql/generated/graphql'
+import { GET_PAGE } from 'graphql/queries'
 import graphqlClient from 'services/gqlApi'
+import { NavigationType } from 'contexts/navigation/types'
+import { useLocalStorage } from 'hooks/useLocalStorage'
 import { Banner } from '../components/BannerHome'
 
 type HomeProps = {
@@ -16,7 +15,7 @@ type HomeProps = {
 
 const Home: NextPage<HomeProps> = ({ menu }) => {
 	const Content = dynamic(() => import('../components/MiddleSection'))
-	const [state, setValue] = useLocalStorage('menu', {})
+	const [, setValue] = useLocalStorage('menu', {})
 	useEffect(() => {
 		setValue(menu)
 	}, [menu, setValue])

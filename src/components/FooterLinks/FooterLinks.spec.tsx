@@ -1,20 +1,19 @@
 import { screen } from '@testing-library/react'
 import { render } from '__mocks__/customRender'
 import { FooterLinks } from '.'
+import { FooterLinkProps } from './types'
 
-const mockProps = {
+const mockProps: FooterLinkProps = {
 	links: [
 		{
-			listItem: 'item 1',
-			url: '#',
+			slug: '#',
 			id: '001',
-			text: 'description1'
+			name: 'description1'
 		},
 		{
-			listItem: 'item 2',
-			url: '#',
+			slug: '#',
 			id: '002',
-			text: 'description2'
+			name: 'description2'
 		}
 	],
 	subtitle: 'Redes Sociais'
@@ -33,7 +32,7 @@ describe('<FooterLinks />', () => {
 	it('should render List and links component correctly', () => {
 		render(<FooterLinks {...mockProps} />)
 		const list = screen.getByRole('list')
-		const li = screen.getByRole('listitem', { name: /item 1/i })
+		const li = screen.getByRole('listitem', { name: /description1/i })
 		expect(list).toBeInTheDocument()
 		expect(li).toBeInTheDocument()
 		expect(list.firstChild).toHaveAttribute('href')

@@ -1,14 +1,5 @@
+import { DataImage } from 'models/image'
 import { api } from 'services/unsplashApi'
-
-interface DataImage {
-	regular: string
-	full: string
-	thumb: string
-	author: string
-	userLink: string
-	downloadLocation: string
-	alt: string
-}
 
 export async function getImages(img: string): Promise<DataImage> {
 	const request = await api.get(`photos/${img}`)

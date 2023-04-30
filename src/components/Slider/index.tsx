@@ -16,6 +16,7 @@ export const Slider: React.FC = () => {
 	return (
 		<Swiper
 			className='swiper'
+			role='slider'
 			a11y={{
 				prevSlideMessage: 'Previous slide',
 				nextSlideMessage: 'Next slide'

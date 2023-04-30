@@ -9,7 +9,8 @@ beforeAll(() => {
 			removeListener: jest.fn(),
 			addEventListener: jest.fn(),
 			removeEventListener: jest.fn(),
-			dispatchEvent: jest.fn()
+			dispatchEvent: jest.fn(),
+			'prefers-color-scheme': 'dark'
 		}))
 	})
 })

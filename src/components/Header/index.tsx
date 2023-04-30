@@ -1,32 +1,37 @@
-import { useRouter } from 'next/router'
-import { Box, Flex, HStack, useColorModeValue } from '@chakra-ui/react'
-import { NavButton } from 'components/NavButton'
-import { ToggleButton } from 'components/ToggleButton'
+import {
+	Flex,
+	useColorModeValue,
+	useMediaQuery,
+	Box
+} from '@chakra-ui/react'
 import { Menu } from 'components/Menu'
 import { Logo } from 'components/Logo'
 
 export const Header: React.FC = () => {
 	const color = useColorModeValue('white', 'purple.900')
-	const router = useRouter()
+	const [isLargerThan800] = useMediaQuery('(max-width: 800px)', {
+		ssr: true,
+		fallback: false
+	})
 
 	return (
 		<Flex
 			as='header'
-			justify='space-around'
+			justify='space-between'
 			p={4}
 			pos='fixed'
 			w='100%'
 			bgColor={color}
 			zIndex={100}
-			boxShadow='lg'>
-			<HStack align='center' spacing={[2, 4, 8]}>
-				<Menu />
-				{router.pathname !== '/' && <NavButton />}
-			</HStack>
-			<Box>
-				<Logo />
+			boxShadow='lg'
+			align='center'>
+			<Box w='sm' p={1}>
+				{!isLargerThan800 && <Menu />}
 			</Box>
-			<ToggleButton />
+
+			<Flex minW='5xl'>
+				<Logo />
+			</Flex>
 		</Flex>
 	)
 }

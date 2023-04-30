@@ -64,7 +64,9 @@ function reducer(
 
 export function useGallery(): GalleryReducer {
 	const [state, dispatch] = useReducer(reducer, initialState)
-	const { query } = useRouter()
+
+	const router = useRouter()
+
 	const queryImages = useQuery(
 		['gallery-img', state.page],
 		() =>
@@ -74,13 +76,12 @@ export function useGallery(): GalleryReducer {
 			refetchOnMount: true,
 			onSuccess: (data) =>
 				dispatch({ type: GalleryActions.SAVE_IMAGES, payload: data }),
-			onError: (error) => console.error(error), //todo: show toast,
-			onSettled: () => console.log('local storage on') //todo: save localStorage
+			onError: () => console.log('medidas')
 		}
 	)
 
 	useEffect(() => {
-		const param = query.query
+		const param = router.query.query
 		if (param != undefined) {
 			dispatch({
 				type: GalleryActions.CREATE_SEARCH_TERM,
@@ -91,7 +92,7 @@ export function useGallery(): GalleryReducer {
 				payload: param.toString()
 			})
 		}
-	}, [query])
+	}, [router])
 
 	return { state, dispatch, isLoading: queryImages.isLoading }
 }

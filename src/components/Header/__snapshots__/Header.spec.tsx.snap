@@ -2,30 +2,29 @@
 
 exports[`<Header /> should match to snapshot  1`] = `
 <header
-  class="css-pkdmob"
+  class="css-1myzxgy"
 >
   <div
-    class="chakra-stack css-1c8ajme"
+    class="css-1qiko6f"
   >
     <button
-      aria-controls="menu-list-:r9:"
-      aria-expanded="false"
-      aria-haspopup="menu"
-      aria-label="Options"
-      class="chakra-button chakra-menu__menu-button css-1dnkga9"
-      id="menu-button-:r9:"
-      role="button"
+      aria-controls="menu"
+      aria-expanded="true"
+      aria-hidden="true"
+      aria-label="open menu"
+      class="chakra-button css-1opyrxp"
+      name="menu"
       type="button"
     >
       <svg
         aria-hidden="true"
         fill="currentColor"
         focusable="false"
-        height="25"
+        height="1em"
         stroke="currentColor"
         stroke-width="0"
         viewBox="0 0 512 512"
-        width="25"
+        width="1em"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -33,105 +32,27 @@ exports[`<Header /> should match to snapshot  1`] = `
         />
       </svg>
     </button>
+  </div>
+  <div
+    class="css-16k8qf9"
+  >
     <div
-      class="css-r6z5ec"
-      style="visibility: hidden; position: absolute; min-width: max-content; inset: 0 auto auto 0;"
+      class="css-79elbk"
     >
-      <div
-        aria-orientation="vertical"
-        class="chakra-menu__menu-list css-im7blu"
-        id="menu-list-:r9:"
-        role="menu"
-        style="transform-origin: var(--popper-transform-origin); opacity: 0; visibility: hidden; transform: scale(0.8) translateZ(0);"
-        tabindex="-1"
+      <img
+        alt="logo com a expressão Excursionista"
+        aria-label="logo"
+        data-nimg="1"
+        decoding="async"
+        height="50"
+        loading="lazy"
+        role="img"
+        src="/assets/logo/logo.svg"
+        srcset="/assets/logo/logo.svg 1x, /assets/logo/logo.svg 2x"
+        style="color: transparent;"
+        width="300"
       />
     </div>
-    <div
-      class="css-0"
-    >
-      <a
-        href="/"
-      >
-        <button
-          aria-label="navigation-home"
-          class="chakra-button css-1iyulru"
-          type="button"
-        >
-          <svg
-            aria-hidden="true"
-            fill="currentColor"
-            focusable="false"
-            height="25"
-            stroke="currentColor"
-            stroke-width="0"
-            viewBox="0 0 512 512"
-            width="25"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M80 212v236a16 16 0 0016 16h96V328a24 24 0 0124-24h80a24 24 0 0124 24v136h96a16 16 0 0016-16V212"
-              fill="none"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="32"
-            />
-            <path
-              d="M480 256L266.89 52c-5-5.28-16.69-5.34-21.78 0L32 256m368-77V64h-48v69"
-              fill="none"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="32"
-            />
-          </svg>
-        </button>
-      </a>
-    </div>
-  </div>
-  <div
-    class="css-0"
-  >
-    <img
-      alt="logo com a expressão Excursionista"
-      aria-label="logo"
-      data-nimg="1"
-      decoding="async"
-      height="50"
-      loading="lazy"
-      role="img"
-      src="/assets/logo/logo.svg"
-      srcset="/assets/logo/logo.svg 1x, /assets/logo/logo.svg 2x"
-      style="color: transparent;"
-      width="300"
-    />
-  </div>
-  <div
-    class="css-0"
-  >
-    <button
-      aria-label="change color"
-      class="chakra-button css-18nm5yk"
-      type="button"
-    >
-      <svg
-        aria-hidden="true"
-        fill="currentColor"
-        focusable="false"
-        height="25"
-        stroke="currentColor"
-        stroke-width="0"
-        viewBox="0 0 24 24"
-        width="25"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M0 0h24v24H0V0z"
-          fill="none"
-        />
-        <path
-          d="M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.79zM1 10.5h3v2H1zM11 .55h2V3.5h-2zm8.04 2.495l1.408 1.407-1.79 1.79-1.407-1.408zm-1.8 15.115l1.79 1.8 1.41-1.41-1.8-1.79zM20 10.5h3v2h-3zm-8-5c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm-1 4h2v2.95h-2zm-7.45-.96l1.41 1.41 1.79-1.8-1.41-1.41z"
-        />
-      </svg>
-    </button>
   </div>
 </header>
 `;

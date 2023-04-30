@@ -3,7 +3,7 @@ import { BannerContinent } from '.'
 
 const mockProps = {
 	continent: 'Lua',
-	image: 'lua',
+	image: '/assets/continents/lua.jpg',
 	color: '#fff'
 }
 describe('<BannerContinent/>', () => {
