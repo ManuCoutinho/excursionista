@@ -1,42 +1,101 @@
 import Link from 'next/link'
-import { IconButton, Menu as ChakraMenu, MenuButton, MenuItem, MenuList } from '@chakra-ui/react'
+import {
+	IconButton,
+	ListItem,
+	List,
+	useDisclosure,
+	Drawer,
+	DrawerBody,
+	DrawerContent,
+	DrawerOverlay,
+	DrawerHeader,
+	DrawerCloseButton,
+	HStack,
+	Text,
+	useColorModeValue,
+	DrawerFooter
+} from '@chakra-ui/react'
 import { IoMdMenu } from 'react-icons/io'
-import { menuLinks } from 'constants/navigation'
+import { useMenu } from 'hooks/useMenu'
+import { Fragment } from 'react'
+import { NavButton } from 'components/NavButton'
+import { ToggleButton } from 'components/ToggleButton'
 
 export const Menu: React.FC = () => {
-  return (
-    <ChakraMenu isLazy aria-haspopup>
-      <MenuButton
-        as={IconButton}
-        icon={<IoMdMenu size={25} />}
-        aria-label='Options'
-        role='button'
-        color='purple.300'
-        transition='all 0.2s'
-        size='lg'
-        bg='transparent'
-        _hover={{
-          color: 'yellow.500'
-        }}
-        _focus={{
-          boxShadow: 'none'
-        }}
-      />
-      <MenuList role='menu' aria-orientation='vertical' mx='auto' mb='10px'>
-        {menuLinks?.map((item) => (
-          <Link
-            href={{
-              pathname: item.url,
-              query: { continent: item.id }
-            }}
-            key={item.listItem}
-            passHref
-            legacyBehavior
-            prefetch>
-            <MenuItem role='menuitem'>{item.listItem}</MenuItem>
-          </Link>
-        ))}
-      </MenuList>
-    </ChakraMenu>
-  )
+	const color = useColorModeValue('white', 'purple.900')
+	const { data } = useMenu()
+	const { isOpen, onClose, onOpen } = useDisclosure()
+	const ariaLabel = isOpen ? 'close menu' : 'open menu'
+	const ariaExpanded = isOpen ? false : true
+
+	return (
+		<Fragment>
+			<IconButton
+				aria-label={ariaLabel}
+				name='menu'
+				icon={<IoMdMenu />}
+				onClick={onOpen}
+				aria-controls='menu'
+				aria-hidden={true}
+				aria-expanded={ariaExpanded}
+				variant='ghost'
+				fontSize={28}
+				mt={4}
+			/>
+			<Drawer placement={'left'} onClose={onClose} isOpen={isOpen}>
+				<DrawerOverlay />
+				<DrawerContent bg={color}>
+					<DrawerCloseButton />
+					<DrawerHeader
+						borderBottomWidth={1}
+						mb={6}
+						cursor='pointer'
+						_hover={{
+							color: 'yellow.500'
+						}}>
+						<Link
+							href={{
+								pathname: `/`
+							}}
+							key={`menu-:home:`}
+							passHref
+							legacyBehavior>
+							<HStack onClick={onClose}>
+								<NavButton />
+								<Text>Home</Text>
+							</HStack>
+						</Link>
+					</DrawerHeader>
+					<DrawerBody>
+						<List role='menu' aria-orientation='vertical' spacing={4}>
+							{data?.map(({ id, name, slug }) => (
+								<Link
+									href={{
+										pathname: `/continent/${slug}`,
+										query: { continent: id }
+									}}
+									key={`menu-:${id}:`}
+									passHref
+									legacyBehavior>
+									<ListItem
+										onClick={onClose}
+										role='menuitem'
+										cursor='pointer'
+										_hover={{
+											color: 'yellow.500',
+											textDecoration: 'underline'
+										}}>
+										{name}
+									</ListItem>
+								</Link>
+							))}
+						</List>
+					</DrawerBody>
+					<DrawerFooter borderTopWidth={1} mb={4}>
+						<ToggleButton />
+					</DrawerFooter>
+				</DrawerContent>
+			</Drawer>
+		</Fragment>
+	)
 }

@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Skeleton/> should match to snapshot  1`] = `
+<div>
+  <div
+    class="chakra-stack css-1byv5eb"
+  >
+    <div
+      class="chakra-skeleton css-olz4s9"
+    />
+    <div
+      class="css-16uc9oj"
+    >
+      <div
+        class="css-wzpjib"
+      >
+        <div
+          class="chakra-skeleton__group css-1ayfwcb"
+        >
+          <div
+            class="chakra-skeleton css-tl1b3o"
+          />
+          <div
+            class="chakra-skeleton css-12r9lpq"
+          />
+        </div>
+      </div>
+      <div
+        class="chakra-skeleton css-1wnjkes"
+      />
+    </div>
+  </div>
+  <span
+    hidden=""
+    id="__chakra_env"
+  />
+</div>
+`;

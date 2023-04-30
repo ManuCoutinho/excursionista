@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BoxInfo /> should match to snapshot 1`] = `
+<div
+  class="chakra-stack css-hxyc7v"
+>
+  <div
+    class="css-0"
+  >
+    <p
+      class="chakra-text css-1kjoj6d"
+    >
+      neverland
+    </p>
+    <div
+      class="chakra-stack css-84zodg"
+    >
+      <p
+        class="chakra-text css-1mv0x2l"
+      >
+        países
+      </p>
+      <span />
+    </div>
+  </div>
+  <div
+    class="css-0"
+  >
+    <p
+      class="chakra-text css-1kjoj6d"
+    >
+      1234
+    </p>
+    <div
+      class="chakra-stack css-84zodg"
+    >
+      <p
+        class="chakra-text css-1mv0x2l"
+      >
+        idiomas
+      </p>
+      <span>
+        <span>
+          <svg
+            aria-hidden="true"
+            color="#47585B"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="2"
+            style="color: rgb(71, 88, 91);"
+            viewBox="0 0 24 24"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </span>
+      </span>
+    </div>
+  </div>
+  <div
+    class="css-0"
+  >
+    <p
+      class="chakra-text css-1kjoj6d"
+    >
+      angels
+    </p>
+    <div
+      class="chakra-stack css-84zodg"
+    >
+      <p
+        class="chakra-text css-1mv0x2l"
+      >
+        cidades +100
+      </p>
+      <span>
+        <span>
+          <svg
+            aria-hidden="true"
+            color="#47585B"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="2"
+            style="color: rgb(71, 88, 91);"
+            viewBox="0 0 24 24"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </span>
+      </span>
+    </div>
+  </div>
+</div>
+`;

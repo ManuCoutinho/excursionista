@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header /> should match to snapshot  1`] = `
+<header
+  class="css-1myzxgy"
+>
+  <div
+    class="css-1qiko6f"
+  >
+    <button
+      aria-controls="menu"
+      aria-expanded="true"
+      aria-hidden="true"
+      aria-label="open menu"
+      class="chakra-button css-1opyrxp"
+      name="menu"
+      type="button"
+    >
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        focusable="false"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="0"
+        viewBox="0 0 512 512"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M64 384h384v-42.666H64V384zm0-106.666h384v-42.667H64v42.667zM64 128v42.665h384V128H64z"
+        />
+      </svg>
+    </button>
+  </div>
+  <div
+    class="css-16k8qf9"
+  >
+    <div
+      class="css-79elbk"
+    >
+      <img
+        alt="logo com a expressão Excursionista"
+        aria-label="logo"
+        data-nimg="1"
+        decoding="async"
+        height="50"
+        loading="lazy"
+        role="img"
+        src="/assets/logo/logo.svg"
+        srcset="/assets/logo/logo.svg 1x, /assets/logo/logo.svg 2x"
+        style="color: transparent;"
+        width="300"
+      />
+    </div>
+  </div>
+</header>
+`;

@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FooterLinks /> should match to snapshot 1`] = `
+<nav>
+  <h2
+    class="chakra-heading css-1chae5f"
+  >
+    Redes Sociais
+  </h2>
+  <ul
+    class="css-119xfik"
+    role="list"
+  >
+    <li
+      aria-label="description1"
+      class="css-evbufz"
+      href="/#"
+      role="listitem"
+    >
+      <a
+        class="chakra-link css-spn4bz"
+        rel="noreferrer noopener"
+        target="_blank"
+      >
+        description1
+      </a>
+    </li>
+    <li
+      aria-label="description2"
+      class="css-evbufz"
+      href="/#"
+      role="listitem"
+    >
+      <a
+        class="chakra-link css-spn4bz"
+        rel="noreferrer noopener"
+        target="_blank"
+      >
+        description2
+      </a>
+    </li>
+  </ul>
+</nav>
+`;

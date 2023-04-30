@@ -1,11 +1,6 @@
-export type FooterLinkProps = {
-  subtitle: string
-  links: MenuLink[]
-}
+import { NavigationType } from 'contexts/navigation/types'
 
-export type MenuLink = {
-  listItem?: string
-  url: string
-  id?: string
-  text?: string
+export type FooterLinkProps = {
+	subtitle: string
+	links: NavigationType[]
 }
