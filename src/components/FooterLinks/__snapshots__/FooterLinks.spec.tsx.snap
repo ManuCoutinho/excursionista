@@ -11,34 +11,30 @@ exports[`<FooterLinks /> should match to snapshot 1`] = `
     class="css-119xfik"
     role="list"
   >
-    <li
-      aria-label="description1"
-      class="css-evbufz"
+    <a
       href="/#"
-      role="listitem"
+      rel="noreferrer noopener"
     >
-      <a
-        class="chakra-link css-spn4bz"
-        rel="noreferrer noopener"
-        target="_blank"
+      <li
+        aria-label="description1"
+        class="css-8xctvb"
+        role="listitem"
       >
         description1
-      </a>
-    </li>
-    <li
-      aria-label="description2"
-      class="css-evbufz"
+      </li>
+    </a>
+    <a
       href="/#"
-      role="listitem"
+      rel="noreferrer noopener"
     >
-      <a
-        class="chakra-link css-spn4bz"
-        rel="noreferrer noopener"
-        target="_blank"
+      <li
+        aria-label="description2"
+        class="css-8xctvb"
+        role="listitem"
       >
         description2
-      </a>
-    </li>
+      </li>
+    </a>
   </ul>
 </nav>
 `;

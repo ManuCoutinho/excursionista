@@ -1,10 +1,4 @@
-import {
-	Heading,
-	List,
-	ListItem,
-	Link as ChakraLink,
-	useColorMode
-} from '@chakra-ui/react'
+import { Heading, List, ListItem, useColorMode } from '@chakra-ui/react'
 import Link from 'next/link'
 import { v4 as uuidv4 } from 'uuid'
 import { FooterLinkProps } from './types'
@@ -25,24 +19,25 @@ export const FooterLinks: React.FC<FooterLinkProps> = ({
 					<Link
 						key={uuidv4()}
 						passHref
-						legacyBehavior
 						href={
 							subtitle === 'Redes Sociais' ? slug : `/continent/${slug}`
+						}
+						rel={
+							subtitle === 'Redes Sociais' ? 'noreferrer noopener' : ''
 						}>
 						<ListItem
 							aria-label={name}
 							role='listitem'
-							p={1}
+							p={2}
+							transition='ease-in-out'
+							transitionDelay='0.25ms'
 							_hover={{
-								color: 'purple.300'
+								color: 'purple.300',
+								textDecoration: 'underline',
+								textDecorationThickness: '2px',
+								textUnderlineOffset: '3px'
 							}}>
-							<ChakraLink
-								rel={
-									subtitle === 'Redes Sociais' ? 'noreferrer noopener' : ''
-								}
-								isExternal={subtitle === 'Redes Sociais' ? true : false}>
-								{name}
-							</ChakraLink>
+							{name}
 						</ListItem>
 					</Link>
 				))}

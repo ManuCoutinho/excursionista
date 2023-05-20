@@ -1,13 +1,14 @@
-import { NavigationContext } from 'contexts/navigation'
-import { useContext, useMemo } from 'react'
+import { useEffect, useState } from 'react'
 import { useLocalStorage } from './useLocalStorage'
+import { NavigationType } from 'models/navigation'
 
 export const useMenu = () => {
 	const [state] = useLocalStorage('menu', '')
-	const { data, setData } = useContext(NavigationContext)
-	useMemo(() => {
+	const [data, setData] = useState<NavigationType[]>([])
+
+	useEffect(() => {
 		setData(state)
-	}, [state, setData])
+	}, [state])
 
 	return { data, setData }
 }

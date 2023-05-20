@@ -1,6 +1,5 @@
 import { Fragment, FC } from 'react'
 import dynamic from 'next/dynamic'
-import Head from 'next/head'
 import { NextSeo } from 'next-seo'
 import { Box, Spinner } from '@chakra-ui/react'
 import { BannerContinent } from 'components/BannerContinent'
@@ -16,26 +15,24 @@ const ContinentsTemplate: FC<ContinentPageProps> = ({ page }) => {
 
 	return (
 		<Fragment>
-			<Head>
-				<NextSeo
-					title={`Excursionista | ${page?.name}`}
-					description={page?.bio}
-					canonical={process.env.NEXT_PUBLIC_CANONICAL}
-					openGraph={{
-						url: process.env.NEXT_PUBLIC_CANONICAL,
-						title: 'Excursionista',
-						description: page?.bio,
-						images: [
-							{
-								url: process.env.NEXT_PUBLIC_PREVIEW || '',
-								width: 1280,
-								height: 720,
-								alt: process.env.NEXT_PUBLIC_ALT
-							}
-						]
-					}}
-				/>
-			</Head>
+			<NextSeo
+				title={`Excursionista | ${page?.name}`}
+				description={page?.bio}
+				canonical={process.env.NEXT_PUBLIC_CANONICAL}
+				openGraph={{
+					url: process.env.NEXT_PUBLIC_CANONICAL,
+					title: 'Excursionista',
+					description: page?.bio,
+					images: [
+						{
+							url: process.env.NEXT_PUBLIC_PREVIEW || '',
+							width: 1280,
+							height: 720,
+							alt: process.env.NEXT_PUBLIC_ALT
+						}
+					]
+				}}
+			/>
 			<BannerContinent
 				continent={page?.name}
 				image={page?.cover[0].url}

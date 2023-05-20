@@ -1,4 +1,4 @@
-import { NavigationType } from 'contexts/navigation/types'
+import { NavigationType } from 'models/navigation'
 
 export type FooterLinkProps = {
 	subtitle: string

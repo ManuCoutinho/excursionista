@@ -1,10 +1,14 @@
+import React from 'react'
 import { screen, fireEvent, within } from '@testing-library/react'
-import { render } from '__mocks__/customRender'
+import { renderWithClient } from '__mocks__/providers/ClientRender'
 import { Menu } from '.'
+
+jest.spyOn(React, 'useState')
+jest.spyOn(React, 'useEffect')
 
 describe('< Menu/>', () => {
 	it('should render opened menu correctly ', () => {
-		render(<Menu />)
+		renderWithClient(<Menu />)
 		const openButton = screen.getByRole('button', { hidden: true })
 		expect(openButton).toBeInTheDocument()
 		expect(openButton).toHaveAttribute('aria-expanded', 'true')
@@ -16,7 +20,7 @@ describe('< Menu/>', () => {
 		expect(within(drawer).getByText(/home/i)).toBeInTheDocument()
 	})
 	it('should  match to snapshot', () => {
-		const { container } = render(<Menu />)
+		const { container } = renderWithClient(<Menu />)
 		expect(container).toMatchSnapshot()
 	})
 })
