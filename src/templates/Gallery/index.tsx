@@ -34,8 +34,6 @@ const GalleryTemplate: React.FC = () => {
 		}
 	}, [state, isFetching])
 
-	console.log('🎯 gallery', images)
-
 	return (
 		<Flex h='full' w='full' pt={12} gap={6} direction='column'>
 			<NextSeo
@@ -59,14 +57,19 @@ const GalleryTemplate: React.FC = () => {
 			<Heading
 				color='gray.700'
 				fontWeight='semibold'
-				fontSize='4xl'
+				fontSize={['lg', 'xl', '4xl']}
 				lineHeight='taller'
-				my={6}
-				pt={12}
-				px={24}>
+				my={['2', '4', '6']}
+				pt={[10, 12]}
+				px={[12, 24]}>
 				{`Imagens de ${state.title}`}
 			</Heading>
-			<Box as='section' w='full' py={6} px={[4, 6, 12, 20]} mx='auto'>
+			<Box
+				as='section'
+				w='full'
+				py={[2, 4, 6]}
+				px={[4, 6, 12, 20]}
+				mx='auto'>
 				<Grid
 					mb={8}
 					templateColumns='repeat(auto-fit, minmax(280px, 1fr))'

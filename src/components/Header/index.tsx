@@ -25,7 +25,7 @@ export const Header: React.FC = () => {
 			bgColor={color}
 			zIndex={100}
 			boxShadow='lg'
-			gap={!isLargerThan800 ? '38%' : '2rem'}
+			gap={!isLargerThan800 ? '38%' : '0'}
 			align='center'>
 			<Box w='5rem' p={1}>
 				<Menu />
