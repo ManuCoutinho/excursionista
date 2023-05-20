@@ -17,12 +17,31 @@ import { getUrlAndDownload } from 'functions/handleDownloadImage'
 import { useGallery } from 'hooks/useGallery'
 import { tooltipStyles } from 'styles/components/tooltip'
 import { Pagination } from 'components/Pagination'
+import { NextSeo } from 'next-seo'
 
 const GalleryTemplate: React.FC = () => {
 	const { state, isLoading } = useGallery()
 
 	return (
 		<Flex h='full' w='full' pt={12} gap={6} direction='column'>
+			<NextSeo
+				title={`Excursionista | ${state.title}`}
+				description={`Viaje para seu destino dos sonhos ${state.title}`}
+				canonical={process.env.NEXT_PUBLIC_CANONICAL}
+				openGraph={{
+					url: process.env.NEXT_PUBLIC_CANONICAL,
+					title: 'Excursionista',
+					description: `Conheça mais sobre ${state.title}`,
+					images: [
+						{
+							url: process.env.NEXT_PUBLIC_PREVIEW || '',
+							width: 1280,
+							height: 720,
+							alt: process.env.NEXT_PUBLIC_ALT
+						}
+					]
+				}}
+			/>
 			<Heading
 				color='gray.700'
 				fontWeight='semibold'

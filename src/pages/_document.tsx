@@ -7,8 +7,6 @@ import Document, {
 	NextScript
 } from 'next/document'
 import { theme } from '../styles/theme'
-import { DefaultSeo } from 'next-seo'
-import SEO from '../../next-seo.config'
 class MyDocument extends Document {
 	static async getInitialProps(ctx: DocumentContext) {
 		const initialProps = await Document.getInitialProps(ctx)
@@ -32,7 +30,6 @@ class MyDocument extends Document {
 						type='image'
 					/>
 					<link rel='shortcut icon' href='/assets/favicon.ico' />
-					<DefaultSeo {...SEO} />
 				</Head>
 				<body>
 					<ColorModeScript

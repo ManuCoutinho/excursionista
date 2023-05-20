@@ -2,13 +2,13 @@ export default {
 	openGraph: {
 		type: 'website',
 		locale: 'pt_BR',
-		url: 'https://www.excursionista.manucoutinho.com',
+		url: process.env.NEXT_PUBLIC_CANONICAL || '',
 		images: [
 			{
-				url: 'https://www.excursionista.manucoutinho.com/preview.png',
+				url: process.env.NEXT_PUBLIC_PREVIEW || '',
 				width: 1200,
 				height: 800,
-				alt: 'Foto de um avião roxo e amarelo no céu e a logo do site excursionista',
+				alt: process.env.NEXT_PUBLIC_ALT || '',
 				type: 'image/png'
 			}
 		],
@@ -22,7 +22,7 @@ export default {
 	title: 'Excursionista',
 	description:
 		'Fotos incriveis das 100 cidades mais prucuradas como destinos turístico no mundo.',
-	canonical: 'https://www.excursionista.manucoutinho.com',
+	canonical: process.env.NEXT_PUBLIC_CANONICAL,
 	keywords:
 		'trip excursionista manucoutinho manu coutinho trips continentes viagem turísmo destinos avião praia beach férias vacation holiday feriado lazer free time melhores viagens beautiful place paisagem'
 } as const
