@@ -11,8 +11,12 @@ export interface GalleryReducer {
 			| ActionImages
 	) => void
 	isLoading: boolean
+	isFetching: boolean
 }
 
+export type GalleryProviderProps = {
+	children: React.ReactNode
+}
 export enum GalleryActions {
 	'INCREMENT_PAGE',
 	'DECREMENT_PAGE',

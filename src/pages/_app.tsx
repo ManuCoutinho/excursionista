@@ -12,6 +12,8 @@ import SEO from '../../next-seo.config'
 import { theme } from 'styles/theme'
 import 'styles/styles.css'
 import 'swiper/css/bundle'
+import { ReactQueryDevtools } from 'react-query/devtools'
+import { GalleryProvider } from 'contexts/GalleryContext'
 
 type NextPageWithLayout = NextPage & {
 	getLayout?: (page: ReactElement) => ReactNode
@@ -51,11 +53,14 @@ export default function MyApp({
 		<Fragment>
 			<DefaultSeo {...SEO} />
 			<QueryClientProvider client={queryClient}>
-				<ChakraProvider theme={theme} resetCSS>
-					<Layout>
-						<Component {...pageProps} />
-					</Layout>
-				</ChakraProvider>
+				<GalleryProvider>
+					<ChakraProvider theme={theme} resetCSS>
+						<Layout>
+							<Component {...pageProps} />
+						</Layout>
+					</ChakraProvider>
+				</GalleryProvider>
+				<ReactQueryDevtools />
 			</QueryClientProvider>
 		</Fragment>
 	)

@@ -4,7 +4,6 @@ import {
 	Flex,
 	Grid,
 	VStack,
-	Image,
 	Link as ChakraLink,
 	IconButton,
 	Tooltip,
@@ -18,9 +17,24 @@ import { useGallery } from 'hooks/useGallery'
 import { tooltipStyles } from 'styles/components/tooltip'
 import { Pagination } from 'components/Pagination'
 import { NextSeo } from 'next-seo'
+import { GalleryImage } from 'components/GalleryImage'
+import { useEffect, useState } from 'react'
+import { DataImages } from './types'
 
 const GalleryTemplate: React.FC = () => {
-	const { state, isLoading } = useGallery()
+	const { state, isLoading, isFetching } = useGallery()
+	const [images, setImages] = useState<DataImages | undefined>(
+		state?.images
+	)
+
+	useEffect(() => {
+		setImages(state?.images)
+		if (isFetching) {
+			setImages(state?.images)
+		}
+	}, [state, isFetching])
+
+	console.log('🎯 gallery', images)
 
 	return (
 		<Flex h='full' w='full' pt={12} gap={6} direction='column'>
@@ -57,7 +71,7 @@ const GalleryTemplate: React.FC = () => {
 					mb={8}
 					templateColumns='repeat(auto-fit, minmax(280px, 1fr))'
 					gap={[6, 8, 12]}>
-					{state.images?.results?.map(
+					{images?.results?.map(
 						({ alt_description, id, links, urls, user }) => (
 							<VStack
 								key={id}
@@ -78,17 +92,9 @@ const GalleryTemplate: React.FC = () => {
 								) : (
 									<Box>
 										<Box w='auto'>
-											<Image
-												src={urls?.full}
-												srcSet={urls?.regular}
-												ignoreFallback
+											<GalleryImage
+												src={urls?.regular}
 												alt={alt_description}
-												htmlWidth={450}
-												htmlHeight={173}
-												objectFit='cover'
-												boxSize={[400, 450, 350]}
-												maxH='250px'
-												borderRadius='md'
 											/>
 										</Box>
 										<HStack p='2' justifyContent='space-between'>

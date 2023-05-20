@@ -1,16 +1,21 @@
 import dynamic from 'next/dynamic'
-import { Fragment, FC } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
 import { Header } from 'components/Header'
 import { LayoutProps } from './types'
 
-const Layout: FC<LayoutProps> = ({ children }) => {
+const Layout: React.FC<LayoutProps> = ({ children }) => {
 	const Footer = dynamic(() => import('components/Footer'))
 	return (
-		<Fragment>
+		<AnimatePresence>
 			<Header />
-			<main>{children}</main>
+			<motion.main
+				initial={{ opacity: 0 }}
+				animate={{ opacity: 1 }}
+				exit={{ opacity: 0 }}>
+				{children}
+			</motion.main>
 			<Footer />
-		</Fragment>
+		</AnimatePresence>
 	)
 }
 export default Layout
