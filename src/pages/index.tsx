@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import type { GetStaticProps, NextPage } from 'next'
+import Script from 'next/script'
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import { GetPageQuery } from 'graphql/generated/graphql'
@@ -26,6 +27,17 @@ const Home: NextPage<HomeProps> = ({ menu }) => {
 			</Head>
 			<Banner />
 			<Content />
+			<Script
+				strategy='lazyOnload'
+				async
+				src='https://www.googletagmanager.com/gtag/js?id=G-H6BP4RCMPS'
+			/>
+			<Script id='google-tag' strategy='lazyOnload'>
+				{`window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-H6BP4RCMPS');`}
+			</Script>
 		</>
 	)
 }
