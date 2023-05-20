@@ -25,9 +25,13 @@ exports[`<GridGallery/> should match to snapshot 1`] = `
           >
             <img
               alt="Rio de Janeiro"
-              class="chakra-image css-9fnqqn"
-              height="173"
-              width="450"
+              data-nimg="1"
+              decoding="async"
+              height="400"
+              loading="lazy"
+              src=""
+              style="color: transparent; width: 350px; height: 250px; object-fit: cover; border-radius: 6px;"
+              width="300"
             />
           </a>
           <div
@@ -100,13 +104,14 @@ exports[`<GridGallery/> should match to snapshot 1`] = `
           </div>
           <img
             alt="Brasel"
-            class="chakra-image css-1pcdp9p"
             crossorigin="anonymous"
+            data-nimg="1"
+            decoding="async"
             height="40"
             loading="lazy"
-            src="https://flagcdn.com/w640/rj.png"
-            srcset="https://flagcdn.com/w1280/rj.webp,
-                  https://flagcdn.com/w2560/rj.webp 2x"
+            src="/_next/image?url=https%3A%2F%2Fflagcdn.com%2Fw640%2Frj.png&w=96&q=75"
+            srcset="/_next/image?url=https%3A%2F%2Fflagcdn.com%2Fw640%2Frj.png&w=48&q=75 1x, /_next/image?url=https%3A%2F%2Fflagcdn.com%2Fw640%2Frj.png&w=96&q=75 2x"
+            style="color: transparent; border-radius: 100%; width: 50px; object-fit: cover; box-shadow: inset 0px 14px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1);"
             width="40"
           />
         </div>
@@ -123,9 +128,13 @@ exports[`<GridGallery/> should match to snapshot 1`] = `
           >
             <img
               alt="Cairo"
-              class="chakra-image css-9fnqqn"
-              height="173"
-              width="450"
+              data-nimg="1"
+              decoding="async"
+              height="400"
+              loading="lazy"
+              src=""
+              style="color: transparent; width: 350px; height: 250px; object-fit: cover; border-radius: 6px;"
+              width="300"
             />
           </a>
           <div
@@ -198,13 +207,14 @@ exports[`<GridGallery/> should match to snapshot 1`] = `
           </div>
           <img
             alt="Egito"
-            class="chakra-image css-1pcdp9p"
             crossorigin="anonymous"
+            data-nimg="1"
+            decoding="async"
             height="40"
             loading="lazy"
-            src="https://flagcdn.com/w640/eg.png"
-            srcset="https://flagcdn.com/w1280/eg.webp,
-                  https://flagcdn.com/w2560/eg.webp 2x"
+            src="/_next/image?url=https%3A%2F%2Fflagcdn.com%2Fw640%2Feg.png&w=96&q=75"
+            srcset="/_next/image?url=https%3A%2F%2Fflagcdn.com%2Fw640%2Feg.png&w=48&q=75 1x, /_next/image?url=https%3A%2F%2Fflagcdn.com%2Fw640%2Feg.png&w=96&q=75 2x"
+            style="color: transparent; border-radius: 100%; width: 50px; object-fit: cover; box-shadow: inset 0px 14px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1);"
             width="40"
           />
         </div>

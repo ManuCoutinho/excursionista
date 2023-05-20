@@ -1,11 +1,11 @@
 import { useState, useMemo, Suspense } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import {
 	Box,
 	HStack,
 	Text,
 	VStack,
-	Image,
 	Link as ChakraLink,
 	IconButton,
 	Tooltip,
@@ -18,6 +18,7 @@ import { getUrlAndDownload } from 'functions/handleDownloadImage'
 import { GalleryItemsProps } from './types'
 import { handleRemoveAccent } from 'functions/handleRemoveAccent'
 import { tooltipStyles } from 'styles/components/tooltip'
+import { GalleryImage } from 'components/GalleryImage'
 
 export const GalleryItems: React.FC<GalleryItemsProps> = ({
 	image,
@@ -65,18 +66,7 @@ export const GalleryItems: React.FC<GalleryItemsProps> = ({
 							href={`https://trips.manucoutinho.com/place/${tripUrl}`}
 							rel='noopener noreferrer'
 							passHref>
-							<Image
-								src={data?.regular}
-								srcSet={data?.full}
-								ignoreFallback
-								alt={city}
-								htmlWidth={450}
-								htmlHeight={173}
-								objectFit='cover'
-								boxSize={[400, 450, 350]}
-								maxH='250px'
-								borderRadius='md'
-							/>
+							<GalleryImage src={data?.regular || ''} alt={city} />
 						</Link>
 						<HStack p='2' justifyContent='space-between'>
 							<Text
@@ -132,18 +122,18 @@ export const GalleryItems: React.FC<GalleryItemsProps> = ({
 						</Box>
 						<Image
 							src={`https://flagcdn.com/w640/${flag}.png`}
-							srcSet={`https://flagcdn.com/w1280/${flag}.webp,
-                  https://flagcdn.com/w2560/${flag}.webp 2x`}
-							borderRadius='full'
-							boxSize='50px'
-							boxShadow='lg'
 							loading='lazy'
-							htmlWidth={40}
-							htmlHeight={40}
-							objectFit='fill'
-							align='center'
+							width={40}
 							alt={country}
 							crossOrigin='anonymous'
+							height={40}
+							style={{
+								borderRadius: '100%',
+								width: '50px',
+								objectFit: 'cover',
+								boxShadow:
+									'inset 0px 14px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1)'
+							}}
 						/>
 					</Box>
 				</>

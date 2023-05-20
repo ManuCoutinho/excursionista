@@ -13,7 +13,7 @@ describe('<Logo />', () => {
 		const { container } = render(<Logo />)
 		expect(container.firstChild).toMatchInlineSnapshot(`
 		<div
-		  class="css-79elbk"
+		  class="css-15spr2b"
 		>
 		  <img
 		    alt="logo com a expressão Excursionista"

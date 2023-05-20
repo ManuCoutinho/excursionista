@@ -21,17 +21,16 @@ export const Header: React.FC = () => {
 			p={4}
 			pos='fixed'
 			w='100%'
+			height='10vh'
 			bgColor={color}
 			zIndex={100}
 			boxShadow='lg'
+			gap={!isLargerThan800 ? '38%' : '2rem'}
 			align='center'>
-			<Box w='sm' p={1}>
-				{!isLargerThan800 && <Menu />}
+			<Box w='5rem' p={1}>
+				<Menu />
 			</Box>
-
-			<Flex minW='5xl'>
-				<Logo />
-			</Flex>
+			<Logo />
 		</Flex>
 	)
 }

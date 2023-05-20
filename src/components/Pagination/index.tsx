@@ -13,6 +13,7 @@ import { tooltipStyles } from 'styles/components/tooltip'
 
 export const Pagination: React.FC = () => {
 	const { dispatch, state } = useGallery()
+	console.log('pagination 🐆', state)
 	function hasNextPage() {
 		if (state.page === state.images?.total_pages) {
 			return true
