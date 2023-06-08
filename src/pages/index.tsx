@@ -18,6 +18,7 @@ type HomeProps = {
 const Home: NextPage<HomeProps> = ({ menu }) => {
 	const Content = dynamic(() => import('../components/MiddleSection'))
 	const [, setValue] = useLocalStorage('menu', {})
+
 	useEffect(() => {
 		setValue(menu)
 	}, [menu, setValue])

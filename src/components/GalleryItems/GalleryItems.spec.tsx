@@ -27,7 +27,10 @@ describe('<GalleryItems />', () => {
 		const picture = getByRole('img', { name: props.city })
 		const flag = getByRole('img', { name: props.country })
 		expect(picture).toBeInTheDocument()
-		expect(flag).toHaveAttribute('src', 'https://flagcdn.com/w640/rj.png')
+		expect(flag).toHaveAttribute(
+			'src',
+			'/_next/image?url=https%3A%2F%2Fflagcdn.com%2Fw640%2Frj.png&w=96&q=75'
+		)
 		expect(getByRole('button', { name: /download/i })).toBeInTheDocument()
 	})
 	it('should call function when click on download button', () => {

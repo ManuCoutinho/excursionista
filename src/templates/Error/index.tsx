@@ -36,16 +36,16 @@ const ErrorTemplate: React.FC<{ statusCode: number | null }> = ({
 							fontSize='xl'>{`Error ${statusCode}`}</Text>
 					)}
 					<Text fontWeight='semibold' fontSize='lg' align='center'>
-						Oops! Something unexpected has occurred!
+						Oops! Parece que algo inesperado ocorreu!
 					</Text>
 					<Text align='center'>
-						{` We're sorry for the inconvenience, but it looks like the page you're
-            trying to access is down for maintenance or not exists.`}
+						{` Lamentamos o inconveniente, mas parece que a página que você está
+  							tentando acessar está fora do ar para manutenção ou não existe.`}
 					</Text>
 					<Text align='center'>
-						Our team is already working to normalize access.
+						Nosso time já está trabalhando para normalizar o acesso.
 					</Text>
-					<Text align='center'>Thanks for the patience!</Text>
+					<Text align='center'>Agradecemos a paciência</Text>
 					<Button
 						type='button'
 						onClick={() => router.push('/')}

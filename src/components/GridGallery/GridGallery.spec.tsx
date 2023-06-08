@@ -28,7 +28,10 @@ describe('<GridGallery/>', () => {
 		).toBeInTheDocument()
 		expect(
 			screen.getByRole('img', { name: itemsMock[0].country })
-		).toHaveAttribute('src', 'https://flagcdn.com/w640/rj.png')
+		).toHaveAttribute(
+			'src',
+			'/_next/image?url=https%3A%2F%2Fflagcdn.com%2Fw640%2Frj.png&w=96&q=75'
+		)
 	})
 	it('should match to snapshot', () => {
 		const { container } = renderWithClient(

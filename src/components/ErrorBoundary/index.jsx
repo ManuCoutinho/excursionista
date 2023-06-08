@@ -7,11 +7,6 @@ class ErrorBoundary extends React.Component {
 		this.state = { error: null, errorInfo: null }
 	}
 
-	// // eslint-disable-next-line @typescript-eslint/no-unused-vars
-	// static getDerivedStateFromError(error) {
-	//   return { hasError: true }
-	// }
-
 	componentDidCatch(error, errorInfo) {
 		window.Rollbar?.error(error)
 		this.setState({

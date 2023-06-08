@@ -15,32 +15,36 @@ export const FooterLinks: React.FC<FooterLinkProps> = ({
 				{subtitle}
 			</Heading>
 			<List fontSize={['xs', 'sm']} color={listColor}>
-				{links?.map(({ name, slug }) => (
-					<Link
-						key={uuidv4()}
-						passHref
-						href={
-							subtitle === 'Redes Sociais' ? slug : `/continent/${slug}`
-						}
-						rel={
-							subtitle === 'Redes Sociais' ? 'noreferrer noopener' : ''
-						}>
-						<ListItem
-							aria-label={name}
-							role='listitem'
-							p={2}
-							transition='ease-in-out'
-							transitionDelay='0.25ms'
-							_hover={{
-								color: 'purple.300',
-								textDecoration: 'underline',
-								textDecorationThickness: '2px',
-								textUnderlineOffset: '3px'
-							}}>
-							{name}
-						</ListItem>
-					</Link>
-				))}
+				{links.length > 1
+					? links?.map(({ name, slug }) => (
+							<Link
+								key={uuidv4()}
+								passHref
+								href={
+									subtitle === 'Redes Sociais'
+										? slug
+										: `/continent/${slug}`
+								}
+								rel={
+									subtitle === 'Redes Sociais' ? 'noreferrer noopener' : ''
+								}>
+								<ListItem
+									aria-label={name}
+									role='listitem'
+									p={2}
+									transition='ease-in-out'
+									transitionDelay='0.25ms'
+									_hover={{
+										color: 'purple.300',
+										textDecoration: 'underline',
+										textDecorationThickness: '2px',
+										textUnderlineOffset: '3px'
+									}}>
+									{name}
+								</ListItem>
+							</Link>
+					  ))
+					: null}
 			</List>
 		</nav>
 	)
