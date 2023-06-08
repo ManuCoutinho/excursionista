@@ -2,10 +2,10 @@
 
 exports[`<Header /> should match to snapshot  1`] = `
 <header
-  class="css-1myzxgy"
+  class="css-sk5i5h"
 >
   <div
-    class="css-1qiko6f"
+    class="css-p9k7uw"
   >
     <button
       aria-controls="menu"
@@ -34,25 +34,21 @@ exports[`<Header /> should match to snapshot  1`] = `
     </button>
   </div>
   <div
-    class="css-16k8qf9"
+    class="css-15spr2b"
   >
-    <div
-      class="css-79elbk"
-    >
-      <img
-        alt="logo com a expressão Excursionista"
-        aria-label="logo"
-        data-nimg="1"
-        decoding="async"
-        height="50"
-        loading="lazy"
-        role="img"
-        src="/assets/logo/logo.svg"
-        srcset="/assets/logo/logo.svg 1x, /assets/logo/logo.svg 2x"
-        style="color: transparent;"
-        width="300"
-      />
-    </div>
+    <img
+      alt="logo com a expressão Excursionista"
+      aria-label="logo"
+      data-nimg="1"
+      decoding="async"
+      height="50"
+      loading="lazy"
+      role="img"
+      src="/assets/logo/logo.svg"
+      srcset="/assets/logo/logo.svg 1x, /assets/logo/logo.svg 2x"
+      style="color: transparent;"
+      width="300"
+    />
   </div>
 </header>
 `;

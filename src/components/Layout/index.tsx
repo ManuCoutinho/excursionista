@@ -11,7 +11,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 			<motion.main
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
-				exit={{ opacity: 0 }}>
+				exit={{ opacity: 0 }}
+				style={{ width: '100dvw' }}>
 				{children}
 			</motion.main>
 			<Footer />

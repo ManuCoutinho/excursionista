@@ -38,6 +38,13 @@ export const Pagination: React.FC = () => {
 			behavior: 'smooth'
 		})
 	}
+
+	if (
+		state.images?.results.length != undefined &&
+		state.images?.results.length < 1
+	) {
+		return null
+	}
 	return (
 		<VStack>
 			<Text fontSize='small'>Pag.</Text>

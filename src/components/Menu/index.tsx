@@ -1,3 +1,4 @@
+import { Fragment } from 'react'
 import Link from 'next/link'
 import {
 	IconButton,
@@ -17,7 +18,6 @@ import {
 } from '@chakra-ui/react'
 import { IoMdMenu } from 'react-icons/io'
 import { useMenu } from 'hooks/useMenu'
-import { Fragment } from 'react'
 import { NavButton } from 'components/NavButton'
 import { ToggleButton } from 'components/ToggleButton'
 
@@ -68,27 +68,29 @@ export const Menu: React.FC = () => {
 					</DrawerHeader>
 					<DrawerBody>
 						<List role='menu' aria-orientation='vertical' spacing={4}>
-							{data?.map(({ id, name, slug }) => (
-								<Link
-									href={{
-										pathname: `/continent/${slug}`,
-										query: { continent: id }
-									}}
-									key={`menu-:${id}:`}
-									passHref
-									legacyBehavior>
-									<ListItem
-										onClick={onClose}
-										role='menuitem'
-										cursor='pointer'
-										_hover={{
-											color: 'yellow.500',
-											textDecoration: 'underline'
-										}}>
-										{name}
-									</ListItem>
-								</Link>
-							))}
+							{data.length > 1
+								? data?.map(({ id, name, slug }) => (
+										<Link
+											href={{
+												pathname: `/continent/${slug}`,
+												query: { continent: id }
+											}}
+											key={`menu-:${id}:`}
+											passHref
+											legacyBehavior>
+											<ListItem
+												onClick={onClose}
+												role='menuitem'
+												cursor='pointer'
+												_hover={{
+													color: 'yellow.500',
+													textDecoration: 'underline'
+												}}>
+												{name}
+											</ListItem>
+										</Link>
+								  ))
+								: null}
 						</List>
 					</DrawerBody>
 					<DrawerFooter borderTopWidth={1} mb={4}>

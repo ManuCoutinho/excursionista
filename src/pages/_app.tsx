@@ -14,6 +14,7 @@ import 'styles/styles.css'
 import 'swiper/css/bundle'
 import { ReactQueryDevtools } from 'react-query/devtools'
 import { GalleryProvider } from 'contexts/GalleryContext'
+import ErrorBoundary from 'components/ErrorBoundary'
 
 type NextPageWithLayout = NextPage & {
 	getLayout?: (page: ReactElement) => ReactNode
@@ -50,7 +51,7 @@ export default function MyApp({
 	}, [events])
 
 	return getLayout(
-		<Fragment>
+		<ErrorBoundary>
 			<DefaultSeo {...SEO} />
 			<QueryClientProvider client={queryClient}>
 				<GalleryProvider>
@@ -62,6 +63,6 @@ export default function MyApp({
 				</GalleryProvider>
 				<ReactQueryDevtools />
 			</QueryClientProvider>
-		</Fragment>
+		</ErrorBoundary>
 	)
 }

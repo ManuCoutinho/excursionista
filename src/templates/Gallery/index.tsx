@@ -105,7 +105,9 @@ const GalleryTemplate: React.FC = () => {
 												fontSize='x-small'
 												color='gray.600'
 												mt='2'
-												textAlign='left'>
+												textAlign='left'
+												display='flex'
+												gap='3px'>
 												Photo by
 												<ChakraLink
 													href={`${links?.html}?utm_source=excursionista&utm_medium=referral`}

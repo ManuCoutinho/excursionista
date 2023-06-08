@@ -73,14 +73,16 @@ export const GalleryItems: React.FC<GalleryItemsProps> = ({
 								fontSize='x-small'
 								color={textColor}
 								mt='2'
-								textAlign='left'>
+								textAlign='left'
+								display='flex'
+								gap='2px'>
 								Photo by
 								<ChakraLink
 									href={`${data?.userLink}?utm_source=excursionista&utm_medium=referral`}
 									isExternal>
 									{data?.author}
-								</ChakraLink>{' '}
-								on{' '}
+								</ChakraLink>
+								on
 								<ChakraLink
 									href='https://unsplash.com/?utm_source=excursionista&utm_medium=referral'
 									isExternal>

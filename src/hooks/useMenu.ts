@@ -7,7 +7,9 @@ export const useMenu = () => {
 	const [data, setData] = useState<NavigationType[]>([])
 
 	useEffect(() => {
-		setData(state)
+		if (state != undefined) {
+			setData(state)
+		}
 	}, [state])
 
 	return { data, setData }
