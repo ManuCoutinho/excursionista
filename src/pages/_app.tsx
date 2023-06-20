@@ -1,4 +1,4 @@
-import { Fragment, ReactElement, ReactNode, useEffect } from 'react'
+import { ReactElement, ReactNode, useEffect } from 'react'
 import { NextPage } from 'next'
 import { useRouter } from 'next/router'
 import { AppProps } from 'next/app'
